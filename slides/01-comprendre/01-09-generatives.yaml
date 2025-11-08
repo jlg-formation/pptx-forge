@@ -1,0 +1,35 @@
+chapter:
+  number: 1
+  key: "comprendre"
+  title: "Comprendre l’IA dans le design"
+
+slide:
+  id: "09"
+  type: "content"
+  title: "IA génératives en pratique"
+  meta:
+    order: 9
+  content:
+    bullets:
+      - "Génération de concepts visuels originaux"
+      - "Exploration rapide de directions stylistiques"
+      - "Création de variations de design"
+      - "Inspiration pour l'innovation"
+      - "Accélération de la phase d'idéation"
+    key_message: "Les IA génératives transforment la pratique créative en permettant l'exploration massive d'idées."
+    illustration_prompt: >
+      Illustration vectorielle montrant des bulles d'idées explosant d'un cerveau connecté à une IA. Fond blanc, style dynamique, format 16:9, sans watermark.
+    speaker_notes: |
+      Explorons maintenant comment les IA génératives s'appliquent concrètement dans la pratique du design. Ces outils, capables de créer du contenu nouveau, ouvrent des perspectives fascinantes pour la créativité.
+
+      La génération de concepts visuels originaux est l'usage le plus direct. Au lieu de partir d'une page blanche intimidante, les designers peuvent utiliser des outils comme Midjourney ou DALL-E pour produire des images de départ qui stimulent l'imagination. Par exemple, un prompt comme "interface mobile pour une app de méditation, style minimaliste zen" peut générer plusieurs concepts visuels instantanément.
+
+      L'exploration rapide de directions stylistiques permet de tester de nombreuses approches sans investir du temps dans chacune. Un designer peut générer 10 variations de moodboards pour un même projet en quelques minutes, puis sélectionner les plus prometteuses pour les développer manuellement.
+
+      La création de variations de design est particulièrement utile pour les systèmes de design. Une fois qu'un composant de base est établi, l'IA peut générer des variantes pour différentes tailles d'écran, états ou contextes d'usage, accélérant considérablement le développement.
+
+      En termes d'inspiration pour l'innovation, les IA génératives peuvent combiner des concepts inattendus. Elles excellent dans le "remix" créatif, associant des éléments qui n'auraient pas naturellement été reliés par un humain, ouvrant des pistes d'innovation surprenantes.
+
+      Enfin, l'accélération de la phase d'idéation permet aux designers de produire plus d'idées en moins de temps. Au lieu de se limiter à 3-4 concepts par session de brainstorming, on peut désormais en explorer 20-30, augmentant les chances de trouver la solution optimale.
+
+      Cependant, il est crucial de garder à l'esprit que ces outils sont des assistants, pas des remplaçants. La valeur ajoutée du designer réside dans la curation, l'interprétation et l'adaptation de ces générations automatiques à des besoins utilisateurs réels. L'IA générative est un multiplicateur de créativité, mais elle nécessite toujours l'œil expert et l'empathie humaine pour transformer les idées en designs impactants.

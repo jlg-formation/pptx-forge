@@ -1,0 +1,35 @@
+chapter:
+  number: 2
+  key: "ideation"
+  title: "L'idéation et la création visuelle assistées"
+
+slide:
+  id: "04"
+  type: "content"
+  title: "Création de moodboards et de styles avec Midjourney / Leonardo / Firefly"
+  meta:
+    order: 4
+  content:
+    bullets:
+      - "Génération automatique de palettes visuelles"
+      - "Exploration de styles artistiques variés"
+      - "Cohérence thématique des éléments"
+      - "Inspiration pour l'identité visuelle"
+      - "Rapidité de création de références"
+    key_message: "Les outils IA transforment la création de moodboards en un processus instantané et exploratoire."
+    illustration_prompt: >
+      Illustration vectorielle montrant un moodboard se construisant automatiquement avec des éléments générés par IA. Fond blanc, style compositionnel, format 16:9, sans watermark.
+    speaker_notes: |
+      La création de moodboards, traditionnellement un processus manuel et chronophage, est complètement transformée par les outils IA de génération d'images. Des plateformes comme Midjourney, Leonardo AI et Adobe Firefly permettent de créer des références visuelles cohérentes en quelques instants.
+
+      La génération automatique de palettes visuelles offre une première exploration des couleurs et des ambiances. Au lieu de chercher manuellement des images, le designer peut décrire l'atmosphère souhaitée et obtenir instantanément des propositions de palettes adaptées.
+
+      L'exploration de styles artistiques variés permet de tester rapidement différentes directions créatives. Un même concept peut être décliné en style minimaliste, art déco, ou même des influences culturelles spécifiques, ouvrant des perspectives inattendues.
+
+      La cohérence thématique des éléments est assurée par les algorithmes qui maintiennent une unité visuelle à travers les différentes images générées. Même si chaque élément est créé séparément, l'IA veille à ce qu'ils s'harmonisent autour du thème central.
+
+      Ces moodboards IA servent d'inspiration pour l'identité visuelle globale du projet. Ils aident à définir la direction artistique, à communiquer la vision aux équipes et aux clients, et à aligner tous les intervenants autour d'une esthétique cohérente.
+
+      Enfin, la rapidité de création de références permet d'itérer plus fréquemment. Au lieu de passer des jours à constituer un moodboard physique, on peut désormais créer plusieurs versions en une heure, testant différentes approches et recueillant des feedbacks plus précoces.
+
+      Ces outils ne remplacent pas l'œil expert du designer, mais ils amplifient considérablement sa capacité d'exploration créative, permettant de couvrir plus de terrain et de prendre des décisions plus éclairées.

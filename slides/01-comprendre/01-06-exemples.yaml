@@ -1,0 +1,35 @@
+chapter:
+  number: 1
+  key: "comprendre"
+  title: "Comprendre l’IA dans le design"
+
+slide:
+  id: "06"
+  type: "content"
+  title: "Exemples concrets : assistants de recherche utilisateur, analyse de feedbacks"
+  meta:
+    order: 6
+  content:
+    bullets:
+      - "Analyse automatique de commentaires utilisateurs"
+      - "Identification de patterns dans les données d'usage"
+      - "Génération de personas assistée par IA"
+      - "Simulation de tests utilisateurs virtuels"
+      - "Benchmarking automatique de l'accessibilité"
+    key_message: "L'IA apporte des exemples concrets d'amélioration de la recherche utilisateur et de l'analyse."
+    illustration_prompt: >
+      Illustration vectorielle montrant des graphiques d'analyse avec des éléments IA traitant des données utilisateurs. Fond blanc, style minimal, format 16:9, sans watermark.
+    speaker_notes: |
+      Pour illustrer concrètement l'impact de l'IA sur la recherche utilisateur, examinons quelques exemples pratiques qui montrent comment ces technologies transforment notre approche de l'analyse et de la compréhension des utilisateurs.
+
+      L'analyse automatique de commentaires utilisateurs est l'un des cas d'usage les plus immédiats. Au lieu de lire manuellement des centaines de feedbacks, l'IA peut classifier les commentaires par thèmes, identifier les sentiments (positif, négatif, neutre) et mettre en évidence les problèmes récurrents. Par exemple, un outil comme MonkeyLearn ou des solutions intégrées à des plateformes comme UserTesting peuvent traiter des volumes importants de données qualitatives en quelques minutes.
+
+      L'identification de patterns dans les données d'usage permet de découvrir des insights cachés. Les algorithmes de clustering peuvent grouper les utilisateurs selon leurs comportements, révélant des segments inattendus. Un e-commerce pourrait ainsi découvrir que certains utilisateurs naviguent différemment selon l'heure de la journée, ouvrant des opportunités de personnalisation.
+
+      La génération de personas assistée par IA combine données quantitatives et qualitatives pour créer des profils utilisateurs plus riches et précis. En analysant des données démographiques, des parcours d'usage et des feedbacks, l'IA peut suggérer des motivations profondes et des besoins non exprimés, allant au-delà des personas traditionnels basés sur des hypothèses.
+
+      Les simulations de tests utilisateurs virtuels utilisent des modèles d'IA pour prédire comment de nouveaux utilisateurs réagiront à une interface. Ces outils, encore en développement, pourraient permettre de tester des concepts avant même de créer des prototypes physiques, accélérant considérablement les itérations.
+
+      Enfin, le benchmarking automatique de l'accessibilité analyse les designs selon les standards WCAG et suggère des améliorations. Des outils comme axe DevTools utilisent l'IA pour identifier non seulement les violations évidentes, mais aussi les problèmes subtils d'utilisabilité pour les personnes en situation de handicap.
+
+      Ces exemples montrent que l'IA ne remplace pas l'expertise humaine, mais l'amplifie. Elle nous permet de traiter plus de données, de découvrir des insights plus profonds et de prendre des décisions plus éclairées. Cependant, l'interprétation finale et l'empathie restent des compétences exclusivement humaines.

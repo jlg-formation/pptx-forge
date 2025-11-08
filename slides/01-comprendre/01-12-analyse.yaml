@@ -1,0 +1,35 @@
+chapter:
+  number: 1
+  key: "comprendre"
+  title: "Comprendre l’IA dans le design"
+
+slide:
+  id: "12"
+  type: "content"
+  title: "Analyse de feedbacks avec IA"
+  meta:
+    order: 12
+  content:
+    bullets:
+      - "Classification automatique des commentaires"
+      - "Détection des sentiments et émotions"
+      - "Identification des thèmes récurrents"
+      - "Quantification des problèmes prioritaires"
+      - "Génération de rapports synthétiques"
+    key_message: "L'IA transforme l'analyse de feedbacks en un processus structuré et efficace."
+    illustration_prompt: >
+      Illustration vectorielle montrant des commentaires bruts entrant dans une machine IA qui produit des rapports organisés. Fond blanc, style process, format 16:9, sans watermark.
+    speaker_notes: |
+      L'analyse des feedbacks utilisateurs est une tâche chronophage mais cruciale pour les designers. L'IA apporte des outils puissants pour traiter ces données de manière plus efficace et approfondie.
+
+      La classification automatique des commentaires permet de trier des centaines de feedbacks en catégories pertinentes. Au lieu de lire chaque commentaire manuellement, l'IA peut identifier si un retour concerne l'utilisabilité, le design visuel, les performances ou le contenu, accélérant considérablement l'analyse.
+
+      La détection des sentiments et émotions va au-delà de la simple classification. Les algorithmes de traitement du langage naturel peuvent identifier non seulement si un utilisateur est satisfait ou mécontent, mais aussi détecter des émotions subtiles comme la frustration, la confusion ou l'enthousiasme.
+
+      L'identification des thèmes récurrents révèle des patterns cachés dans les données. L'IA peut découvrir que plusieurs utilisateurs mentionnent "difficile à trouver" sans utiliser exactement les mêmes mots, permettant d'identifier des problèmes d'architecture d'information.
+
+      La quantification des problèmes prioritaires aide à prioriser les améliorations. En combinant la fréquence des mentions et leur intensité émotionnelle, l'IA peut établir un ordre de priorité objectif pour les corrections à apporter.
+
+      Enfin, la génération de rapports synthétiques transforme les données brutes en insights actionnables. L'IA peut produire des résumés exécutifs, des recommandations concrètes et même des visualisations des tendances principales.
+
+      Ces capacités permettent aux designers de traiter plus de feedbacks, d'obtenir des insights plus nuancés et de prendre des décisions plus éclairées. Cependant, l'interprétation humaine reste essentielle : l'IA identifie les patterns, mais c'est le designer qui comprend le contexte et transforme ces insights en améliorations significatives de l'expérience utilisateur.

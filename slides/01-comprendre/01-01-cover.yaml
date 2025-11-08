@@ -1,0 +1,16 @@
+chapter:
+  number: 1
+  key: "comprendre"
+  title: "Comprendre l’IA dans le design"
+
+slide:
+  id: "01"
+  type: "cover"
+  title: "Comprendre l’IA dans le design"
+  meta:
+    order: 1
+  content:
+    bullets: []
+    key_message: ""
+    illustration_prompt: ""
+    speaker_notes: ""

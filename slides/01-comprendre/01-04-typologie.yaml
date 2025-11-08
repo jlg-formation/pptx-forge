@@ -1,0 +1,33 @@
+chapter:
+  number: 1
+  key: "comprendre"
+  title: "Comprendre l’IA dans le design"
+
+slide:
+  id: "04"
+  type: "content"
+  title: "Typologie des IA : génératives, prédictives, conversationnelles"
+  meta:
+    order: 4
+  content:
+    bullets:
+      - "IA génératives : créent du nouveau contenu"
+      - "IA prédictives : anticipent des comportements"
+      - "IA conversationnelles : interagissent naturellement"
+      - "Applications en design : génération d'idées, analyse UX"
+      - "Combinaison pour des workflows optimisés"
+    key_message: "Trois types d'IA pour enrichir le processus de design : générative, prédictive et conversationnelle."
+    illustration_prompt: >
+      Illustration vectorielle montrant trois cercles interconnectés représentant les types d'IA, avec des icônes symbolisant création, prédiction et conversation. Fond blanc, style plat, composition simple, format 16:9, sans watermark.
+    speaker_notes: |
+      Maintenant que nous avons vu les bases, explorons les différents types d'intelligence artificielle disponibles pour les designers. Cette typologie nous aidera à choisir le bon outil pour chaque étape de notre processus créatif.
+
+      Les IA génératives sont capables de créer du contenu nouveau à partir d'exemples. Elles utilisent des modèles comme les GAN (Generative Adversarial Networks) ou les transformers pour produire des images, des textes ou des designs originaux. Pour les designers UX/UI, ces outils sont précieux pour générer des idées initiales, créer des mockups rapides ou explorer des directions stylistiques.
+
+      Les IA prédictives, quant à elles, analysent des données historiques pour anticiper des comportements futurs. Elles excellent dans l'analyse de données utilisateurs, la prédiction de taux de conversion ou l'identification de patterns d'usage. Un designer peut utiliser une IA prédictive pour comprendre comment les utilisateurs navigueront probablement dans une interface proposée.
+
+      Enfin, les IA conversationnelles, comme les chatbots avancés, permettent des interactions naturelles en langage humain. Elles sont utiles pour brainstormer avec l'IA, obtenir des feedbacks sur des concepts ou même simuler des entretiens utilisateurs. Ces systèmes peuvent aider à affiner des idées en posant des questions pertinentes et en offrant des perspectives alternatives.
+
+      En pratique, ces trois types d'IA se complètent souvent. Par exemple, vous pourriez utiliser une IA conversationnelle pour définir un brief, une IA générative pour créer des variations visuelles, et une IA prédictive pour valider vos choix avec des données utilisateurs. Cette approche intégrée maximise les bénéfices de l'IA tout en minimisant ses limitations.
+
+      Il est important de noter que ces catégories ne sont pas strictes ; de nombreux outils combinent plusieurs types d'IA. Par exemple, un outil comme Midjourney (génératif) peut être utilisé de manière conversationnelle via des prompts textuels. En tant que designers, notre rôle est de maîtriser ces technologies pour les adapter à nos besoins créatifs spécifiques.

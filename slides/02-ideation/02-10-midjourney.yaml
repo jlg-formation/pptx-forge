@@ -1,0 +1,35 @@
+chapter:
+  number: 2
+  key: "ideation"
+  title: "L'idéation et la création visuelle assistées"
+
+slide:
+  id: "10"
+  type: "content"
+  title: "Utilisation de Midjourney"
+  meta:
+    order: 10
+  content:
+    bullets:
+      - "Interface Discord intuitive"
+      - "Génération d'images haute qualité"
+      - "Variations et upscale intégrés"
+      - "Communauté créative active"
+      - "Intégration dans les workflows"
+    key_message: "Midjourney excelle dans la génération d'images artistiques et conceptuelles."
+    illustration_prompt: >
+      Illustration vectorielle montrant l'interface Discord avec des images Midjourney. Fond blanc, style applicatif, format 16:9, sans watermark.
+    speaker_notes: |
+      Midjourney s'est imposé comme l'un des outils IA les plus populaires pour la génération d'images créatives, grâce à sa qualité artistique exceptionnelle et son accessibilité via Discord.
+
+      L'interface Discord intuitive rend l'outil accessible à tous, sans installation complexe. Les utilisateurs interagissent naturellement avec le bot via des commandes textuelles dans un serveur dédié, créant une expérience conviviale et communautaire.
+
+      La génération d'images haute qualité est la force principale de Midjourney. Ses algorithmes produisent des résultats visuellement impressionnants, avec un sens artistique développé qui rivalise avec des créations humaines professionnelles.
+
+      Les fonctionnalités de variations et upscale intégrés permettent d'affiner les résultats. Une fois une image générée, on peut créer des variantes subtiles ou agrandir l'image à haute résolution sans perte de qualité, facilitant l'intégration dans des projets professionnels.
+
+      La communauté créative active est un atout majeur. Le serveur Discord rassemble des artistes, designers et créatifs du monde entier, partageant leurs prompts, techniques et inspirations, créant un écosystème d'apprentissage continu.
+
+      Enfin, l'intégration dans les workflows professionnels est facilitée par les exports de haute qualité et la compatibilité avec les outils de design traditionnels. De nombreux designers intègrent désormais Midjourney dans leur processus quotidien.
+
+      Bien que puissant, Midjourney nécessite une période d'apprentissage pour maîtriser ses commandes spécifiques et optimiser les prompts. Mais une fois apprivoisé, il devient un partenaire créatif indispensable pour l'exploration visuelle.

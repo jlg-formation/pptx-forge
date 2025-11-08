@@ -1,0 +1,35 @@
+chapter:
+  number: 3
+  key: "prototypage"
+  title: "Prototypage et design d’interface avec IA"
+
+slide:
+  id: "13"
+  type: "content"
+  title: "Limites de l'IA"
+  meta:
+    order: 13
+  content:
+    bullets:
+      - "Compréhension limitée du contexte"
+      - "Dépendance à la qualité des données"
+      - "Risques de biais et d'erreurs"
+      - "Manque de créativité originale"
+      - "Questions éthiques et de propriété"
+    key_message: "Comprendre les limites de l'IA permet de l'utiliser de manière responsable et efficace."
+    illustration_prompt: >
+      Illustration vectorielle montrant les limites de l'IA avec des barrières symboliques. Fond blanc, style réaliste, format 16:9, sans watermark.
+    speaker_notes: |
+      Malgré ses avancées impressionnantes, l'IA présente des limites importantes qu'il est crucial de reconnaître pour une utilisation responsable.
+
+      La compréhension limitée du contexte empêche l'IA de saisir les nuances culturelles, émotionnelles ou situationnelles complexes.
+
+      La dépendance à la qualité des données signifie que les résultats ne peuvent être meilleurs que les données d'entraînement.
+
+      Les risques de biais et d'erreurs peuvent mener à des interfaces discriminantes ou incorrectes si les données sont biaisées.
+
+      Le manque de créativité originale limite l'IA à recombiner des éléments existants plutôt qu'à innover véritablement.
+
+      Les questions éthiques et de propriété soulèvent des interrogations sur les droits d'auteur et l'impact sur les emplois créatifs.
+
+      Reconnaître ces limites permet aux designers de combiner judicieusement l'IA avec leur expertise humaine pour des résultats optimaux.

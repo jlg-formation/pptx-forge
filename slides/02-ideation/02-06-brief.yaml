@@ -1,0 +1,35 @@
+chapter:
+  number: 2
+  key: "ideation"
+  title: "L'idéation et la création visuelle assistées"
+
+slide:
+  id: "06"
+  type: "content"
+  title: "Construire un brief design cohérent avec un prompt engineering adapté"
+  meta:
+    order: 6
+  content:
+    bullets:
+      - "Structuration claire des objectifs"
+      - "Déinition précise du public cible"
+      - "Spécification des contraintes techniques"
+      - "Formulation de prompts efficaces"
+      - "Validation itérative du brief"
+    key_message: "Un brief bien construit guide l'IA vers des résultats pertinents et alignés."
+    illustration_prompt: >
+      Illustration vectorielle montrant un brief se transformant en prompts précis pour l'IA. Fond blanc, style processuel, format 16:9, sans watermark.
+    speaker_notes: |
+      La qualité des résultats obtenus avec l'IA dépend largement de la qualité du brief initial. Construire un brief design cohérent et maîtriser le prompt engineering sont des compétences essentielles pour tirer le meilleur parti des outils IA.
+
+      La structuration claire des objectifs permet de définir précisément ce que l'on attend de l'IA. Au lieu de demandes vagues comme "fais-moi un design sympa", il s'agit d'objectifs spécifiques : "crée une interface mobile pour la réservation de restaurants, optimisée pour les utilisateurs de 25-35 ans".
+
+      La définition précise du public cible est cruciale. L'IA doit comprendre qui sont les utilisateurs finaux : leurs habitudes, leurs préférences, leurs contraintes. Plus la description est détaillée, plus les résultats seront pertinents.
+
+      La spécification des contraintes techniques intègre les limitations réelles du projet : formats d'écran, technologies disponibles, standards d'accessibilité. Ces contraintes guident l'IA vers des solutions réalisables.
+
+      La formulation de prompts efficaces est un art en soi. Il ne s'agit pas seulement de décrire ce que l'on veut, mais de structurer la demande de manière à ce que l'IA comprenne précisément le contexte, le style souhaité et les éléments prioritaires.
+
+      Enfin, la validation itérative du brief permet d'affiner progressivement la demande. En testant des prompts, analysant les résultats et ajustant, on apprend à communiquer plus efficacement avec l'IA.
+
+      Cette approche méthodique transforme l'IA d'un outil magique mais imprévisible en un partenaire fiable et précis. Elle permet aux designers de contrôler la direction créative tout en bénéficiant de la puissance de génération de l'IA.

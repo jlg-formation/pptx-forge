@@ -1,0 +1,16 @@
+chapter:
+  number: 4
+  key: "tester"
+  title: "Tester, itérer et industrialiser"
+
+slide:
+  id: "01"
+  type: "cover"
+  title: "Tester, itérer et industrialiser"
+  meta:
+    order: 1
+  content:
+    bullets: []
+    key_message: ""
+    illustration_prompt: ""
+    speaker_notes: ""

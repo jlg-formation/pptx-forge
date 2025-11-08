@@ -1,0 +1,47 @@
+chapter:
+  number: 4
+  key: "tester"
+  title: "Tester, itérer et industrialiser"
+
+slide:
+  id: "02"
+  type: "toc"
+  title: "Sommaire du chapitre — Tester, itérer et industrialiser"
+  meta:
+    order: 2
+  content:
+    items:
+      - "IA pour l'analyse de tests utilisateurs et retours qualitatifs"
+      - "Amélioration continue : itération rapide grâce aux modèles IA"
+      - "Évaluer la cohérence, l'accessibilité et la pertinence du design généré"
+      - "Intégrer l'IA dans le workflow produit et dans la culture d'équipe"
+      - "Anticiper les évolutions : vers le design génératif complet"
+      - "TP : améliorer un prototype à partir d'un retour utilisateur simulé par IA"
+      - "Méthodes de test avec IA"
+      - "Gestion des retours"
+      - "Accessibilité et IA"
+      - "Culture d'équipe"
+      - "Design génératif"
+      - "Simulation de retours"
+      - "Amélioration de prototypes"
+      - "Perspectives futures"
+      - "Discussion"
+    key_message: "Vue d'ensemble du chapitre et des notions abordées."
+    illustration_prompt: >
+      Illustration vectorielle sans texte, fond blanc (#ffffff), montrant une
+      arborescence de concepts reliés. Style minimal, composition claire et
+      équilibrée, format 16:9, sans watermark.
+    speaker_notes: |
+      Bonjour à toutes et à tous. Dans ce quatrième chapitre de notre formation sur l'intelligence artificielle appliquée au design UX/UI, nous allons plonger dans les phases cruciales de test, d'itération et d'industrialisation. Après avoir exploré la compréhension des IA, l'idéation assistée et le prototypage, il est temps de voir comment valider et perfectionner nos créations de manière efficace et scalable.
+
+      Nous commencerons par examiner comment l'IA révolutionne l'analyse des tests utilisateurs. Les outils d'intelligence artificielle peuvent désormais traiter de vastes volumes de données qualitatives et quantitatives, identifiant des patterns que l'œil humain pourrait manquer. Cela permet une compréhension plus profonde des comportements utilisateurs et des points de friction dans nos designs.
+
+      Ensuite, nous aborderons l'amélioration continue et l'itération rapide. Grâce aux modèles d'IA générative, nous pouvons créer des variantes de design en quelques secondes, tester différentes approches et optimiser nos interfaces en temps réel. Cette capacité d'itération accélérée transforme fondamentalement le workflow du designer.
+
+      L'évaluation de la cohérence, de l'accessibilité et de la pertinence sera un point central. Des outils IA spécialisés vérifient automatiquement la conformité aux standards d'accessibilité, analysent la cohérence visuelle et évaluent la pertinence fonctionnelle de nos designs générés.
+
+      Nous discuterons également de l'intégration de l'IA dans les workflows produits et la culture d'équipe. Comment former les équipes à ces nouveaux outils ? Comment maintenir un équilibre entre créativité humaine et assistance machine ? Quels sont les défis éthiques et pratiques de cette intégration ?
+
+      Enfin, nous anticiperons les évolutions futures, vers un design génératif complet où l'IA pourrait concevoir des expériences utilisateur de bout en bout. À travers un atelier pratique, vous apprendrez à améliorer un prototype existant en utilisant des retours utilisateurs simulés par IA.
+
+      Ce chapitre vous dotera des compétences nécessaires pour industrialiser vos processus de design, en tirant parti de l'IA pour des itérations plus rapides, des tests plus fiables et une qualité constamment améliorée. Préparez-vous à découvrir comment l'IA transforme non seulement la création, mais aussi la validation et l'optimisation de nos designs.

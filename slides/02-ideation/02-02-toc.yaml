@@ -1,0 +1,35 @@
+chapter:
+  number: 2
+  key: "ideation"
+  title: "L'idéation et la création visuelle assistées"
+
+slide:
+  id: "02"
+  type: "toc"
+  title: "Sommaire du chapitre — L'idéation et la création visuelle assistées"
+  meta:
+    order: 2
+  content:
+    items:
+      - "Génération d'idées et de concepts à partir de prompts"
+      - "Création de moodboards et de styles avec Midjourney / Leonardo / Firefly"
+      - "Utiliser ChatGPT et DALL·E pour stimuler la créativité"
+      - "Construire un brief design cohérent avec un prompt engineering adapté"
+      - "IA et direction artistique : trouver le juste équilibre humain-machine"
+      - "TP : produire un concept visuel cohérent à partir d'un prompt travaillé"
+      - "Techniques de prompt engineering"
+      - "Utilisation de Midjourney"
+      - "Intégration de DALL·E"
+      - "Génération de styles visuels"
+      - "Stimulation de la créativité"
+      - "Direction artistique avec IA"
+      - "Exemples de projets"
+      - "Atelier pratique"
+      - "Retours et itérations"
+    key_message: "Vue d'ensemble du chapitre et des notions abordées."
+    illustration_prompt: >
+      Illustration vectorielle sans texte, fond blanc (#ffffff), montrant une
+      arborescence de concepts reliés. Style minimal, composition claire et
+      équilibrée, format 16:9, sans watermark.
+    speaker_notes: |
+      Ce sommaire présente les grandes lignes du chapitre sur l'idéation assistée par IA. Nous explorerons comment l'IA transforme la phase créative du design, de la génération d'idées à la création visuelle. Les participants apprendront à maîtriser les outils de génération d'images et de texte pour amplifier leur processus créatif. Le chapitre couvre les techniques de prompt engineering, l'utilisation pratique d'outils comme Midjourney et DALL·E, et l'équilibre crucial entre assistance IA et direction artistique humaine. Des exercices pratiques permettront d'appliquer ces concepts concrètement.

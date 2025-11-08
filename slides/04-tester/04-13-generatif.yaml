@@ -1,0 +1,44 @@
+chapter:
+  number: 4
+  key: "tester"
+  title: "Tester, itérer et industrialiser"
+
+slide:
+  id: "13"
+  type: "content"
+  title: "Design génératif"
+  meta:
+    order: 13
+  content:
+    bullets:
+      - "Principes fondamentaux : algorithmes, contraintes et optimisation"
+      - "Outils et plateformes de design génératif avancés"
+      - "Applications concrètes dans l'interface et l'expérience utilisateur"
+      - "Limites actuelles et défis techniques à relever"
+      - "Intégration progressive dans les workflows de design traditionnels"
+    key_message: "Le design génératif révolutionne la création en explorant des milliers de possibilités."
+    illustration_prompt: >
+      Illustration vectorielle sans texte, fond blanc pur (#ffffff), format 16:9,
+      style innovant et algorithmique, montrant un processus génératif : contraintes
+      initiales, algorithmes explorant des variantes, sélection optimale.
+      Composition dynamique et exploratoire, lisible et imprimable, sans watermark.
+    speaker_notes: |
+      Le design génératif représente l'avant-garde de l'assistance IA en design, où les algorithmes ne se contentent plus de suggérer des améliorations, mais créent des designs complets à partir de paramètres définis. Cette approche transforme fondamentalement notre conception de la création.
+
+      Les principes fondamentaux reposent sur trois piliers : les algorithmes d'exploration (qui génèrent des variantes), les contraintes (qui définissent les limites acceptables), et l'optimisation (qui sélectionne les meilleures solutions selon des critères définis). Contrairement au design traditionnel où le créateur explore manuellement quelques options, le génératif explore des milliers de possibilités en quelques secondes.
+
+      Les outils et plateformes évoluent rapidement. Autodesk Generative Design utilise des simulations physiques pour optimiser des pièces mécaniques, mais des équivalents pour l'UX émergent. Des outils comme Adobe Sensei ou des recherches en IA générative permettent de créer des layouts, des palettes de couleurs, ou même des architectures d'information optimisées.
+
+      Les applications concrètes sont prometteuses. Imaginez générer automatiquement des interfaces adaptatives qui s'optimisent pour différents appareils, ou des systèmes de navigation qui s'adaptent aux comportements utilisateurs en temps réel. Des entreprises comme Airbnb utilisent déjà des approches génératives pour optimiser leurs interfaces de recherche.
+
+      Cependant, les limites sont réelles. Les designs générés peuvent manquer de l'âme et du contexte culturel que seul un designer humain peut apporter. Les algorithmes peuvent perpétuer des biais présents dans leurs données d'entraînement, et l'optimisation excessive peut mener à des solutions stériles. De plus, l'explicabilité des décisions algorithmiques reste un défi.
+
+      L'intégration dans les workflows traditionnels se fait progressivement. Commencez par des tâches répétitives : génération de variantes d'icônes, optimisation de layouts, ou création de palettes de couleurs. Au fur et à mesure, étendez à des composants plus complexes, toujours avec supervision humaine.
+
+      Dans la pratique, comment expérimenter ? Utilisez des outils comme Runway ML pour la génération de concepts visuels, ou des frameworks comme Processing pour des explorations algorithmiques. Définissez toujours des contraintes claires et des critères d'évaluation objectifs.
+
+      Les défis éthiques sont importants. Qui est responsable d'un design génératif défaillant ? Comment assurer la diversité et l'inclusivité dans les générations algorithmiques ? Ces questions nécessitent une réflexion continue.
+
+      L'avenir du design génératif est excitant. Nous nous dirigeons vers des systèmes où l'IA et l'humain collaborent en temps réel : l'IA explore l'espace des possibles, l'humain apporte la vision et les valeurs. Cette synergie pourrait multiplier notre capacité créative par un facteur considérable.
+
+      En conclusion, le design génératif n'est pas une menace pour les designers, mais une extension puissante de leurs capacités. Il permet d'explorer des territoires inaccessibles manuellement, d'optimiser pour des critères complexes, et d'accélérer l'innovation. Adopter cette approche, c'est embrasser l'avenir de la création assistée par IA.

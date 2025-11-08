@@ -1,0 +1,35 @@
+chapter:
+  number: 2
+  key: "ideation"
+  title: "L'idéation et la création visuelle assistées"
+
+slide:
+  id: "05"
+  type: "content"
+  title: "Utiliser ChatGPT et DALL·E pour stimuler la créativité"
+  meta:
+    order: 5
+  content:
+    bullets:
+      - "Brainstorming interactif avec ChatGPT"
+      - "Génération d'idées narratives"
+      - "Combinaison texte et image avec DALL·E"
+      - "Exploration de concepts complexes"
+      - "Support à la pensée latérale"
+    key_message: "ChatGPT et DALL·E forment un duo puissant pour explorer des idées de manière interactive."
+    illustration_prompt: >
+      Illustration vectorielle montrant un dialogue entre un designer et IA, avec des images générées apparaissant. Fond blanc, style conversationnel, format 16:9, sans watermark.
+    speaker_notes: |
+      L'association de ChatGPT pour le texte et DALL·E pour les images crée un environnement de création particulièrement riche et interactif pour les designers.
+
+      Le brainstorming interactif avec ChatGPT permet des sessions de génération d'idées conversationnelles. Au lieu de prompts statiques, le designer peut avoir un dialogue fluide : poser des questions, affiner des concepts, demander des variations, créant un processus créatif dynamique et itératif.
+
+      La génération d'idées narratives est particulièrement puissante. ChatGPT peut aider à développer des histoires utilisateur, des scénarios d'usage ou des parcours émotionnels, apportant de la profondeur aux concepts visuels.
+
+      La combinaison texte et image avec DALL·E permet de visualiser immédiatement les idées textuelles. Un concept décrit par ChatGPT peut être instantanément illustré par DALL·E, créant un feedback visuel immédiat qui enrichit la réflexion.
+
+      L'exploration de concepts complexes bénéficie de cette approche hybride. Des idées abstraites ou techniques peuvent être d'abord clarifiées textuellement, puis rendues concrètes visuellement, facilitant la communication et la validation.
+
+      Enfin, le support à la pensée latérale encourage l'exploration de pistes inhabituelles. L'IA peut proposer des associations inattendues ou des perspectives alternatives que le designer n'aurait pas envisagées, stimulant l'innovation.
+
+      Cette combinaison d'outils transforme l'idéation en un processus plus collaboratif et visuel. Elle permet aux designers de travailler plus rapidement, d'explorer plus largement et de communiquer plus efficacement leurs idées aux équipes et aux clients.

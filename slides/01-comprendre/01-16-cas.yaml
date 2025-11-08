@@ -1,0 +1,35 @@
+chapter:
+  number: 1
+  key: "comprendre"
+  title: "Comprendre l’IA dans le design"
+
+slide:
+  id: "16"
+  type: "content"
+  title: "Études de cas"
+  meta:
+    order: 16
+  content:
+    bullets:
+      - "Cas réels d'intégration réussie"
+      - "Leçons apprises des échecs"
+      - "Métriques d'amélioration mesurées"
+      - "Retours d'expérience des équipes"
+      - "Perspectives d'évolution"
+    key_message: "Les études de cas illustrent les bénéfices concrets de l'IA en design."
+    illustration_prompt: >
+      Illustration vectorielle montrant des dossiers de cas avec des résultats positifs. Fond blanc, style documentaire, format 16:9, sans watermark.
+    speaker_notes: |
+      Les études de cas offrent un regard concret sur l'application de l'IA dans des projets de design réels, permettant d'apprendre des expériences d'autrui et d'inspirer sa propre pratique.
+
+      Les cas réels d'intégration réussie montrent comment des équipes ont transformé leur workflow grâce à l'IA. Par exemple, une agence de design qui a réduit de 60% le temps de création de moodboards grâce à Midjourney, ou une entreprise tech qui a amélioré ses taux de conversion de 25% en utilisant l'IA pour optimiser l'UX.
+
+      Les leçons apprises des échecs sont tout aussi précieuses. Elles mettent en lumière les pièges à éviter : dépendance excessive à l'IA, négligence des biais algorithmiques, ou résistance au changement au sein des équipes. Ces histoires d'échec deviennent des guides pour une adoption responsable.
+
+      Les métriques d'amélioration mesurées quantifient l'impact de l'IA. Au-delà des anecdotes, nous examinons des données concrètes : réduction du time-to-market, augmentation de la satisfaction utilisateur, amélioration des performances des produits. Ces chiffres valident l'investissement dans l'IA.
+
+      Les retours d'expérience des équipes révèlent l'aspect humain de cette transformation. Comment les designers ont-ils vécu cette évolution ? Quelles compétences ont-ils dû développer ? Quels challenges culturels ont-ils rencontrés ? Ces témoignages humains complètent l'analyse technique.
+
+      Enfin, les perspectives d'évolution montrent que l'IA en design est un domaine en constante évolution. Quels sont les prochains outils à surveiller ? Comment les tendances actuelles pourraient-elles se développer ? Ces projections aident à anticiper l'avenir.
+
+      Ces études de cas ne sont pas seulement informatives, elles sont motivantes. Elles prouvent que l'IA n'est pas une menace pour les designers, mais un levier puissant pour l'innovation et l'efficacité. En s'inspirant de ces expériences, vous pouvez adapter ces leçons à votre propre contexte.

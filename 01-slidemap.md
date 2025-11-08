@@ -1,108 +1,107 @@
 # 🗺️ Slide Map – Intelligence artificielle pour les designers UX/UI
 
-Ce document répertorie l’ensemble des slides à générer à partir de `00-plan-formation.md`.
-Chaque slide correspond à un fichier `.md` dans `slides/<chapitre-simplifie>/`.
-La colonne “Statut” est mise à jour automatiquement par `xxxSlides` à chaque exécution.
+Ce document répertorie l’ensemble des slides logiques (01–18) par chapitre.
+Chaque slide logique correspond à **un fichier YAML** dans `slides/<CC>-<chapitre-simplifie>/<CC>-<NN>-<motcleslide>.yaml`.
 
 ---
 
 ## Chapitre 1 — Comprendre l’IA dans le design
 
-| Ordre | Type               | Fichier cible                                                                         | Titre du slide                            | Statut |
-| ----: | ------------------ | ------------------------------------------------------------------------------------- | ----------------------------------------- | :----: |
-|    01 | Page de garde      | slides/comprendre-l-ia-dans-le-design/01-page-de-garde.md                             | Comprendre l’IA dans le design            |   ✅   |
-|    02 | Table des matières | slides/comprendre-l-ia-dans-le-design/02-table-des-matieres.md                        | Sommaire du chapitre                      |   ✅   |
-|    03 | Contenu            | slides/comprendre-l-ia-dans-le-design/03-les-bases-de-l-intelligence-artificielle.md  | Les bases de l’intelligence artificielle  |   ✅   |
-|    04 | Contenu            | slides/comprendre-l-ia-dans-le-design/04-definition-de-l-intelligence-artificielle.md | Définition de l’intelligence artificielle |   ✅   |
-|    05 | Contenu            | slides/comprendre-l-ia-dans-le-design/05-applications-de-l-ia-en-design.md            | Applications de l’IA en design            |   ✅   |
-|    06 | Contenu            | slides/comprendre-l-ia-dans-le-design/06-limites-de-l-ia-pour-les-designers.md        | Limites de l’IA pour les designers        |   ✅   |
-|    07 | Contenu            | slides/comprendre-l-ia-dans-le-design/07-typologie-des-ia-generatives.md              | Typologie des IA génératives              |   ✅   |
-|    08 | Contenu            | slides/comprendre-l-ia-dans-le-design/08-ia-predictives-en-design.md                  | IA prédictives en design                  |   ✅   |
-|    09 | Contenu            | slides/comprendre-l-ia-dans-le-design/09-ia-conversationnelles.md                     | IA conversationnelles                     |   ✅   |
-|    10 | Contenu            | slides/comprendre-l-ia-dans-le-design/10-outils-ia-pour-designers.md                  | Outils IA pour designers                  |   ✅   |
-|    11 | Contenu            | slides/comprendre-l-ia-dans-le-design/11-assistants-de-recherche-utilisateur.md       | Assistants de recherche utilisateur       |   ✅   |
-|    12 | Contenu            | slides/comprendre-l-ia-dans-le-design/12-analyse-de-feedbacks-avec-ia.md              | Analyse de feedbacks avec IA              |   ✅   |
-|    13 | Contenu            | slides/comprendre-l-ia-dans-le-design/13-enjeux-ethiques-de-l-ia.md                   | Enjeux éthiques de l’IA                   |   ✅   |
-|    14 | Contenu            | slides/comprendre-l-ia-dans-le-design/14-aspects-creatifs-de-l-usage-de-l-ia.md       | Aspects créatifs de l’usage de l’IA       |   ✅   |
-|    15 | Contenu            | slides/comprendre-l-ia-dans-le-design/15-tp-cartographie-des-usages-ia.md             | TP : Cartographie des usages IA           |   ✅   |
-|    16 | Contenu            | slides/comprendre-l-ia-dans-le-design/16-discussion-et-echanges.md                    | Discussion et échanges                    |   ✅   |
-|    17 | Contenu            | slides/comprendre-l-ia-dans-le-design/17-synthese-et-questions.md                     | Synthèse et questions                     |   ✅   |
-|    18 | Conclusion         | slides/comprendre-l-ia-dans-le-design/18-conclusion.md                                | Conclusion du chapitre                    |   ✅   |
+| Ordre | Type               | Référence YAML                                     | Titre du slide                                                                | Statut |
+| ----: | ------------------ | -------------------------------------------------- | ----------------------------------------------------------------------------- | :----: |
+|    01 | Page de garde      | slides/01-comprendre/01-01-cover.yaml              | Comprendre l’IA dans le design                                                |   ✅   |
+|    02 | Table des matières | slides/01-comprendre/01-02-toc.yaml                | Sommaire du chapitre — Comprendre l’IA dans le design                         |   ✅   |
+|    03 | Contenu            | slides/01-comprendre/01-03-bases.yaml              | Les bases de l’intelligence artificielle et ses limites pour le design        |   ✅   |
+|    04 | Contenu            | slides/01-comprendre/01-04-typologie.yaml          | Typologie des IA : génératives, prédictives, conversationnelles               |   ✅   |
+|    05 | Contenu            | slides/01-comprendre/01-05-outils.yaml             | Les outils du designer augmentés par l’IA                                     |   ✅   |
+|    06 | Contenu            | slides/01-comprendre/01-06-exemples.yaml           | Exemples concrets : assistants de recherche utilisateur, analyse de feedbacks |   ✅   |
+|    07 | Contenu            | slides/01-comprendre/01-07-enjeux.yaml             | Les enjeux éthiques et créatifs de l’usage de l’IA                            |   ✅   |
+|    08 | Contenu            | slides/01-comprendre/01-08-tp.yaml                 | TP : cartographier les usages possibles de l’IA dans son propre projet        |   ✅   |
+|    09 | Contenu            | slides/01-comprendre/01-09-generatives.yaml        | IA génératives en pratique                                                    |   ✅   |
+|    10 | Contenu            | slides/01-comprendre/01-10-predictives.yaml        | IA prédictives pour le design                                                 |   ✅   |
+|    11 | Contenu            | slides/01-comprendre/01-11-conversationnelles.yaml | Outils conversationnels                                                       |   ✅   |
+|    12 | Contenu            | slides/01-comprendre/01-12-analyse.yaml            | Analyse de feedbacks avec IA                                                  |   ✅   |
+|    13 | Contenu            | slides/01-comprendre/01-13-ethique.yaml            | Éthique et créativité                                                         |   ✅   |
+|    14 | Contenu            | slides/01-comprendre/01-14-cartographie.yaml       | Cartographie des usages                                                       |   ✅   |
+|    15 | Contenu            | slides/01-comprendre/01-15-demonstration.yaml      | Démonstration d'outils                                                        |   ✅   |
+|    16 | Contenu            | slides/01-comprendre/01-16-cas.yaml                | Études de cas                                                                 |   ✅   |
+|    17 | Contenu            | slides/01-comprendre/01-17-discussion.yaml         | Discussion et questions                                                       |   ✅   |
+|    18 | Conclusion         | slides/01-comprendre/01-18-conclusion.yaml         | Conclusion du chapitre                                                        |   ✅   |
 
 ---
 
 ## Chapitre 2 — L’idéation et la création visuelle assistées
 
-| Ordre | Type               | Fichier cible                                                                                | Titre du slide                               | Statut |
-| ----: | ------------------ | -------------------------------------------------------------------------------------------- | -------------------------------------------- | :----: |
-|    01 | Page de garde      | slides/l-ideation-et-la-creation-visuelle-assistees/01-page-de-garde.md                      | L’idéation et la création visuelle assistées |   ✅   |
-|    02 | Table des matières | slides/l-ideation-et-la-creation-visuelle-assistees/02-table-des-matieres.md                 | Sommaire du chapitre                         |   ✅   |
-|    03 | Contenu            | slides/l-ideation-et-la-creation-visuelle-assistees/03-generation-d-idees-avec-ia.md         | Génération d’idées avec IA                   |   ✅   |
-|    04 | Contenu            | slides/l-ideation-et-la-creation-visuelle-assistees/04-concepts-a-partir-de-prompts.md       | Concepts à partir de prompts                 |   ✅   |
-|    05 | Contenu            | slides/l-ideation-et-la-creation-visuelle-assistees/05-creation-de-moodboards.md             | Création de moodboards                       |   ✅   |
-|    06 | Contenu            | slides/l-ideation-et-la-creation-visuelle-assistees/06-styles-avec-midjourney.md             | Styles avec Midjourney                       |   ✅   |
-|    07 | Contenu            | slides/l-ideation-et-la-creation-visuelle-assistees/07-utilisation-de-leonardo-et-firefly.md | Utilisation de Leonardo et Firefly           |   ✅   |
-|    08 | Contenu            | slides/l-ideation-et-la-creation-visuelle-assistees/08-chatgpt-pour-la-creativite.md         | ChatGPT pour la créativité                   |   ✅   |
-|    09 | Contenu            | slides/l-ideation-et-la-creation-visuelle-assistees/09-dall-e-en-design.md                   | DALL·E en design                             |   ✅   |
-|    10 | Contenu            | slides/l-ideation-et-la-creation-visuelle-assistees/10-prompt-engineering-pour-briefs.md     | Prompt engineering pour briefs               |   ✅   |
-|    11 | Contenu            | slides/l-ideation-et-la-creation-visuelle-assistees/11-construire-un-brief-coherent.md       | Construire un brief cohérent                 |   ✅   |
-|    12 | Contenu            | slides/l-ideation-et-la-creation-visuelle-assistees/12-equilibre-humain-machine.md           | Équilibre humain-machine                     |   ✅   |
-|    13 | Contenu            | slides/l-ideation-et-la-creation-visuelle-assistees/13-direction-artistique-avec-ia.md       | Direction artistique avec IA                 |   ✅   |
-|    14 | Contenu            | slides/l-ideation-et-la-creation-visuelle-assistees/14-tp-concept-visuel.md                  | TP : Concept visuel                          |   ✅   |
-|    15 | Contenu            | slides/l-ideation-et-la-creation-visuelle-assistees/15-discussion-sur-l-ideation.md          | Discussion sur l’idéation                    |   ✅   |
-|    16 | Contenu            | slides/l-ideation-et-la-creation-visuelle-assistees/16-synthese-visuelle.md                  | Synthèse visuelle                            |   ✅   |
-|    17 | Contenu            | slides/l-ideation-et-la-creation-visuelle-assistees/17-preparation-au-prototypage.md         | Préparation au prototypage                   |   ✅   |
-|    18 | Conclusion         | slides/l-ideation-et-la-creation-visuelle-assistees/18-conclusion.md                         | Conclusion du chapitre                       |   ✅   |
+| Ordre | Type               | Référence YAML                           | Titre du slide                                                           | Statut |
+| ----: | ------------------ | ---------------------------------------- | ------------------------------------------------------------------------ | :----: |
+|    01 | Page de garde      | slides/02-ideation/02-01-cover.yaml      | L'idéation et la création visuelle assistées                             |   ✅   |
+|    02 | Table des matières | slides/02-ideation/02-02-toc.yaml        | Sommaire du chapitre — L'idéation et la création visuelle assistées      |   ✅   |
+|    03 | Contenu            | slides/02-ideation/02-03-generation.yaml | Génération d'idées et de concepts à partir de prompts                    |   ✅   |
+|    04 | Contenu            | slides/02-ideation/02-04-moodboards.yaml | Création de moodboards et de styles avec Midjourney / Leonardo / Firefly |   ✅   |
+|    05 | Contenu            | slides/02-ideation/02-05-chatgpt.yaml    | Utiliser ChatGPT et DALL·E pour stimuler la créativité                   |   ✅   |
+|    06 | Contenu            | slides/02-ideation/02-06-brief.yaml      | Construire un brief design cohérent avec un prompt engineering adapté    |   ✅   |
+|    07 | Contenu            | slides/02-ideation/02-07-equilibre.yaml  | IA et direction artistique : trouver le juste équilibre humain-machine   |   ✅   |
+|    08 | Contenu            | slides/02-ideation/02-08-tp.yaml         | TP : produire un concept visuel cohérent à partir d'un prompt travaillé  |   ✅   |
+|    09 | Contenu            | slides/02-ideation/02-09-prompts.yaml    | Techniques de prompt engineering                                         |   ✅   |
+|    10 | Contenu            | slides/02-ideation/02-10-midjourney.yaml | Utilisation de Midjourney                                                |   ✅   |
+|    11 | Contenu            | slides/02-ideation/02-11-dalle.yaml      | Intégration de DALL·E                                                    |   ✅   |
+|    12 | Contenu            | slides/02-ideation/02-12-styles.yaml     | Génération de styles visuels                                             |   ✅   |
+|    13 | Contenu            | slides/02-ideation/02-13-creativite.yaml | Stimulation de la créativité                                             |   ✅   |
+|    14 | Contenu            | slides/02-ideation/02-14-direction.yaml  | Direction artistique avec IA                                             |   ✅   |
+|    15 | Contenu            | slides/02-ideation/02-15-exemples.yaml   | Exemples de projets                                                      |   ✅   |
+|    16 | Contenu            | slides/02-ideation/02-16-atelier.yaml    | Atelier pratique                                                         |   ✅   |
+|    17 | Contenu            | slides/02-ideation/02-17-feedback.yaml   | Retours et itérations                                                    |   ✅   |
+|    18 | Conclusion         | slides/02-ideation/02-18-conclusion.yaml | Conclusion du chapitre                                                   |   ✅   |
 
 ---
 
 ## Chapitre 3 — Prototypage et design d’interface avec IA
 
-| Ordre | Type               | Fichier cible                                                                         | Titre du slide                            | Statut |
-| ----: | ------------------ | ------------------------------------------------------------------------------------- | ----------------------------------------- | :----: |
-|    01 | Page de garde      | slides/prototypage-et-design-d-interface-avec-ia/01-page-de-garde.md                  | Prototypage et design d’interface avec IA |   ✅   |
-|    02 | Table des matières | slides/prototypage-et-design-d-interface-avec-ia/02-table-des-matieres.md             | Sommaire du chapitre                      |   ✅   |
-|    03 | Contenu            | slides/prototypage-et-design-d-interface-avec-ia/03-ia-dans-figma.md                  | IA dans Figma                             |   ✅   |
-|    04 | Contenu            | slides/prototypage-et-design-d-interface-avec-ia/04-generation-avec-galileo.md        | Génération avec Galileo                   |   ✅   |
-|    05 | Contenu            | slides/prototypage-et-design-d-interface-avec-ia/05-uizard-pour-interfaces.md         | Uizard pour interfaces                    |   ✅   |
-|    06 | Contenu            | slides/prototypage-et-design-d-interface-avec-ia/06-design-system-ia-compatible.md    | Design system IA-compatible               |   ✅   |
-|    07 | Contenu            | slides/prototypage-et-design-d-interface-avec-ia/07-structuration-du-design-system.md | Structuration du design system            |   ✅   |
-|    08 | Contenu            | slides/prototypage-et-design-d-interface-avec-ia/08-micro-interactions-avec-ia.md     | Micro-interactions avec IA                |   ✅   |
-|    09 | Contenu            | slides/prototypage-et-design-d-interface-avec-ia/09-optimisation-des-parcours.md      | Optimisation des parcours                 |   ✅   |
-|    10 | Contenu            | slides/prototypage-et-design-d-interface-avec-ia/10-generation-de-copies-ux.md        | Génération de copies UX                   |   ✅   |
-|    11 | Contenu            | slides/prototypage-et-design-d-interface-avec-ia/11-microtextes-avec-ia.md            | Microtextes avec IA                       |   ✅   |
-|    12 | Contenu            | slides/prototypage-et-design-d-interface-avec-ia/12-collaboration-ia-designer.md      | Collaboration IA-designer                 |   ✅   |
-|    13 | Contenu            | slides/prototypage-et-design-d-interface-avec-ia/13-forces-de-la-collaboration.md     | Forces de la collaboration                |   ✅   |
-|    14 | Contenu            | slides/prototypage-et-design-d-interface-avec-ia/14-limites-actuelles.md              | Limites actuelles                         |   ✅   |
-|    15 | Contenu            | slides/prototypage-et-design-d-interface-avec-ia/15-tp-prototype-interactif.md        | TP : Prototype interactif                 |   ✅   |
-|    16 | Contenu            | slides/prototypage-et-design-d-interface-avec-ia/16-discussion-sur-le-prototypage.md  | Discussion sur le prototypage             |   ✅   |
-|    17 | Contenu            | slides/prototypage-et-design-d-interface-avec-ia/17-synthese-et-iteration.md          | Synthèse et itération                     |   ✅   |
-|    18 | Conclusion         | slides/prototypage-et-design-d-interface-avec-ia/18-conclusion.md                     | Conclusion du chapitre                    |   ✅   |
+| Ordre | Type               | Référence YAML                                 | Titre du slide                                                       | Statut |
+| ----: | ------------------ | ---------------------------------------------- | -------------------------------------------------------------------- | :----: |
+|    01 | Page de garde      | slides/03-prototypage/03-01-cover.yaml         | Prototypage et design d’interface avec IA                            |   ✅   |
+|    02 | Table des matières | slides/03-prototypage/03-02-toc.yaml           | Sommaire du chapitre — Prototypage et design d’interface avec IA     |   ✅   |
+|    03 | Contenu            | slides/03-prototypage/03-03-figma.yaml         | IA dans Figma, Galileo, Uizard : génération automatique d'interfaces |   ✅   |
+|    04 | Contenu            | slides/03-prototypage/03-04-designsystem.yaml  | Structurer un design system IA-compatible                            |   ✅   |
+|    05 | Contenu            | slides/03-prototypage/03-05-interactions.yaml  | Optimiser les micro-interactions et les parcours avec IA             |   ✅   |
+|    06 | Contenu            | slides/03-prototypage/03-06-copies.yaml        | Génération de copies UX et microtextes                               |   ✅   |
+|    07 | Contenu            | slides/03-prototypage/03-07-collaboration.yaml | Collaboration IA/designer : forces et limites actuelles              |   ✅   |
+|    08 | Contenu            | slides/03-prototypage/03-08-tp.yaml            | TP : créer un prototype interactif IA-assisté                        |   ✅   |
+|    09 | Contenu            | slides/03-prototypage/03-09-outils.yaml        | Outils de prototypage IA                                             |   ✅   |
+|    10 | Contenu            | slides/03-prototypage/03-10-system.yaml        | Design systems avancés                                               |   ✅   |
+|    11 | Contenu            | slides/03-prototypage/03-11-parcours.yaml      | Parcours utilisateur                                                 |   ✅   |
+|    12 | Contenu            | slides/03-prototypage/03-12-textes.yaml        | Microtextes et copies                                                |   ✅   |
+|    13 | Contenu            | slides/03-prototypage/03-13-limites.yaml       | Limites de l'IA                                                      |   ✅   |
+|    14 | Contenu            | slides/03-prototypage/03-14-integration.yaml   | Intégration dans le workflow                                         |   ✅   |
+|    15 | Contenu            | slides/03-prototypage/03-15-exemples.yaml      | Exemples de prototypes                                               |   ✅   |
+|    16 | Contenu            | slides/03-prototypage/03-16-tests.yaml         | Tests et validation                                                  |   ✅   |
+|    17 | Contenu            | slides/03-prototypage/03-17-optimisation.yaml  | Optimisation continue                                                |   ✅   |
+|    18 | Conclusion         | slides/03-prototypage/03-18-conclusion.yaml    | Conclusion du chapitre                                               |   ✅   |
 
 ---
 
 ## Chapitre 4 — Tester, itérer et industrialiser
 
-| Ordre | Type               | Fichier cible                                                                   | Titre du slide                     | Statut |
-| ----: | ------------------ | ------------------------------------------------------------------------------- | ---------------------------------- | :----: |
-|    01 | Page de garde      | slides/tester-iterer-et-industrialiser/01-page-de-garde.md                      | Tester, itérer et industrialiser   |   ✅   |
-|    02 | Table des matières | slides/tester-iterer-et-industrialiser/02-table-des-matieres.md                 | Sommaire du chapitre               |   ✅   |
-|    03 | Contenu            | slides/tester-iterer-et-industrialiser/03-analyse-de-tests-utilisateurs.md      | Analyse de tests utilisateurs      |   ✅   |
-|    04 | Contenu            | slides/tester-iterer-et-industrialiser/04-retours-qualitatifs-avec-ia.md        | Retours qualitatifs avec IA        |   ✅   |
-|    05 | Contenu            | slides/tester-iterer-et-industrialiser/05-amelioration-continue.md              | Amélioration continue              |   ✅   |
-|    06 | Contenu            | slides/tester-iterer-et-industrialiser/06-iteration-rapide.md                   | Itération rapide                   |   ✅   |
-|    07 | Contenu            | slides/tester-iterer-et-industrialiser/07-evaluation-de-la-coherence.md         | Évaluation de la cohérence         |   ✅   |
-|    08 | Contenu            | slides/tester-iterer-et-industrialiser/08-accessibilite-du-design.md            | Accessibilité du design            |   ✅   |
-|    09 | Contenu            | slides/tester-iterer-et-industrialiser/09-pertinence-du-design-genere.md        | Pertinence du design généré        |   ✅   |
-|    10 | Contenu            | slides/tester-iterer-et-industrialiser/10-integration-dans-le-workflow.md       | Intégration dans le workflow       |   ✅   |
-|    11 | Contenu            | slides/tester-iterer-et-industrialiser/11-culture-d-equipe-et-ia.md             | Culture d’équipe et IA             |   ✅   |
-|    12 | Contenu            | slides/tester-iterer-et-industrialiser/12-evolutions-futures.md                 | Évolutions futures                 |   ✅   |
-|    13 | Contenu            | slides/tester-iterer-et-industrialiser/13-design-generatif-complet.md           | Design génératif complet           |   ✅   |
-|    14 | Contenu            | slides/tester-iterer-et-industrialiser/14-tp-ameliorer-un-prototype.md          | TP : Améliorer un prototype        |   ✅   |
-|    15 | Contenu            | slides/tester-iterer-et-industrialiser/15-discussion-sur-l-industrialisation.md | Discussion sur l’industrialisation |   ✅   |
-|    16 | Contenu            | slides/tester-iterer-et-industrialiser/16-synthese-finale.md                    | Synthèse finale                    |   ✅   |
-|    17 | Contenu            | slides/tester-iterer-et-industrialiser/17-questions-et-perspectives.md          | Questions et perspectives          |   ✅   |
-|    18 | Conclusion         | slides/tester-iterer-et-industrialiser/18-conclusion.md                         | Conclusion du chapitre             |   ✅   |
+| Ordre | Type               | Référence YAML                            | Titre du slide                                                             | Statut |
+| ----: | ------------------ | ----------------------------------------- | -------------------------------------------------------------------------- | :----: |
+|    01 | Page de garde      | slides/04-tester/04-01-cover.yaml         | Tester, itérer et industrialiser                                           |   ✅   |
+|    02 | Table des matières | slides/04-tester/04-02-toc.yaml           | Sommaire du chapitre — Tester, itérer et industrialiser                    |   ✅   |
+|    03 | Contenu            | slides/04-tester/04-03-analyse.yaml       | IA pour l'analyse de tests utilisateurs et retours qualitatifs             |   ✅   |
+|    04 | Contenu            | slides/04-tester/04-04-iteration.yaml     | Amélioration continue : itération rapide grâce aux modèles IA              |   ✅   |
+|    05 | Contenu            | slides/04-tester/04-05-evaluation.yaml    | Évaluer la cohérence, l'accessibilité et la pertinence du design généré    |   ✅   |
+|    06 | Contenu            | slides/04-tester/04-06-workflow.yaml      | Intégrer l'IA dans le workflow produit et dans la culture d'équipe         |   ✅   |
+|    07 | Contenu            | slides/04-tester/04-07-evolutions.yaml    | Anticiper les évolutions : vers le design génératif complet                |   ✅   |
+|    08 | Contenu            | slides/04-tester/04-08-tp.yaml            | TP : améliorer un prototype à partir d'un retour utilisateur simulé par IA |   ✅   |
+|    09 | Contenu            | slides/04-tester/04-09-tests.yaml         | Méthodes de test avec IA                                                   |   ✅   |
+|    10 | Contenu            | slides/04-tester/04-10-retours.yaml       | Gestion des retours                                                        |   ✅   |
+|    11 | Contenu            | slides/04-tester/04-11-accessibilite.yaml | Accessibilité et IA                                                        |   ✅   |
+|    12 | Contenu            | slides/04-tester/04-12-culture.yaml       | Culture d'équipe                                                           |   ✅   |
+|    13 | Contenu            | slides/04-tester/04-13-generatif.yaml     | Design génératif                                                           |   ✅   |
+|    14 | Contenu            | slides/04-tester/04-14-simulation.yaml    | Simulation de retours                                                      |   ✅   |
+|    15 | Contenu            | slides/04-tester/04-15-amelioration.yaml  | Amélioration de prototypes                                                 |   ✅   |
+|    16 | Contenu            | slides/04-tester/04-16-perspectives.yaml  | Perspectives futures                                                       |   ✅   |
+|    17 | Contenu            | slides/04-tester/04-17-discussion.yaml    | Discussion                                                                 |   ✅   |
+|    18 | Conclusion         | slides/04-tester/04-18-conclusion.yaml    | Conclusion du chapitre                                                     |   ✅   |
 
 ---
 
@@ -110,7 +109,7 @@ La colonne “Statut” est mise à jour automatiquement par `xxxSlides` à chaq
 
 | Symbole | Signification                           |
 | ------: | --------------------------------------- |
-|      ✅ | Slide déjà généré                       |
-|      ⏳ | Slide à générer                         |
-|      ⚠️ | Slide partiellement généré / à réviser  |
+|      ✅ | Fichier YAML déjà généré                |
+|      ⏳ | Fichier YAML à générer                  |
+|      ⚠️ | Entrée partiellement générée / à revoir |
 |      ❌ | Erreur lors d’une génération précédente |

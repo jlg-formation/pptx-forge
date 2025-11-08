@@ -1,0 +1,35 @@
+chapter:
+  number: 2
+  key: "ideation"
+  title: "L'idéation et la création visuelle assistées"
+
+slide:
+  id: "13"
+  type: "content"
+  title: "Stimulation de la créativité"
+  meta:
+    order: 13
+  content:
+    bullets:
+      - "Ouverture à de nouvelles idées"
+      - "Combinaisons créatives inattendues"
+      - "Dépassement des blocages mentaux"
+      - "Exploration de territoires inconnus"
+      - "Renforcement de l'intuition"
+    key_message: "L'IA stimule la créativité en offrant des perspectives nouvelles et variées."
+    illustration_prompt: >
+      Illustration vectorielle montrant un cerveau s'ouvrant à des idées générées par IA. Fond blanc, style inspirant, format 16:9, sans watermark.
+    speaker_notes: |
+      L'IA ne se contente pas d'accélérer les processus créatifs ; elle les transforme profondément en stimulant la créativité de manière inattendue et enrichissante.
+
+      L'ouverture à de nouvelles idées est l'effet le plus immédiat. En générant des propositions multiples et variées, l'IA expose les designers à des concepts qu'ils n'auraient pas envisagés spontanément, élargissant leur horizon créatif.
+
+      Les combinaisons créatives inattendues sont particulièrement stimulantes. L'IA excellent dans l'association d'éléments disparates, créant des hybrides conceptuels qui peuvent inspirer des innovations radicales.
+
+      Le dépassement des blocages mentaux est un bénéfice précieux. Quand un designer est "bloqué" sur une idée, l'IA peut proposer des alternatives qui débloquent la situation, permettant de reprendre le flux créatif.
+
+      L'exploration de territoires inconnus encourage les designers à s'aventurer dans des styles ou des thèmes qu'ils connaissent moins bien. Cette exposition à la diversité enrichit leur palette créative.
+
+      Enfin, le renforcement de l'intuition vient de l'interaction continue avec l'IA. En analysant et sélectionnant parmi les générations, les designers affinent leur jugement esthétique et développent une intuition plus nuancée.
+
+      Cette stimulation créative transforme l'IA d'un simple outil en un partenaire qui challenge et enrichit le processus créatif, permettant aux designers d'atteindre des niveaux d'innovation qu'ils n'auraient pas cru possibles.

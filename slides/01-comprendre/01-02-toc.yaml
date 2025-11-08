@@ -1,0 +1,35 @@
+chapter:
+  number: 1
+  key: "comprendre"
+  title: "Comprendre l’IA dans le design"
+
+slide:
+  id: "02"
+  type: "toc"
+  title: "Sommaire du chapitre — Comprendre l’IA dans le design"
+  meta:
+    order: 2
+  content:
+    items:
+      - "Les bases de l’intelligence artificielle et ses limites pour le design"
+      - "Typologie des IA : génératives, prédictives, conversationnelles"
+      - "Les outils du designer augmentés par l’IA"
+      - "Exemples concrets : assistants de recherche utilisateur, analyse de feedbacks"
+      - "Les enjeux éthiques et créatifs de l’usage de l’IA"
+      - "TP : cartographier les usages possibles de l’IA dans son propre projet"
+      - "IA génératives en pratique"
+      - "IA prédictives pour le design"
+      - "Outils conversationnels"
+      - "Analyse de feedbacks avec IA"
+      - "Éthique et créativité"
+      - "Cartographie des usages"
+      - "Démonstration d'outils"
+      - "Études de cas"
+      - "Discussion et questions"
+    key_message: "Vue d’ensemble du chapitre et des notions abordées."
+    illustration_prompt: >
+      Illustration vectorielle sans texte, fond blanc (#ffffff), montrant une
+      arborescence de concepts reliés. Style minimal, composition claire et
+      équilibrée, format 16:9, sans watermark.
+    speaker_notes: |
+      Ce sommaire présente les grandes lignes du chapitre sur la compréhension de l'IA dans le design. Nous allons explorer les fondamentaux de l'intelligence artificielle, ses différentes typologies et ses applications pratiques pour les designers UX/UI. Les participants découvriront comment l'IA peut être un outil puissant pour améliorer leur processus créatif, tout en étant conscients de ses limites et des enjeux éthiques. Le chapitre se termine par un travail pratique où chacun cartographiera les usages possibles de l'IA dans son propre projet. Cette approche permet de poser les bases nécessaires pour une intégration réfléchie de l'IA dans le design d'expérience utilisateur.

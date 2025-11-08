@@ -1,0 +1,35 @@
+chapter:
+  number: 3
+  key: "prototypage"
+  title: "Prototypage et design d’interface avec IA"
+
+slide:
+  id: "14"
+  type: "content"
+  title: "Intégration dans le workflow"
+  meta:
+    order: 14
+  content:
+    bullets:
+      - "Adoption progressive et itérative"
+      - "Formation et accompagnement équipe"
+      - "Mesure des bénéfices et ROI"
+      - "Adaptation aux processus existants"
+      - "Évolution continue des pratiques"
+    key_message: "L'intégration réussie de l'IA nécessite une approche structurée et progressive."
+    illustration_prompt: >
+      Illustration vectorielle montrant l'IA s'intégrant harmonieusement dans un workflow existant. Fond blanc, style intégratif, format 16:9, sans watermark.
+    speaker_notes: |
+      L'intégration de l'IA dans les workflows de design nécessite une approche méthodique pour maximiser les bénéfices et minimiser les résistances.
+
+      L'adoption progressive permet de tester les outils sur des projets pilotes avant un déploiement à grande échelle.
+
+      La formation et l'accompagnement de l'équipe sont essentiels pour que tous les membres maîtrisent les nouveaux outils et processus.
+
+      La mesure des bénéfices et du ROI justifie l'investissement et guide les décisions d'extension ou d'ajustement.
+
+      L'adaptation aux processus existants évite de bouleverser complètement les habitudes de travail établies.
+
+      L'évolution continue des pratiques permet de s'adapter aux avancées technologiques et aux retours d'expérience.
+
+      Cette approche intégrée transforme l'adoption de l'IA d'un changement disruptif en une évolution naturelle et bénéfique.

@@ -1,0 +1,35 @@
+chapter:
+  number: 1
+  key: "comprendre"
+  title: "Comprendre l’IA dans le design"
+
+slide:
+  id: "07"
+  type: "content"
+  title: "Les enjeux éthiques et créatifs de l’usage de l’IA"
+  meta:
+    order: 7
+  content:
+    bullets:
+      - "Biais algorithmiques et discrimination"
+      - "Perte de créativité humaine"
+      - "Questions de propriété intellectuelle"
+      - "Impact sur l'emploi des designers"
+      - "Nécessité d'une régulation éthique"
+    key_message: "L'IA soulève des enjeux éthiques majeurs qui doivent guider son usage en design."
+    illustration_prompt: >
+      Illustration vectorielle montrant une balance avec des éléments éthiques d'un côté et des avantages IA de l'autre. Fond blanc, style plat, format 16:9, sans watermark.
+    speaker_notes: |
+      Abordons maintenant les aspects éthiques et créatifs de l'intégration de l'IA dans le design, car ces considérations sont essentielles pour une utilisation responsable de ces technologies.
+
+      Les biais algorithmiques constituent l'un des problèmes les plus préoccupants. Les systèmes d'IA apprennent à partir de données qui peuvent contenir des biais sociaux, culturels ou historiques. Par exemple, si un outil de génération d'images est entraîné principalement sur des photographies occidentales, il risque de reproduire des stéréotypes ou d'exclure certaines représentations. Pour les designers, cela signifie que nous devons être vigilants quant à la diversité des données utilisées et remettre en question les outputs générés.
+
+      La question de la perte de créativité humaine est également centrale. Certains craignent que l'IA ne réduise le design à une simple exécution technique, éliminant l'intuition et l'innovation authentique. Cependant, je pense que l'IA peut au contraire amplifier la créativité en permettant d'explorer plus d'idées et de se concentrer sur les aspects les plus humains du design : l'empathie, la stratégie et la vision.
+
+      Les questions de propriété intellectuelle sont complexes. Qui détient les droits sur un design généré par IA ? Les données d'entraînement proviennent-elles de sources autorisées ? Les designers doivent s'assurer que leur utilisation de l'IA respecte les droits d'auteur et les licences des outils qu'ils emploient.
+
+      L'impact sur l'emploi est un sujet sensible. L'IA pourrait automatiser certaines tâches répétitives, mais elle crée aussi de nouveaux rôles : prompt engineers, éthiciens de l'IA, superviseurs de systèmes automatisés. Les designers qui embrassent ces technologies seront plus compétitifs sur le marché du travail.
+
+      Enfin, la nécessité d'une régulation éthique est évidente. Nous avons besoin de frameworks pour guider l'utilisation responsable de l'IA en design, incluant des principes de transparence, d'équité et de respect de la vie privée. En tant que professionnels, nous devons être les premiers à établir ces standards.
+
+      Ces enjeux ne sont pas des obstacles, mais des opportunités pour redéfinir notre pratique du design de manière plus consciente et éthique.

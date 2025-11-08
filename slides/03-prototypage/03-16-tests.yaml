@@ -1,0 +1,35 @@
+chapter:
+  number: 3
+  key: "prototypage"
+  title: "Prototypage et design d’interface avec IA"
+
+slide:
+  id: "16"
+  type: "content"
+  title: "Tests et validation"
+  meta:
+    order: 16
+  content:
+    bullets:
+      - "Tests utilisateurs automatisés"
+      - "Analyse de l'accessibilité"
+      - "Validation des parcours critiques"
+      - "Tests de performance prédictifs"
+      - "Feedback loops continus"
+    key_message: "L'IA améliore les processus de test et validation pour des prototypes plus robustes."
+    illustration_prompt: >
+      Illustration vectorielle montrant des tests automatisés sur un prototype. Fond blanc, style analytique, format 16:9, sans watermark.
+    speaker_notes: |
+      L'IA révolutionne les processus de test et validation, permettant des évaluations plus complètes et plus rapides des prototypes.
+
+      Les tests utilisateurs automatisés simulent des comportements humains pour identifier les problèmes d'utilisabilité avant les tests réels.
+
+      L'analyse de l'accessibilité utilise l'IA pour vérifier automatiquement la conformité aux standards WCAG et autres normes.
+
+      La validation des parcours critiques s'assure que les chemins utilisateur principaux fonctionnent correctement.
+
+      Les tests de performance prédictifs anticipent les problèmes de chargement et de réactivité.
+
+      Les feedback loops continus intègrent automatiquement les données d'usage pour améliorer continuellement le prototype.
+
+      Cette approche transforme les tests d'une étape ponctuelle en un processus continu d'amélioration.

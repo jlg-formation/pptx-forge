@@ -1,0 +1,35 @@
+chapter:
+  number: 3
+  key: "prototypage"
+  title: "Prototypage et design d’interface avec IA"
+
+slide:
+  id: "12"
+  type: "content"
+  title: "Microtextes et copies"
+  meta:
+    order: 12
+  content:
+    bullets:
+      - "Génération contextuelle de textes"
+      - "Optimisation pour la conversion"
+      - "Adaptation culturelle et linguistique"
+      - "Tests A/B automatisés"
+      - "Cohérence de ton et voix"
+    key_message: "L'IA affine les microtextes pour des interfaces plus communicantes et efficaces."
+    illustration_prompt: >
+      Illustration vectorielle montrant des textes optimisés dans une interface. Fond blanc, style textuel détaillé, format 16:9, sans watermark.
+    speaker_notes: |
+      Les microtextes et copies représentent souvent la touche finale qui fait la différence dans une interface utilisateur.
+
+      La génération contextuelle de textes prend en compte l'environnement et l'action de l'utilisateur pour produire des messages pertinents et utiles.
+
+      L'optimisation pour la conversion utilise des techniques de copywriting éprouvées pour maximiser l'engagement et les actions souhaitées.
+
+      L'adaptation culturelle et linguistique assure que les textes résonnent avec les utilisateurs de différentes cultures et langues.
+
+      Les tests A/B automatisés permettent de comparer différentes versions de textes et d'identifier celles qui performent le mieux.
+
+      La cohérence de ton et voix maintient une personnalité de marque uniforme à travers tous les éléments textuels.
+
+      Cette attention aux détails textuels transforme les interfaces fonctionnelles en expériences communicantes et mémorables.

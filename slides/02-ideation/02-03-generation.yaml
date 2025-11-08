@@ -1,0 +1,35 @@
+chapter:
+  number: 2
+  key: "ideation"
+  title: "L'idéation et la création visuelle assistées"
+
+slide:
+  id: "03"
+  type: "content"
+  title: "Génération d'idées et de concepts à partir de prompts"
+  meta:
+    order: 3
+  content:
+    bullets:
+      - "Exploration rapide d'idées multiples"
+      - "Combinaisons inattendues de concepts"
+      - "Inspiration pour des directions nouvelles"
+      - "Accélération de la phase brainstorming"
+      - "Diversité des perspectives créatives"
+    key_message: "L'IA génère des idées abondantes, ouvrant des pistes créatives inattendues."
+    illustration_prompt: >
+      Illustration vectorielle montrant des bulles d'idées jaillissant d'un prompt textuel vers un designer. Fond blanc, style dynamique, format 16:9, sans watermark.
+    speaker_notes: |
+      La génération d'idées assistée par IA révolutionne la phase d'idéation du design. Au lieu de partir d'une page blanche intimidante, les designers peuvent désormais utiliser des prompts textuels pour déclencher une cascade d'idées créatives.
+
+      L'exploration rapide d'idées multiples permet de couvrir un terrain créatif beaucoup plus large en moins de temps. Où un brainstorming traditionnel pourrait produire 10-15 idées, l'IA peut en générer 50-100 variations en quelques minutes, offrant une richesse d'options à explorer.
+
+      Les combinaisons inattendues de concepts sont l'une des forces les plus intéressantes de l'IA. En associant des éléments qui ne seraient pas naturellement venus à l'esprit d'un humain, l'IA crée des ponts entre des domaines apparemment disparates, ouvrant des perspectives innovantes.
+
+      Cette abondance d'idées sert d'inspiration pour des directions nouvelles. Même si certaines générations IA sont imparfaites ou inappropriées, elles peuvent déclencher des associations d'idées chez le designer, menant à des concepts originaux et personnels.
+
+      L'accélération de la phase brainstorming permet aux équipes de design de passer plus rapidement de l'idéation à la validation. Au lieu de passer des heures en réunion, on peut rapidement identifier les pistes les plus prometteuses et les développer en profondeur.
+
+      Enfin, la diversité des perspectives créatives apportée par l'IA enrichit le processus. Les algorithmes, entraînés sur des milliards d'images et de textes, apportent des influences culturelles et stylistiques variées que même les designers les plus expérimentés pourraient ne pas connaître.
+
+      Cependant, il est crucial de garder à l'esprit que ces idées générées sont des points de départ, pas des produits finis. Le rôle du designer reste essentiel pour filtrer, adapter et humaniser ces concepts IA.

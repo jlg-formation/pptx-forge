@@ -1,0 +1,35 @@
+chapter:
+  number: 3
+  key: "prototypage"
+  title: "Prototypage et design d’interface avec IA"
+
+slide:
+  id: "05"
+  type: "content"
+  title: "Optimiser les micro-interactions et les parcours avec IA"
+  meta:
+    order: 5
+  content:
+    bullets:
+      - "Analyse automatique des flux utilisateurs"
+      - "Suggestions d'améliorations d'UX"
+      - "Génération de variantes d'interactions"
+      - "Tests de faisabilité technique"
+      - "Optimisation des conversions"
+    key_message: "L'IA affine les détails qui font la différence en termes d'expérience utilisateur."
+    illustration_prompt: >
+      Illustration vectorielle montrant des parcours utilisateur avec optimisations IA. Fond blanc, style fluide, format 16:9, sans watermark.
+    speaker_notes: |
+      L'optimisation des micro-interactions et des parcours utilisateur représente l'un des domaines où l'IA apporte le plus de valeur dans le prototypage.
+
+      L'analyse automatique des flux utilisateurs permet d'identifier les points de friction dans un parcours. L'IA analyse les heatmaps, les données de clics et les temps d'interaction pour repérer les zones problématiques.
+
+      Les suggestions d'améliorations d'UX sont générées automatiquement. L'IA propose des modifications spécifiques : "Ajouter un état de chargement ici", "Simplifier ce formulaire", "Améliorer la hiérarchie visuelle".
+
+      La génération de variantes d'interactions permet de tester différentes approches. Pour un bouton, l'IA peut proposer des animations, des feedbacks visuels ou des comportements alternatifs.
+
+      Les tests de faisabilité technique intègrent les contraintes du développement. L'IA évalue si une interaction proposée est réalisable avec les technologies disponibles.
+
+      Enfin, l'optimisation des conversions utilise des algorithmes prédictifs pour identifier les modifications les plus susceptibles d'améliorer les taux de conversion.
+
+      Cette optimisation fine transforme les prototypes en expériences utilisateur raffinées, où chaque détail contribue à une interaction fluide et engageante.

@@ -1,0 +1,35 @@
+chapter:
+  number: 1
+  key: "comprendre"
+  title: "Comprendre l’IA dans le design"
+
+slide:
+  id: "11"
+  type: "content"
+  title: "Outils conversationnels"
+  meta:
+    order: 11
+  content:
+    bullets:
+      - "Chatbots pour brainstorming créatif"
+      - "Assistants virtuels pour feedback instantané"
+      - "Génération de contenu textuel"
+      - "Simulation d'entretiens utilisateurs"
+      - "Support à la prise de décision"
+    key_message: "Les IA conversationnelles offrent un dialogue naturel pour enrichir le processus de design."
+    illustration_prompt: >
+      Illustration vectorielle montrant une conversation entre un designer et une IA représentée par un robot. Fond blanc, style dialogue, format 16:9, sans watermark.
+    speaker_notes: |
+      Les outils conversationnels représentent une évolution majeure dans l'interaction homme-machine, offrant des interfaces naturelles pour collaborer avec l'IA dans le processus de design.
+
+      Les chatbots spécialisés dans le brainstorming créatif permettent d'explorer des idées de manière interactive. Au lieu de prompts statiques, le designer peut avoir une conversation fluide : "Quelles seraient des alternatives au menu hamburger ?" L'IA peut proposer des idées, raffiner les concepts et même challenger les hypothèses du designer.
+
+      Les assistants virtuels offrent un feedback instantané sur les concepts en développement. Un designer peut décrire une idée d'interface et recevoir immédiatement des suggestions d'amélioration, des questions pertinentes ou des références à des patterns UX éprouvés.
+
+      La génération de contenu textuel assistée par conversation permet de créer des copies UX plus naturelles. Plutôt que de générer du texte brut, l'IA peut itérer avec le designer : "Ce bouton dit 'Acheter maintenant', mais que diriez-vous de 'Commencer mon aventure' pour une expérience plus engageante ?"
+
+      La simulation d'entretiens utilisateurs utilise des IA conversationnelles pour tester des concepts avant les vrais tests. Ces "utilisateurs virtuels" peuvent réagir de manière réaliste aux prototypes, révélant des problèmes potentiels d'utilisabilité.
+
+      Enfin, le support à la prise de décision aide les designers à évaluer les options. L'IA peut présenter les avantages et inconvénients de différentes approches, suggérer des critères d'évaluation ou même aider à prioriser les tâches.
+
+      Ces outils conversationnels transforment l'IA d'un outil technique en un partenaire créatif. Ils permettent une collaboration plus intuitive et productive, où l'expertise humaine et la puissance de calcul de l'IA se complètent harmonieusement. Cependant, il est important de maintenir une distance critique et de ne pas déléguer les décisions finales à ces systèmes.

@@ -1,0 +1,38 @@
+chapter:
+  number: 3
+  key: "prototypage"
+  title: "Prototypage et design d’interface avec IA"
+
+slide:
+  id: "07"
+  type: "content"
+  title: "Collaboration IA/designer : forces et limites actuelles"
+  meta:
+    order: 7
+  content:
+    bullets:
+      - "Accélération des tâches répétitives"
+      - "Exploration créative amplifiée"
+      - "Réduction des erreurs de cohérence"
+      - "Dépendance à la qualité des données"
+      - "Manque d'intuition contextuelle"
+      - "Risques de sur-automatisation"
+    key_message: "La collaboration IA-designer maximise les forces de chacun pour des résultats optimaux."
+    illustration_prompt: >
+      Illustration vectorielle montrant un designer et une IA collaborant harmonieusement sur un prototype. Fond blanc, style collaboratif, format 16:9, sans watermark.
+    speaker_notes: |
+      La collaboration entre l'IA et le designer représente l'avenir du prototypage, mais elle nécessite une compréhension claire des forces et limites de chaque partie.
+
+      L'accélération des tâches répétitives permet aux designers de se concentrer sur les aspects stratégiques. L'IA gère la génération de variantes, la vérification de cohérence, libérant du temps pour l'innovation.
+
+      L'exploration créative est amplifiée par la capacité de l'IA à proposer des idées inattendues. Le designer garde le contrôle éditorial, sélectionnant et adaptant les suggestions les plus pertinentes.
+
+      La réduction des erreurs de cohérence est un bénéfice majeur. L'IA applique automatiquement les règles du design system, éliminant les oublis qui peuvent survenir dans le travail manuel.
+
+      Cependant, la dépendance à la qualité des données est une limite importante. Si les données d'entraînement sont biaisées ou incomplètes, l'IA reproduira ces défauts dans ses générations.
+
+      Le manque d'intuition contextuelle reste une faiblesse. L'IA peut optimiser techniquement, mais elle ne comprend pas toujours les nuances culturelles ou émotionnelles.
+
+      Les risques de sur-automatisation existent : en déléguant trop à l'IA, on risque de perdre la touche personnelle qui fait la différence dans le design.
+
+      Pour une collaboration optimale, il faut définir clairement les rôles : l'IA pour l'exécution et l'optimisation, le designer pour la stratégie et l'empathie.

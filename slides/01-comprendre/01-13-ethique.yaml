@@ -1,0 +1,35 @@
+chapter:
+  number: 1
+  key: "comprendre"
+  title: "Comprendre l’IA dans le design"
+
+slide:
+  id: "13"
+  type: "content"
+  title: "Éthique et créativité"
+  meta:
+    order: 13
+  content:
+    bullets:
+      - "Équilibre entre automatisation et créativité"
+      - "Responsabilité dans l'usage des données"
+      - "Transparence des processus IA"
+      - "Inclusion et diversité dans les designs"
+      - "Développement durable du design"
+    key_message: "L'éthique guide l'usage créatif de l'IA pour un design responsable."
+    illustration_prompt: >
+      Illustration vectorielle montrant une boussole éthique pointant vers l'innovation créative. Fond blanc, style symbolique, format 16:9, sans watermark.
+    speaker_notes: |
+      L'intégration de l'IA dans le design soulève des questions profondes sur l'éthique et la créativité, que nous devons aborder pour une pratique responsable et innovante.
+
+      L'équilibre entre automatisation et créativité est au cœur du débat. L'IA peut automatiser les tâches répétitives, libérant du temps pour la créativité authentique, mais elle risque aussi de standardiser les approches et de réduire la diversité des solutions. Les designers doivent trouver le juste milieu : utiliser l'IA pour amplifier leur créativité, pas pour la remplacer.
+
+      La responsabilité dans l'usage des données est cruciale. Les systèmes d'IA apprennent sur des données qui peuvent contenir des biais ou des informations sensibles. Les designers ont la responsabilité de s'assurer que les données utilisées sont éthiques, anonymisées et représentatives de la diversité des utilisateurs.
+
+      La transparence des processus IA permet aux utilisateurs de comprendre comment les décisions sont prises. Cela inclut d'expliquer quand et comment l'IA a été utilisée dans la conception d'un produit, favorisant la confiance et permettant une critique constructive.
+
+      L'inclusion et la diversité dans les designs générés par IA dépendent de la qualité des données d'entraînement. Les designers doivent activement travailler à diversifier ces données pour éviter de reproduire des biais culturels ou sociaux dans les interfaces créées.
+
+      Enfin, le développement durable du design avec IA concerne l'impact environnemental des technologies. Les centres de données nécessaires aux IA consomment beaucoup d'énergie, et les designers doivent considérer l'empreinte carbone de leurs outils et promouvoir des pratiques durables.
+
+      En intégrant ces considérations éthiques dans leur pratique créative, les designers peuvent utiliser l'IA non seulement pour innover, mais aussi pour créer des expériences plus inclusives, responsables et humainement significatives.

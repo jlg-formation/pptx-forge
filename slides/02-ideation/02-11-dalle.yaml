@@ -1,0 +1,35 @@
+chapter:
+  number: 2
+  key: "ideation"
+  title: "L'idéation et la création visuelle assistées"
+
+slide:
+  id: "11"
+  type: "content"
+  title: "Intégration de DALL·E"
+  meta:
+    order: 11
+  content:
+    bullets:
+      - "Accessibilité via ChatGPT Plus"
+      - "Génération intégrée aux conversations"
+      - "Focus sur la précision technique"
+      - "Variétés stylistiques étendues"
+      - "Édition et modification avancées"
+    key_message: "DALL·E offre une intégration fluide entre texte et génération d'images."
+    illustration_prompt: >
+      Illustration vectorielle montrant DALL·E intégré dans une interface de chat. Fond blanc, style intégré, format 16:9, sans watermark.
+    speaker_notes: |
+      DALL·E, développé par OpenAI, se distingue par son intégration transparente avec les outils de conversation, offrant une expérience particulièrement fluide pour les designers.
+
+      L'accessibilité via ChatGPT Plus rend l'outil facilement disponible pour les utilisateurs de l'écosystème OpenAI. Pas besoin d'outils supplémentaires ; la génération d'images s'intègre naturellement dans les conversations textuelles.
+
+      La génération intégrée aux conversations permet un workflow itératif particulièrement efficace. On peut décrire une idée textuellement, générer une image, puis affiner le concept en continuant la discussion, créant un processus créatif dynamique.
+
+      Le focus sur la précision technique fait de DALL·E un outil privilégié pour les applications professionnelles. Il excelle dans la génération d'éléments spécifiques, de compositions complexes et de détails techniques précis.
+
+      Les variétés stylistiques étendues permettent d'explorer un large spectre créatif, des illustrations réalistes aux styles artistiques les plus variés, répondant aux besoins divers des projets de design.
+
+      Enfin, les fonctionnalités d'édition et modification avancées permettent de retravailler les images générées. On peut modifier des éléments spécifiques, changer les couleurs, ajuster les compositions, transformant DALL·E en un outil de création interactive.
+
+      Cette intégration étroite avec les interfaces conversationnelles fait de DALL·E un choix privilégié pour les designers qui privilégient les workflows intégrés et itératifs.

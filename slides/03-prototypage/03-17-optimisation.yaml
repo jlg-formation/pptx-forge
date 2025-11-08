@@ -1,0 +1,35 @@
+chapter:
+  number: 3
+  key: "prototypage"
+  title: "Prototypage et design d’interface avec IA"
+
+slide:
+  id: "17"
+  type: "content"
+  title: "Optimisation continue"
+  meta:
+    order: 17
+  content:
+    bullets:
+      - "Apprentissage automatique des préférences"
+      - "Adaptation en temps réel"
+      - "A/B testing automatisé"
+      - "Optimisation basée sur données"
+      - "Évolution prédictive des besoins"
+    key_message: "L'optimisation continue utilise l'IA pour des prototypes qui s'améliorent automatiquement."
+    illustration_prompt: >
+      Illustration vectorielle montrant un prototype qui s'optimise en continu. Fond blanc, style évolutif, format 16:9, sans watermark.
+    speaker_notes: |
+      L'optimisation continue transforme les prototypes statiques en systèmes d'apprentissage capables de s'améliorer automatiquement.
+
+      L'apprentissage automatique des préférences permet au prototype d'adapter son comportement selon les interactions des utilisateurs.
+
+      L'adaptation en temps réel modifie l'interface selon le contexte d'usage et les préférences individuelles.
+
+      L'A/B testing automatisé teste simultanément différentes variantes pour identifier les plus performantes.
+
+      L'optimisation basée sur données utilise les analytics pour guider les améliorations continues.
+
+      L'évolution prédictive des besoins anticipe les changements dans les attentes des utilisateurs.
+
+      Cette approche crée des prototypes non seulement fonctionnels, mais véritablement intelligents et évolutifs.

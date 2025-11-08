@@ -1,0 +1,16 @@
+chapter:
+  number: 3
+  key: "prototypage"
+  title: "Prototypage et design d’interface avec IA"
+
+slide:
+  id: "01"
+  type: "cover"
+  title: "Prototypage et design d’interface avec IA"
+  meta:
+    order: 1
+  content:
+    bullets: []
+    key_message: ""
+    illustration_prompt: ""
+    speaker_notes: ""

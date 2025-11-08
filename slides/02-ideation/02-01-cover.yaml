@@ -1,0 +1,16 @@
+chapter:
+  number: 2
+  key: "ideation"
+  title: "L'idéation et la création visuelle assistées"
+
+slide:
+  id: "01"
+  type: "cover"
+  title: "L'idéation et la création visuelle assistées"
+  meta:
+    order: 1
+  content:
+    bullets: []
+    key_message: ""
+    illustration_prompt: ""
+    speaker_notes: ""

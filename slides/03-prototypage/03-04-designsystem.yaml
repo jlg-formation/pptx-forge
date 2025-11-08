@@ -1,0 +1,35 @@
+chapter:
+  number: 3
+  key: "prototypage"
+  title: "Prototypage et design d’interface avec IA"
+
+slide:
+  id: "04"
+  type: "content"
+  title: "Structurer un design system IA-compatible"
+  meta:
+    order: 4
+  content:
+    bullets:
+      - "Composants modulaires et paramétrables"
+      - "Tokens de design automatisés"
+      - "Règles de génération définies"
+      - "Évolutivité et maintenance facilitées"
+      - "Cohérence à grande échelle"
+    key_message: "Un design system IA-compatible facilite l'automatisation et la cohérence."
+    illustration_prompt: >
+      Illustration vectorielle montrant un système de composants interconnectés avec IA. Fond blanc, style systémique, format 16:9, sans watermark.
+    speaker_notes: |
+      Pour tirer pleinement parti de l'IA dans le prototypage, il est essentiel de structurer un design system qui soit compatible avec ces technologies.
+
+      Les composants modulaires et paramétrables forment la base d'un système IA-compatible. Chaque élément d'interface est conçu pour être facilement modifiable et combinable, permettant à l'IA de générer des variations sans casser la structure.
+
+      Les tokens de design automatisés définissent les variables (couleurs, typographies, espacements) de manière programmable. L'IA peut ainsi modifier automatiquement ces tokens pour créer des thèmes ou des variantes.
+
+      Les règles de génération définies guident l'IA dans ses créations. Quelles combinaisons sont autorisées ? Quels éléments doivent toujours être présents ? Ces règles assurent que les générations IA respectent l'identité de marque.
+
+      L'évolutivité et la maintenance sont facilitées par cette approche structurée. Ajouter un nouveau composant ou modifier un style existant peut être fait de manière centralisée, et l'IA applique automatiquement ces changements.
+
+      Enfin, la cohérence à grande échelle est garantie par le système. Même en générant des centaines d'écrans, l'IA maintient une unité visuelle parfaite, éliminant les dérives qui peuvent survenir dans les projets manuels.
+
+      Cette structuration transforme le design system d'un simple guide en un framework actif qui collabore avec l'IA pour produire des interfaces cohérentes et évolutives.

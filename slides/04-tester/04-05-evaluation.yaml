@@ -1,0 +1,45 @@
+chapter:
+  number: 4
+  key: "tester"
+  title: "Tester, itérer et industrialiser"
+
+slide:
+  id: "05"
+  type: "content"
+  title: "Évaluer la cohérence, l'accessibilité et la pertinence du design généré"
+  meta:
+    order: 5
+  content:
+    bullets:
+      - "Vérification automatique de la conformité aux standards d'accessibilité (WCAG)"
+      - "Analyse de cohérence visuelle, typographique et fonctionnelle"
+      - "Évaluation de la pertinence par rapport aux objectifs métier et utilisateur"
+      - "Détection proactive de biais et problèmes d'inclusivité"
+      - "Génération de rapports détaillés avec recommandations prioritaires"
+    key_message: "L'IA élève la qualité des designs vers l'excellence et l'inclusivité."
+    illustration_prompt: >
+      Illustration vectorielle sans texte, fond blanc pur (#ffffff), format 16:9,
+      style professionnel et structuré, montrant une interface de design analysée
+      par IA : checkmarks pour accessibilité, cohérence, pertinence, avec des
+      indicateurs visuels de score. Composition claire et organisée,
+      lisible et imprimable, sans watermark.
+    speaker_notes: |
+      Évaluer la qualité d'un design généré par IA est crucial pour assurer qu'il répond non seulement aux standards techniques, mais aussi aux besoins humains et éthiques. L'IA elle-même peut nous aider dans cette évaluation, créant un cercle vertueux d'amélioration.
+
+      Commençons par l'accessibilité, pierre angulaire de tout bon design. Les outils IA peuvent scanner automatiquement vos interfaces pour vérifier la conformité aux guidelines WCAG. Ils analysent le contraste des couleurs, la taille des textes, la navigation au clavier, les alternatives textuelles pour les images, et même la complexité cognitive des interfaces. Des outils comme axe-core ou des intégrations dans Figma utilisent l'IA pour identifier des problèmes qu'un œil humain pourrait manquer.
+
+      La cohérence est un autre aspect critique. L'IA peut analyser l'ensemble de votre design system pour détecter les incohérences : une icône qui ne respecte pas le style général, une couleur légèrement différente de la palette approuvée, ou une interaction qui sort du pattern établi. Cette analyse automatique permet de maintenir une expérience utilisateur cohérente à travers tous les points de contact.
+
+      L'évaluation de la pertinence va plus loin. L'IA peut croiser les données de performance avec les objectifs métier : est-ce que ce design maximise les conversions ? Répond-il aux besoins identifiés lors des recherches utilisateurs ? Des outils comme Hotjar ou Google Analytics avec IA intégrée peuvent corréler les métriques de performance avec les éléments de design spécifiques.
+
+      La détection de biais est particulièrement importante dans les designs générés par IA. Les modèles peuvent perpétuer des biais présents dans leurs données d'entraînement. Des outils spécialisés analysent les designs pour détecter des représentations stéréotypées, des exclusions involontaires, ou des expériences qui favorisent certains groupes démographiques.
+
+      Les rapports générés par ces outils IA ne sont pas de simples listes de problèmes ; ils priorisent les corrections, expliquent l'impact potentiel sur l'expérience utilisateur, et suggèrent des solutions concrètes. Cela transforme l'évaluation d'une tâche punitive en une opportunité d'apprentissage et d'amélioration.
+
+      Dans la pratique, comment intégrer cela ? Intégrez les vérifications IA dans votre pipeline de déploiement. Par exemple, avant de merger une branche, un outil comme Chromatic ou des linters personnalisés peuvent bloquer les changements non conformes. Formez votre équipe à interpréter les rapports IA, en combinant l'expertise algorithmique avec le jugement humain.
+
+      Les défis existent : les outils IA ne sont pas infaillibles, et une dépendance excessive peut mener à une standardisation excessive. Il est essentiel de calibrer les seuils de tolérance et de maintenir une supervision humaine pour les décisions critiques.
+
+      L'avenir de l'évaluation avec IA est excitant. Nous nous dirigeons vers des systèmes qui non seulement détectent les problèmes, mais les corrigent automatiquement, créant des designs auto-optimisants. Mais cela soulève des questions éthiques : qui définit les critères de "qualité" ? Comment assurer que ces évaluations ne favorisent pas certaines cultures ou perspectives ?
+
+      En conclusion, l'évaluation assistée par IA transforme notre approche de la qualité. Elle nous permet d'atteindre des niveaux de cohérence, d'accessibilité et de pertinence impossibles manuellement, tout en nous forçant à réfléchir plus profondément aux valeurs que nous souhaitons incarner dans nos designs. C'est un outil puissant pour créer des expériences non seulement efficaces, mais aussi éthiques et inclusives.

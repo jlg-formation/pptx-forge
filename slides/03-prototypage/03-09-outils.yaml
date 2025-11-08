@@ -1,0 +1,35 @@
+chapter:
+  number: 3
+  key: "prototypage"
+  title: "Prototypage et design d’interface avec IA"
+
+slide:
+  id: "09"
+  type: "content"
+  title: "Outils de prototypage IA"
+  meta:
+    order: 9
+  content:
+    bullets:
+      - "Plateformes no-code avec IA"
+      - "Plugins pour outils existants"
+      - "Outils spécialisés en UX"
+      - "Solutions d'entreprise"
+      - "Tendances émergentes"
+    key_message: "L'écosystème des outils IA pour le prototypage offre des solutions adaptées à chaque besoin."
+    illustration_prompt: >
+      Illustration vectorielle montrant une variété d'outils IA pour le prototypage. Fond blanc, style technologique, format 16:9, sans watermark.
+    speaker_notes: |
+      L'écosystème des outils de prototypage IA évolue rapidement, offrant des solutions adaptées à différents niveaux de compétence et de besoin.
+
+      Les plateformes no-code avec IA, comme Bubble ou Adalo intégrant des capacités IA, permettent aux non-développeurs de créer des prototypes fonctionnels sans coder.
+
+      Les plugins pour outils existants étendent les fonctionnalités des logiciels familiers. Les plugins IA pour Figma ou Sketch ajoutent des capacités de génération automatique sans changer l'environnement de travail.
+
+      Les outils spécialisés en UX, comme Framer ou Principle avec IA, se concentrent sur l'animation et l'interaction, permettant de créer des prototypes hautement fidèles.
+
+      Les solutions d'entreprise offrent des fonctionnalités avancées pour les grandes organisations, avec intégration aux systèmes existants et conformité aux standards de sécurité.
+
+      Les tendances émergentes incluent l'IA conversationnelle pour le prototypage (décrire un prototype en langage naturel) et l'IA prédictive pour optimiser les parcours utilisateur.
+
+      Le choix de l'outil dépend du contexte : complexité du projet, compétences de l'équipe, contraintes budgétaires et besoins d'intégration.

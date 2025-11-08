@@ -1,0 +1,37 @@
+chapter:
+  number: 1
+  key: "comprendre"
+  title: "Comprendre l’IA dans le design"
+
+slide:
+  id: "08"
+  type: "content"
+  title: "TP : cartographier les usages possibles de l’IA dans son propre projet"
+  meta:
+    order: 8
+  content:
+    bullets:
+      - "Identifier les étapes de son workflow actuel"
+      - "Repérer les tâches répétitives automatisables"
+      - "Évaluer les opportunités d'assistance IA"
+      - "Cartographier les risques et bénéfices"
+      - "Planifier l'intégration progressive"
+    key_message: "Cartographiez les usages possibles de l'IA pour optimiser votre workflow de design."
+    illustration_prompt: >
+      Illustration vectorielle montrant une carte mentale avec des connexions entre tâches de design et outils IA. Fond blanc, style arborescent, format 16:9, sans watermark.
+    speaker_notes: |
+      Passons maintenant à la pratique avec un travail pratique qui vous permettra d'appliquer concrètement les concepts que nous venons d'explorer. Cette cartographie des usages possibles de l'IA dans votre propre projet est une étape cruciale pour une intégration réfléchie et efficace.
+
+      Commencez par identifier les étapes de votre workflow actuel. Listez toutes les phases de votre processus de design, de la recherche utilisateur initiale jusqu'à la livraison finale. Soyez aussi détaillé que possible : recherche, idéation, wireframing, prototypage, tests, etc.
+
+      Ensuite, repérez les tâches répétitives qui pourraient être automatisées. Quelles activités vous prennent du temps sans apporter beaucoup de valeur ajoutée créative ? Par exemple, la génération de variations de couleurs, l'analyse de feedbacks ou la création de mockups de base.
+
+      Pour chaque tâche identifiée, évaluez les opportunités d'assistance IA. Quels outils existent pour cette tâche spécifique ? Sont-ils adaptés à votre contexte ? Quels seraient les bénéfices en termes de temps gagné ou de qualité améliorée ?
+
+      Cartographiez ensuite les risques et bénéfices. Pour chaque usage potentiel, notez les avantages (productivité, exploration d'idées) et les risques (biais, perte de contrôle créatif). Cette analyse équilibrée vous aidera à prendre des décisions éclairées.
+
+      Enfin, planifiez l'intégration progressive. Ne cherchez pas à tout changer d'un coup. Commencez par un outil simple, mesurez son impact, puis étendez progressivement. Cette approche itérative minimise les risques et maximise les apprentissages.
+
+      Prenez 15-20 minutes pour réaliser cette cartographie. Vous pouvez utiliser un simple document texte, un mind map ou même un outil de design. L'important est de réfléchir concrètement à comment l'IA peut s'intégrer dans votre pratique quotidienne.
+
+      À la fin de cet exercice, vous aurez une vision claire des opportunités offertes par l'IA pour votre workflow personnel, ouvrant la voie à une adoption responsable et bénéfique de ces technologies.
