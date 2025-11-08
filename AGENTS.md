@@ -1,6 +1,6 @@
-# 🤖 AGENTS.md
+# 🤖 AGENTS.md — Convention **fichiers par slide** (v3.1)
 
-## Commandes : `xxxSlides` & `xxxSlidemap`
+## Commandes : `xxxSlidemap` & `xxxSlides` (mode YAML)
 
 ---
 
@@ -8,8 +8,8 @@
 
 ### 🎯 Objectif
 
-Générer un fichier `01-slidemap.md` à partir du plan de formation `00-plan-formation.md`.  
-Ce fichier sert de **carte de production des slides**. Il répertorie tous les chapitres et toutes les slides à générer, avec leurs numéros, titres, fichiers cibles et **statuts**.  
+Générer/mettre à jour un fichier `01-slidemap.md` à partir du plan de formation `00-plan-formation.md` **pour piloter la production YAML**.
+Ce fichier répertorie tous les chapitres et toutes les _slides logiques_ (01–18), avec leur numéro, titre, **référence YAML cible (1 fichier par slide)** et **statut**.
 Il permet ensuite à la commande `xxxSlides` de savoir **où elle s’est arrêtée** et de **reprendre automatiquement**.
 
 ### ⚙️ Fonctionnement
@@ -24,30 +24,52 @@ L’agent doit :
 
 1. Lire `00-plan-formation.md`.
 2. Lister les chapitres du plan.
-3. Pour chaque chapitre, produire 18 entrées (01 à 18) avec : _type_, _titre de slide_, _chemin de fichier cible_ et _statut initial_ `⏳` (sauf si le fichier existe déjà → `✅`).
+3. Pour chaque chapitre, produire 18 entrées (01 à 18) avec : _type_, _titre de slide_, **référence YAML (chemin de fichier)** et _statut initial_ `⏳` (sauf si le fichier YAML existe déjà → `✅`).
 4. Écrire/mettre à jour `01-slidemap.md` à la racine du repo.
 
-### 📁 Exemple de structure `01-slidemap.md`
+### 📁 Références YAML et nouvelle convention de nommage (fichier **par slide**)
+
+- **Un fichier YAML par slide** :
+  `slides/<CC>-<chapitre-simplifie>/<CC>-<NN>-<motcleslide>.yaml`
+
+  **Définitions :**
+
+  - `CC` = numéro du chapitre sur 2 chiffres (`01`, `02`, …).
+  - `NN` = numéro de la slide logique (01..18).
+  - `<chapitre-simplifie>` = **un seul mot-clé** du titre du chapitre, minuscule, sans accents/ponctuation (les espaces et ponctuations → tirets si nécessaire, mais privilégier **un seul mot**).
+  - `<motcleslide>` = **un seul mot-clé** représentatif du titre de la slide, minuscule, sans accents/ponctuation (mêmes règles que ci‑dessus).
+
+- **Exemples :**
+
+  - Chapitre 1 « Introduction » → répertoire : `slides/01-introduction/`
+
+    - Slide 01 (page de garde) → `slides/01-introduction/01-01-cover.yaml`
+    - Slide 02 (sommaire) → `slides/01-introduction/01-02-toc.yaml`
+    - Slide 05 « Principaux risques » → `slides/01-introduction/01-05-risques.yaml`
+
+- **Référence complète** utilisée dans `01-slidemap.md` :
+  `slides/01-introduction/01-05-risques.yaml`
+
+### 🧱 Exemple de structure `01-slidemap.md` (extrait)
 
 ```markdown
 # 🗺️ Slide Map – <Titre de la formation>
 
-Ce document répertorie l’ensemble des slides à générer à partir de `00-plan-formation.md`.
-Chaque slide correspond à un fichier `.md` dans `slides/<chapitre-simplifie>/`.
-La colonne “Statut” est mise à jour automatiquement par `xxxSlides` à chaque exécution.
+Ce document répertorie l’ensemble des slides logiques (01–18) par chapitre.
+Chaque slide logique correspond à **un fichier YAML** dans `slides/<CC>-<chapitre-simplifie>/<CC>-<NN>-<motcleslide>.yaml`.
 
 ---
 
 ## Chapitre 1 — Introduction à la sécurité mobile
 
-| Ordre | Type               | Fichier cible                                                        | Titre du slide                    | Statut |
-| ----: | ------------------ | -------------------------------------------------------------------- | --------------------------------- | :----: |
-|    01 | Page de garde      | slides/01-introduction-a-la-securite-mobile/01-page-de-garde.md      | Introduction à la sécurité mobile |   ✅   |
-|    02 | Table des matières | slides/01-introduction-a-la-securite-mobile/02-table-des-matieres.md | Sommaire du chapitre              |   ✅   |
-|    03 | Contenu            | slides/01-introduction-a-la-securite-mobile/03-contexte.md           | Contexte de la sécurité mobile    |   ⏳   |
-|    04 | Contenu            | slides/01-introduction-a-la-securite-mobile/04-risques-principaux.md | Principaux risques mobiles        |   ⏳   |
-|     … | …                  | …                                                                    | …                                 |   …    |
-|    18 | Conclusion         | slides/01-introduction-a-la-securite-mobile/18-conclusion.md         | Conclusion du chapitre            |   ⏳   |
+| Ordre | Type               | Référence YAML                               | Titre du slide                    | Statut |
+| ----: | ------------------ | -------------------------------------------- | --------------------------------- | :----: |
+|    01 | Page de garde      | slides/01-introduction/01-01-cover.yaml      | Introduction à la sécurité mobile |   ✅   |
+|    02 | Table des matières | slides/01-introduction/01-02-toc.yaml        | Sommaire du chapitre              |   ✅   |
+|    03 | Contenu            | slides/01-introduction/01-03-contexte.yaml   | Contexte de la sécurité mobile    |   ⏳   |
+|    04 | Contenu            | slides/01-introduction/01-04-risques.yaml    | Principaux risques mobiles        |   ⏳   |
+|     … | …                  | …                                            | …                                 |   …    |
+|    18 | Conclusion         | slides/01-introduction/01-18-conclusion.yaml | Conclusion du chapitre            |   ⏳   |
 
 ---
 
@@ -55,15 +77,15 @@ La colonne “Statut” est mise à jour automatiquement par `xxxSlides` à chaq
 
 | Symbole | Signification                           |
 | ------: | --------------------------------------- |
-|      ✅ | Slide déjà généré                       |
-|      ⏳ | Slide à générer                         |
-|      ⚠️ | Slide partiellement généré / à réviser  |
+|      ✅ | Fichier YAML déjà généré                |
+|      ⏳ | Fichier YAML à générer                  |
+|      ⚠️ | Entrée partiellement générée / à revoir |
 |      ❌ | Erreur lors d’une génération précédente |
 
 ### Règles
 
-- 18 slides par chapitre : `01` (page de garde) · `02` (table des matières) · `03–17` (contenu) · `18` (conclusion).
-- Noms de dossiers/fichiers : `slides/<chapitre-simplifie>/<NN-*.md>`, minuscules, espaces → tirets, accents supprimés.
+- 18 _slides logiques_ par chapitre : `01` (page de garde) · `02` (table des matières) · `03–17` (contenu) · `18` (conclusion).
+- Dossiers/fichiers : `slides/<CC>-<chapitre-simplifie>/<CC>-<NN>-<motcleslide>.yaml`, minuscules, accents supprimés, **un seul mot** pour `<chapitre-simplifie>` et `<motcleslide>`.
 - Chemins **relatifs** au repo.
 - `xxxSlides` **lit** ce fichier pour savoir quelles entrées passer de `⏳` à `✅`.
 ```
@@ -74,132 +96,83 @@ La colonne “Statut” est mise à jour automatiquement par `xxxSlides` à chaq
 
 ### 🎯 Objectif
 
-Générer automatiquement le répertoire `slides/` contenant un sous-dossier par chapitre,  
-chaque dossier comprenant **18 slides** cohérents et complets, en se basant sur `01-slidemap.md` (s’il existe) ou, à défaut, sur `00-plan-formation.md`.
+Générer automatiquement le répertoire `slides/` contenant **un fichier YAML par slide**,
+à partir de `01-slidemap.md` (s’il existe) ou, à défaut, de `00-plan-formation.md`.
+
+### 📄 Schéma YAML — **spécification (fichier par slide)**
+
+Chaque fichier YAML contient les métadonnées du chapitre et **une unique slide**.
+
+```yaml
+chapter:
+  number: 1 # entier, 1-indexé, aussi préfixé CC pour l'affichage
+  key: "introduction" # mot-clé unique, minuscule, sans accent (du chapitre)
+  title: "Introduction à la sécurité mobile"
+
+slide:
+  id: "05" # "01" à "18" (chaîne à deux chiffres)
+  type: "content" # cover | toc | content | conclusion
+  title: "Principaux risques mobiles"
+  meta:
+    order: 5 # 1..18 (entier)
+  content:
+    bullets: # 5 bullets exactement pour content & conclusion
+      - "<Bullet 1, ≤ 12 mots>"
+      - "<Bullet 2, ≤ 12 mots>"
+      - "<Bullet 3, ≤ 12 mots>"
+      - "<Bullet 4, ≤ 12 mots>"
+      - "<Bullet 5, ≤ 12 mots>"
+    key_message: "<phrase percutante ≤ 120 caractères>"
+    illustration_prompt: >
+      <3–6 phrases, image vectorielle sans texte, fond blanc pur (#ffffff),
+      format 16:9, style plat/isométrique, composition simple, lisible et
+      imprimable, sans watermark.>
+    speaker_notes: |
+      <Texte fluide (250–500 mots), en plusieurs paragraphes avec **gras**,
+      _italique_ ou citation. Ton pédagogique et concret.>
+```
+
+**Spécificités par type :**
+
+- `cover` : `bullets`, `key_message`, `illustration_prompt`, `speaker_notes` → vides.
+- `toc` :
+
+  ```yaml
+  slide:
+    id: "02"
+    type: "toc"
+    title: "Sommaire du chapitre — Introduction à la sécurité mobile"
+    meta: { order: 2 }
+    content:
+      items: # 15 éléments : titres des slides 03..17
+        - "Contexte de la sécurité mobile"
+        - "..."
+      key_message: "Vue d’ensemble du chapitre et des notions abordées."
+      illustration_prompt: >
+        Illustration vectorielle sans texte, fond blanc (#ffffff), montrant une
+        arborescence de concepts reliés. Style minimal, composition claire et
+        équilibrée, format 16:9, sans watermark.
+      speaker_notes: >
+        Ce sommaire situe les étapes du chapitre et les attentes pédagogiques principales.
+  ```
+
+- `conclusion` : même structure que `content` avec notes 250–400 mots.
 
 ### ⚙️ Description
 
-Pour **chaque chapitre**, créer un sous-dossier :
+Pour **chaque slide**, créer un fichier :
 
 ```
-slides/<chapitre-simplifie>/
+slides/<CC>-<chapitre-simplifie>/<CC>-<NN>-<motcleslide>.yaml
 ```
 
-Dans chaque dossier, **18 fichiers Markdown** :
-
-- **01 – Page de garde** : **uniquement le titre du chapitre** (aucun bullet, message clé, prompt ni note orale)
-- **02 – Table des matières** : liste des **15 titres** des slides de contenu (03–17), message clé global + prompt simple + courte note
-- **03 à 17 – Slides de contenu (x15)** : gabarit complet
-- **18 – Conclusion** : gabarit complet (synthèse)
-
-### 🧱 Gabarits
-
-#### 1) Page de garde (slide 01)
-
-```markdown
----
-id: slide-<chapitre>-01
-chapter: "<Titre du chapitre>"
-order: 1
-type: cover
----
-
-# <Titre du chapitre>
-```
-
-#### 2) Table des matières (slide 02)
-
-```markdown
----
-id: slide-<chapitre>-02
-chapter: "<Titre du chapitre>"
-order: 2
-type: toc
----
-
-# Sommaire du chapitre — <Titre du chapitre>
-
-1. <Titre du slide 03>
-2. <Titre du slide 04>
-   ...
-3. <Titre du slide 17>
-
-**Message clé :** Vue d’ensemble du chapitre et des notions abordées.
-
-**Illustration — prompt :**
-Illustration vectorielle sans texte, fond blanc (#ffffff), montrant une arborescence de concepts reliés. Style minimal, composition claire et équilibrée, format 16:9, sans watermark.
-
----
-
-## 🎤 Note orale
-
-_Ce sommaire situe les étapes du chapitre et les attentes pédagogiques principales._
-```
-
-#### 3) Slides de contenu (slides 03–17) — gabarit commun
-
-```markdown
----
-id: slide-<chapitre>-<NN>
-chapter: "<Titre du chapitre>"
-order: <NN>
-type: content
----
-
-# <Titre du slide>
-
-- <Bullet 1, ≤ 12 mots>
-- <Bullet 2, ≤ 12 mots>
-- <Bullet 3, ≤ 12 mots>
-- <Bullet 4, ≤ 12 mots>
-- <Bullet 5, ≤ 12 mots>
-
-**Message clé :** <phrase percutante ≤ 120 caractères>
-
-**Illustration — prompt :**
-<3–6 phrases, image vectorielle sans texte, fond blanc pur (#ffffff), format 16:9, style plat/isométrique, composition simple, lisible et imprimable, sans watermark.>
-
----
-
-## 🎤 Note orale
-
-<Texte fluide (250–500 mots), en plusieurs paragraphes avec **gras**, _italique_ ou citation. Ton pédagogique et concret.>
-```
-
-#### 4) Conclusion (slide 18)
-
-```markdown
----
-id: slide-<chapitre>-18
-chapter: "<Titre du chapitre>"
-order: 18
-type: conclusion
----
-
-# Conclusion — <Titre du chapitre>
-
-- <Synthèse 1>
-- <Synthèse 2>
-- <Synthèse 3>
-- <Synthèse 4>
-- <Synthèse 5>
-
-**Message clé :** <résumé fort et inspirant du chapitre.>
-
-**Illustration — prompt :**
-Illustration symbolique de clôture du thème, fond blanc pur (#ffffff), style plat et épuré, composition centrée, sans texte.
-
----
-
-## 🎤 Note orale
-
-<Conclusion orale de 250–400 mots, reformulant les idées clés et ouvrant vers la suite.>
-```
+- `motcleslide` est dérivé du titre de la slide (un seul mot, minuscule, sans accents/ponctuation). Exemples : `cover`, `toc`, `contexte`, `risques`, `mesures`, `demo`, `exemple`, `atelier`, `conclusion`.
+- Si un fichier existe déjà, **le mettre à jour** sans casser la structure.
 
 ### 🔁 Reprise automatique & pagination
 
 - `xxxSlides` **lit d’abord** `01-slidemap.md`.
-- Il détecte la **première ligne** en statut `⏳` et **génère par lot de 5 slides** (ou une valeur configurable).
+- Il détecte la **première ligne** en statut `⏳` et **(ré)génère par lot de fichiers YAML** (par défaut 5).
 - Après génération, il met à jour les lignes correspondantes en `✅` et s’arrête.
 - Au prochain appel, il reprend au prochain `⏳`.
 
@@ -210,34 +183,33 @@ xxxSlides chapitre="<nom|numéro>" start=<NN> count=<K>
 ```
 
 - `chapitre` : restreindre à un chapitre.
-- `start` : numéro de slide de départ (défaut = premier `⏳`).
-- `count` : nombre de slides à générer (défaut = 5).
+- `start` : numéro de slide logique de départ (défaut = premier `⏳`).
+- `count` : nombre de **fichiers** à générer (défaut = 6).
 
 ### 🧠 Règles générales
 
 - 5 bullets **exactement** pour les slides de contenu et de conclusion.
 - Message clé ≤ 120 caractères.
-- Prompt d’illustration **en texte fluide**, jamais en bloc de code, **fond blanc #ffffff**, **sans texte**, **16:9**.
-- Note orale 250–500 mots, fluide, avec Markdown enrichi.
-- Numérotation : 01 à 18 par chapitre.
-- Langue : **français**. Ton : **formateur humain** (oral, concret, professionnel).
-- Noms de dossiers/fichiers : minuscules, espaces → tirets, accents supprimés.
+- Prompt d’illustration **en texte fluide**, **fond blanc #ffffff**, **sans texte**, **16:9**.
+- Notes orales : 250–500 mots (conclusion : 250–400), ton **formateur humain** (oral, concret, pro).
+- Numérotation par chapitre : `01` à `18`.
+- Noms de dossiers/fichiers : minuscules, accents supprimés, **un seul mot** pour `<chapitre-simplifie>` et `<motcleslide>`.
 
 ### 🧾 Sortie attendue
 
-- Dossiers `slides/<chapitre-simplifie>/`
-- Fichiers `01-*.md` … `18-*.md`
+- Dossiers `slides/<CC>-<chapitre-simplifie>/`
+- **Fichiers YAML** : `slides/<CC>-<chapitre-simplifie>/<CC>-<NN>-<motcleslide>.yaml`
 - Mise à jour de `01-slidemap.md` (statuts).
 - Journal de fin :
 
 ```
-✅ Slides 03–07 générés pour « Introduction à la sécurité mobile »
-↪ Prochain slide en attente : 08
+✅ YAML 03–07 générés pour « Introduction à la sécurité mobile » (files 01-03..01-07)
+↪ Prochaine entrée en attente : 08
 ```
 
 ---
 
 ### 🪶 Auteur
 
-Jean-Louis Guénégo — JLG Consulting  
-(version 2.0, novembre 2025)
+Jean-Louis Guénégo — JLG Consulting
+(version 3.1, novembre 2025)
