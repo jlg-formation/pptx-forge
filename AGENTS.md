@@ -128,13 +128,18 @@ slide:
       format 16:9, style plat/isométrique, composition simple, lisible et
       imprimable, sans watermark.>
     speaker_notes: |
-      <Texte fluide (250–500 mots), en plusieurs paragraphes avec **gras**,
-      _italique_ ou citation. Ton pédagogique et concret.>
+      <Texte au format Markdown, présenté comme une prose fluide (250 à 500 mots).
+      Le ton est formateur, concret et professionnel.  
+      Le texte peut utiliser des **mises en valeur** (gras, italique), des listes à
+      puces ou numérotées si besoin, mais **aucun titre de chapitre**.  
+      Il doit être structuré naturellement, clair et agréable à lire, tout en
+      restant dans la limite de 500 mots.>
 ```
 
 **Spécificités par type :**
 
 - `cover` : `bullets`, `key_message`, `illustration_prompt`, `speaker_notes` → vides.
+
 - `toc` :
 
   ```yaml
