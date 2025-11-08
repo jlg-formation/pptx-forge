@@ -177,7 +177,7 @@ slides/<CC>-<chapitre-simplifie>/<CC>-<NN>-<motcleslide>.yaml
 ### 🔁 Reprise automatique & pagination
 
 - `xxxSlides` **lit d’abord** `01-slidemap.md`.
-- Il détecte la **première ligne** en statut `⏳` et **(ré)génère par lot de fichiers YAML** (par défaut 5).
+- Il détecte la **première ligne** en statut `⏳` et **(ré)génère par lot de fichiers YAML** (par défaut 6).
 - Après génération, il met à jour les lignes correspondantes en `✅` et s’arrête.
 - Au prochain appel, il reprend au prochain `⏳`.
 
@@ -208,8 +208,8 @@ xxxSlides chapitre="<nom|numéro>" start=<NN> count=<K>
 - Journal de fin :
 
 ```
-✅ YAML 03–07 générés pour « Introduction à la sécurité mobile » (files 01-03..01-07)
-↪ Prochaine entrée en attente : 08
+✅ YAML 03–08 générés pour « Introduction à la sécurité mobile » (files 01-03..01-08)
+↪ Prochaine entrée en attente : 09
 ```
 
 ---
