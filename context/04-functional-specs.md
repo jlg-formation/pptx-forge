@@ -22,20 +22,20 @@ L'outil est un script TypeScript exécuté via bun, qui transforme des fichiers 
 
 ### 3. Gestion des Illustrations
 
-- **Description :** Intégrer images depuis `illustrations/` (nommage `<CC>-<NN>-<motcleslide>.<ext>`) ou placeholders. Les illustrations ne sont pas générées par l'outil ; elles sont préparées en amont via méthodes externes (ex. : script PSE pour téléchargement Google Images ou génération IA manuelle). L'outil recherche le fichier image correspondant à chaque slide (basé sur chapter.number-slide.id-motcleslide) et l'embarque si disponible, sinon utilise un placeholder.
+- **Description :** Intégrer images depuis `illustrations/` avec la même structure de sous-répertoires et noms que les slides YAML (ex. : `illustrations/01-introduction/01-01-cover.jpg` pour `slides/01-introduction/01-01-cover.yaml`). Les illustrations ne sont pas générées par l'outil ; elles sont préparées en amont via méthodes externes (ex. : script PSE pour téléchargement Google Images ou génération IA manuelle). L'outil recherche le fichier image correspondant à chaque slide et l'embarque si disponible, sinon utilise un placeholder.
 - **Méthodes de préparation externes :**
   - Méthode 1 : Génération IA (coûteuse, ~0,50 $/image, 1 min/image) – non intégrée à l'outil.
-  - Méthode 2 : Script PSE pour recherche Google Images et téléchargement automatique (limité à 100 images/jour), stocké dans `illustrations/<CC>-<NN>-<motcleslide>.<ext>` (ex. : `01-01-cover.jpg`).
+  - Méthode 2 : Script PSE pour recherche Google Images et téléchargement automatique (limité à 100 images/jour), stocké dans `illustrations/` avec la même structure que les YAML.
 - **User Stories :** US1.2.
 - **Critères :** Images chargées si disponibles, sinon placeholder sans erreur ; pas de génération en temps réel dans l'outil.
 
 ### 4. Scripts de Gestion des Illustrations
 
 - **Description :** Fournir deux scripts séparés, lancés à la demande par l'utilisateur, pour préparer les illustrations avant génération PPTX.
-  - Script 1 : Génération d'images par IA (utilise prompts des YAML pour créer images vectorielles, stockées dans `illustrations/`).
-  - Script 2 : Recherche Google Images et téléchargement (PSE script, limité à 100 images/jour, utilise prompts pour rechercher et télécharger images).
+  - Script 1 : Génération d'images par IA (utilise prompts des YAML pour créer images vectorielles, stockées dans `illustrations/` avec la même structure que les YAML).
+  - Script 2 : Recherche Google Images et téléchargement (PSE script, limité à 100 images/jour, utilise prompts pour rechercher et télécharger images, stockées dans `illustrations/` avec la même structure).
 - **User Stories :** US1.2 (pour Marie), US2.5 (pour Antoine).
-- **Critères :** Scripts en ligne de commande, compatibles avec bun/TypeScript, gèrent erreurs (ex. : limites API), stockent images sous `<CC>-<NN>-<motcleslide>.<ext>`.
+- **Critères :** Scripts en ligne de commande, compatibles avec bun/TypeScript, gèrent erreurs (ex. : limites API), stockent images sous `<CC>-<chapitre-simplifie>/<CC>-<NN>-<motcleslide>.<ext>`.
 
 ### 5. Gestion d'Erreurs
 

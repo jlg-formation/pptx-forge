@@ -35,7 +35,7 @@ Développer un outil en ligne de commande qui génère automatiquement une prés
 - **Pile technologique :** TypeScript avec bun (recommandé pour la manipulation PPTX via la bibliothèque `pptxgenjs`).
 - **Dépendances :** Doit être compatible avec la structure YAML existante de `AGENTS.md`.
 - **Calendrier :** Phase 1 : Conception et spécifications (actuelle) ; Phase 2 : Implémentation (à déterminer).
-- **Hypothèses :** Les fichiers YAML sont valides et complets ; les illustrations sont gérées via l'une des deux méthodes : 1) Génération IA (coûteuse, ~0,50 $/image, 1 min/image) ou 2) Script PSE pour recherche Google Images et téléchargement (limité à 100 images/jour), stocké dans le répertoire `illustrations/` sous `<CC>-<NN>-<motcleslide>.<ext>` (ex. : `01-01-cover.jpg`).
+- **Hypothèses :** Les fichiers YAML sont valides et complets ; les illustrations sont gérées via l'une des deux méthodes : 1) Génération IA (coûteuse, ~0,50 $/image, 1 min/image) ou 2) Script PSE pour recherche Google Images et téléchargement (limité à 100 images/jour), stocké dans le répertoire `illustrations/` avec la même structure de sous-répertoires et noms que les slides YAML (ex. : `illustrations/01-introduction/01-01-cover.jpg`).
 
 ### Critères de succès
 
