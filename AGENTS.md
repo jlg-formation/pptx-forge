@@ -242,7 +242,8 @@ L’agent doit :
 - **Layouts par type :**
   - `cover` : Layout titre principal (title slide).
   - `toc` : Layout titre et contenu (title and content), avec liste des items.
-  - `content` / `conclusion` : Layout titre et contenu, avec bullets et key_message en sous-titre.
+  - `content` : Layout titre et contenu avec 3 variantes pour varier le visuel (sélection via hash SHA1 du nom du slide).
+  - `conclusion` : Layout titre et contenu, avec bullets et key_message en sous-titre.
 - **Illustrations :** Utiliser des placeholders ou intégrer des images depuis un dossier `illustrations/` avec la même structure de sous-répertoires et noms que les slides YAML (ex. : `illustrations/01-introduction/01-01-cover.jpg` pour `slides/01-introduction/01-01-cover.yaml`).
 - **Speaker Notes :** Ajouter le texte dans la section notes de chaque slide.
 - **Paramètres optionnels :**

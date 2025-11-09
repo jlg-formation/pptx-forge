@@ -14,14 +14,15 @@ L'outil est un script TypeScript exécuté via bun, structuré en modules pour l
 ## Technologies et Dépendances
 
 - **Langage :** TypeScript (ES2022+).
-- **Runtime :** Bun (pour exécution rapide et gestion des dépendances).
+- **Runtime :** Bun (pour exécution rapide et gestion des dépendances, incluant fetch natif pour téléchargements HTTP).
 - **Bibliothèques Clés :**
   - `pptxgenjs` : Génération PPTX (layouts, contenu, export).
   - `js-yaml` : Parsing des fichiers YAML.
   - `fs` (Node.js) : Accès aux fichiers système.
   - `path` (Node.js) : Gestion des chemins de fichiers.
-- **Dépendances Optionnelles :** Pour scripts illustrations (ex. : `axios` pour téléchargements, bibliothèques IA si intégrées).
-- **Environnement :** Compatible avec Node.js 18+, bun 1.0+.
+  - `crypto` (Node.js) : Hash SHA1 pour sélection de template.
+- **Dépendances Optionnelles :** Pour scripts illustrations (utiliser fetch de bun pour téléchargements HTTP, sans bibliothèques externes comme axios).
+- **Environnement :** Compatible avec Node.js 22+ et bun 1.3.2+.
 
 ## Modèles de Données
 
@@ -58,6 +59,13 @@ interface SlideData {
   - `toc` : Slide avec titre et liste d'items.
   - `content`/`conclusion` : Slide avec titre, bullets, key_message.
 
+## Layouts par type :
+
+- `cover` : Slide avec titre uniquement.
+- `toc` : Slide avec titre et liste d'items. slide (pour cohérence et variété).
+- `content` : Slide avec titre, bullets, key_message ; 3 variantes (rotation basée sur slide.order % 3).
+- `conclusion` : Slide avec titre, bullets, key_message.
+
 ## Interfaces et APIs
 
 ### Interface CLI
@@ -73,6 +81,7 @@ interface SlideData {
 - `parseYamlFiles(dir: string): SlideData[]` : Scan et parse YAML.
 - `generatePptx(slides: SlideData[], options: Options): void` : Génère et sauvegarde PPTX.
 - `loadIllustration(path: string): Buffer | null` : Charge image ou retourne null.
+- `downloadImage(url: string): Promise<Buffer>` : Télécharge image via fetch de bun (pour scripts illustrations).
 
 ## Gestion d'Erreurs
 
