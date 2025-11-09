@@ -4,7 +4,24 @@ Ce document détaille les spécifications techniques pour l'implémentation de l
 
 ## Vue d'ensemble de l'Architecture
 
-L'outil est un script TypeScript exécuté via bun, structuré en modules pour la lisibilité et la maintenabilité. Architecture modulaire avec séparation des préoccupations :
+L'outil est un script TypeScript exécuté via bun, structuré en modules pour la lisibilité et la maintenabilité. Architecture modulaire avec séparation des préoccupations. Tout le code est inclus dans le répertoire `scripts/`.
+
+### Organisation du Code
+
+- `scripts/index.ts` : Point d'entrée principal (orchestration globale).
+- `scripts/cli/args.ts` : Parsing des arguments de ligne de commande.
+- `scripts/cli/logger.ts` : Gestion du logging (niveaux info, warn, error).
+- `scripts/parser/yaml-parser.ts` : Parsing des fichiers YAML individuels.
+- `scripts/parser/slide-loader.ts` : Chargement et tri des données de slides.
+- `scripts/generator/pptx-generator.ts` : Orchestration de la génération PPTX.
+- `scripts/generator/layout-manager.ts` : Gestion des layouts par type de slide.
+- `scripts/generator/slide-builder.ts` : Construction des slides individuelles.
+- `scripts/illustrations/image-loader.ts` : Chargement des images depuis le système de fichiers.
+- `scripts/illustrations/downloader.ts` : Téléchargement d'images via fetch.
+- `scripts/illustrations/placeholder.ts` : Gestion des placeholders d'images.
+- `scripts/utils/sort.ts` : Fonctions de tri (slides, chapitres).
+- `scripts/utils/validate.ts` : Validation des données YAML et chemins.
+- `scripts/utils/helpers.ts` : Fonctions utilitaires diverses (hash, formatage).
 
 - **Module Principal :** Orchestration (parsing YAML, génération PPTX).
 - **Module Illustrations :** Gestion des images (chargement, placeholders).
@@ -13,7 +30,7 @@ L'outil est un script TypeScript exécuté via bun, structuré en modules pour l
 
 ## Technologies et Dépendances
 
-- **Langage :** TypeScript (ES2022+).
+- **Langage :** TypeScript (ES2022+). Tous les scripts sont écrits en TypeScript.
 - **Runtime :** Bun (pour exécution rapide et gestion des dépendances, incluant fetch natif pour téléchargements HTTP).
 - **Bibliothèques Clés :**
   - `pptxgenjs` : Génération PPTX (layouts, contenu, export).
