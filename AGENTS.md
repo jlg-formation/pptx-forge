@@ -277,6 +277,12 @@ Tous les commits Git doivent suivre le format **Conventional Commits**.
 
 ---
 
+## Conventions de Développement
+
+Lors de l'implémentation du code, il est obligatoire de lire les spécifications dans le répertoire `context/`, en particulier tous les fichiers numérotés (e.g., `00-project-brief.md`, `04-functional-specs.md`, `05-technical-spec.md`).
+
+---
+
 ### 🪶 Auteur
 
 Jean-Louis Guénégo — JLG Consulting
