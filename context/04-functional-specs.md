@@ -22,10 +22,10 @@ L'outil est un script TypeScript exécuté via bun, qui transforme des fichiers 
 
 ### 3. Gestion des Illustrations
 
-- **Description :** Intégrer images depuis `illustrations/` (nommage cc-nn.ext) ou placeholders. Les illustrations ne sont pas générées par l'outil ; elles sont préparées en amont via méthodes externes (ex. : script PSE pour téléchargement Google Images ou génération IA manuelle). L'outil recherche le fichier image correspondant à chaque slide (basé sur chapter.number-slide.id) et l'embarque si disponible, sinon utilise un placeholder.
+- **Description :** Intégrer images depuis `illustrations/` (nommage `<CC>-<NN>-<motcleslide>.<ext>`) ou placeholders. Les illustrations ne sont pas générées par l'outil ; elles sont préparées en amont via méthodes externes (ex. : script PSE pour téléchargement Google Images ou génération IA manuelle). L'outil recherche le fichier image correspondant à chaque slide (basé sur chapter.number-slide.id-motcleslide) et l'embarque si disponible, sinon utilise un placeholder.
 - **Méthodes de préparation externes :**
   - Méthode 1 : Génération IA (coûteuse, ~0,50 $/image, 1 min/image) – non intégrée à l'outil.
-  - Méthode 2 : Script PSE pour recherche Google Images et téléchargement automatique (limité à 100 images/jour), stocké dans `illustrations/cc-nn.<ext>` (ex. : `01-01.jpg`).
+  - Méthode 2 : Script PSE pour recherche Google Images et téléchargement automatique (limité à 100 images/jour), stocké dans `illustrations/<CC>-<NN>-<motcleslide>.<ext>` (ex. : `01-01-cover.jpg`).
 - **User Stories :** US1.2.
 - **Critères :** Images chargées si disponibles, sinon placeholder sans erreur ; pas de génération en temps réel dans l'outil.
 

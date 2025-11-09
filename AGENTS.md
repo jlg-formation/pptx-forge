@@ -243,7 +243,7 @@ L’agent doit :
   - `cover` : Layout titre principal (title slide).
   - `toc` : Layout titre et contenu (title and content), avec liste des items.
   - `content` / `conclusion` : Layout titre et contenu, avec bullets et key_message en sous-titre.
-- **Illustrations :** Utiliser des placeholders ou intégrer des images depuis un dossier `assets/` basé sur les prompts (pas de génération en temps réel).
+- **Illustrations :** Utiliser des placeholders ou intégrer des images depuis un dossier `illustrations/` basé sur les prompts (pas de génération en temps réel).
 - **Speaker Notes :** Ajouter le texte dans la section notes de chaque slide.
 - **Paramètres optionnels :**
   ```
