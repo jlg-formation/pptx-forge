@@ -1,6 +1,6 @@
 # 🤖 AGENTS.md — Convention **fichiers par slide** (v3.1)
 
-## Commandes : `xxxSlidemap` & `xxxSlides` (mode YAML)
+## Commandes : `xxxSlidemap` & `xxxSlides` & `xxxPptx` (mode YAML)
 
 ---
 
@@ -211,6 +211,62 @@ xxxSlides chapitre="<nom|numéro>" start=<NN> count=<K>
 ✅ YAML 03–08 générés pour « Introduction à la sécurité mobile » (files 01-03..01-08)
 ↪ Prochaine entrée en attente : 09
 ```
+
+---
+
+## Commande : `xxxPptx`
+
+### 🎯 Objectif
+
+Générer un fichier Microsoft PowerPoint (.pptx) à partir du répertoire `slides/` contenant les fichiers YAML des slides, en produisant une présentation professionnelle et prête à l'emploi.
+
+### ⚙️ Fonctionnement
+
+Quand tu exécutes :
+
+```
+xxxPptx
+```
+
+L’agent doit :
+
+1. Scanner le répertoire `slides/` et lire tous les fichiers YAML (un par slide).
+2. Trier les slides par numéro de chapitre (chapter.number) puis par ordre de slide (slide.meta.order).
+3. Pour chaque slide, appliquer le layout PPTX approprié selon le type (cover, toc, content, conclusion).
+4. Intégrer le contenu : titre, bullets (pour content/conclusion), key_message, speaker_notes (dans les notes du slide), et illustrations (placeholders ou images liées).
+5. Générer et sauvegarder le fichier PPTX à la racine du repo (par défaut : `presentation.pptx`).
+
+### 📄 Détails techniques
+
+- **Bibliothèque recommandée :** `pptxgenjs` avec `bun` pour la manipulation PPTX.
+- **Layouts par type :**
+  - `cover` : Layout titre principal (title slide).
+  - `toc` : Layout titre et contenu (title and content), avec liste des items.
+  - `content` / `conclusion` : Layout titre et contenu, avec bullets et key_message en sous-titre.
+- **Illustrations :** Utiliser des placeholders ou intégrer des images depuis un dossier `assets/` basé sur les prompts (pas de génération en temps réel).
+- **Speaker Notes :** Ajouter le texte dans la section notes de chaque slide.
+- **Paramètres optionnels :**
+  ```
+  xxxPptx output="<nom-fichier>.pptx" theme="<theme-pptx>"
+  ```
+  - `output` : Nom du fichier de sortie (défaut = `presentation.pptx`).
+  - `theme` : Appliquer un thème PPTX personnalisé (défaut = thème standard).
+
+### 🧠 Règles générales
+
+- Assurer la compatibilité avec la structure YAML de `AGENTS.md`.
+- Gestion d'erreurs : Signaler les fichiers YAML manquants ou invalides.
+- Performance : Optimiser pour des présentations avec plusieurs chapitres (e.g., 5-10 chapitres x 18 slides).
+- Sortie : Journal console avec statut (e.g., "✅ PPTX généré : presentation.pptx").
+
+### 🧾 Sortie attendue
+
+- Fichier PPTX généré à la racine.
+- Message de confirmation :
+  ```
+  ✅ PPTX généré avec succès : presentation.pptx (X slides)
+  ```
+- En cas d'erreur : Liste des problèmes (e.g., "⚠️ Slide 01-03 manquant").
 
 ---
 
