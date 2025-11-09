@@ -271,6 +271,12 @@ L’agent doit :
 
 ---
 
+## Conventions de Commit Git
+
+Tous les commits Git doivent suivre le format **Conventional Commits**.
+
+---
+
 ### 🪶 Auteur
 
 Jean-Louis Guénégo — JLG Consulting
