@@ -58,6 +58,7 @@ interface SlideData {
   - `cover` : Slide avec titre uniquement.
   - `toc` : Slide avec titre et liste d'items.
   - `content`/`conclusion` : Slide avec titre, bullets, key_message.
+- Pour tous les types de slide, ajouter les `speaker_notes` du YAML dans les notes du slide via `slide.addNotes(speaker_notes)`.
 
 ## Layouts par type :
 
