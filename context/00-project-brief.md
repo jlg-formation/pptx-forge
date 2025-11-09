@@ -44,12 +44,6 @@ Développer un outil en ligne de commande qui génère automatiquement une prés
 - Interface en ligne de commande : ex. : `bun run pptx-generator.ts --output presentation.pptx`.
 - Gestion d'erreurs pour les fichiers manquants ou YAML invalides.
 
-### Prochaines étapes
-
-- Affiner les spécifications détaillées dans les documents suivants (ex. : `01-technical-specs.md`, `02-ui-specs.md`).
-- Prototypage d'une génération PPTX d'exemple pour un chapitre.
-- Discuter de l'intégration avec le workflow `xxxSlides` existant.
-
 ---
 
 _Ce cahier des charges constitue la base des spécifications détaillées. Retours et itérations bienvenus._
