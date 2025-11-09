@@ -35,7 +35,7 @@ L'outil est un script TypeScript exécuté via bun, qui transforme des fichiers 
   - Script 1 : Génération d'images par IA (utilise prompts des YAML pour créer images vectorielles, stockées dans `illustrations/`).
   - Script 2 : Recherche Google Images et téléchargement (PSE script, limité à 100 images/jour, utilise prompts pour rechercher et télécharger images).
 - **User Stories :** US1.2 (pour Marie), US2.5 (pour Antoine).
-- **Critères :** Scripts en ligne de commande, compatibles avec bun/TypeScript, gèrent erreurs (ex. : limites API), stockent images sous `cc-nn.<ext>`.
+- **Critères :** Scripts en ligne de commande, compatibles avec bun/TypeScript, gèrent erreurs (ex. : limites API), stockent images sous `<CC>-<NN>-<motcleslide>.<ext>`.
 
 ### 5. Gestion d'Erreurs
 
@@ -77,7 +77,7 @@ L'outil est un script TypeScript exécuté via bun, qui transforme des fichiers 
 
 - **Interface Utilisateur :** Ligne de commande (CLI) avec arguments optionnels.
 - **Entrées :** Répertoire `slides/`, paramètres CLI.
-- **Sorties :** Fichier PPTX, logs console.
+- **Sorties :** Fichier PPTX dans `dist/`, logs console.
 
 ## Modèle de Données
 

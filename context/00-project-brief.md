@@ -14,7 +14,7 @@ Développer un outil en ligne de commande qui génère automatiquement une prés
 ### Périmètre
 
 - **Entrée :** Le répertoire `slides/` avec des sous-répertoires par chapitre (ex. : `slides/01-introduction/`), chacun contenant des fichiers YAML (ex. : `01-01-cover.yaml`).
-- **Sortie :** Un fichier `.pptx` unique (ex. : `presentation.pptx`) à la racine du projet, avec les slides ordonnés par chapitre et ID de slide.
+- **Sortie :** Un fichier `.pptx` unique (ex. : `dist/presentation.pptx`) dans le répertoire `dist/`, avec les slides ordonnés par chapitre et ID de slide.
 - **Fonctionnalités clés :**
   - Analyser les fichiers YAML pour extraire les données de slide (titre, type, puces, message clé, prompt d'illustration, notes orales).
   - Générer des slides PPTX avec des layouts appropriés (ex. : slide titre pour la couverture, liste à puces pour le contenu, table des matières pour TOC).

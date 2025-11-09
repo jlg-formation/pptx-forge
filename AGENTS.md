@@ -234,7 +234,7 @@ L’agent doit :
 2. Trier les slides par numéro de chapitre (chapter.number) puis par ordre de slide (slide.meta.order).
 3. Pour chaque slide, appliquer le layout PPTX approprié selon le type (cover, toc, content, conclusion).
 4. Intégrer le contenu : titre, bullets (pour content/conclusion), key_message, speaker_notes (dans les notes du slide), et illustrations (placeholders ou images liées).
-5. Générer et sauvegarder le fichier PPTX à la racine du repo (par défaut : `presentation.pptx`).
+5. Générer et sauvegarder le fichier PPTX dans le répertoire `dist/` (par défaut : `dist/presentation.pptx`).
 
 ### 📄 Détails techniques
 
@@ -249,7 +249,7 @@ L’agent doit :
   ```
   xxxPptx output="<nom-fichier>.pptx" theme="<theme-pptx>"
   ```
-  - `output` : Nom du fichier de sortie (défaut = `presentation.pptx`).
+  - `output` : Nom du fichier de sortie (défaut = `dist/presentation.pptx`).
   - `theme` : Appliquer un thème PPTX personnalisé (défaut = thème standard).
 
 ### 🧠 Règles générales
@@ -261,10 +261,10 @@ L’agent doit :
 
 ### 🧾 Sortie attendue
 
-- Fichier PPTX généré à la racine.
+- Fichier PPTX généré dans `dist/`.
 - Message de confirmation :
   ```
-  ✅ PPTX généré avec succès : presentation.pptx (X slides)
+  ✅ PPTX généré avec succès : dist/presentation.pptx (X slides)
   ```
 - En cas d'erreur : Liste des problèmes (e.g., "⚠️ Slide 01-03 manquant").
 
