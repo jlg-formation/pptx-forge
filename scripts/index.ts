@@ -19,4 +19,7 @@ async function main(): Promise<void> {
   await generatePptx(slides, options, illustrationsDir);
 }
 
-main().catch(() => process.exit(1));
+main().catch((error) => {
+  console.error("Unhandled error:", error);
+  process.exit(1);
+});

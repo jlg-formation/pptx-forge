@@ -14,8 +14,11 @@ export function buildSlide(
   );
   slide.addText(slideData.slide.title, { x: 0.5, y: 0.5, w: 9, h: 1 });
 
-  if (slideData.slide.content.bullets) {
-    slide.addText(slideData.slide.content.bullets.slice(0, 5), {
+  if (
+    slideData.slide.content.bullets &&
+    slideData.slide.content.bullets.length > 0
+  ) {
+    slide.addText([...slideData.slide.content.bullets.slice(0, 5)], {
       x: 0.5,
       y: 1.5,
       w: 9,
@@ -30,8 +33,11 @@ export function buildSlide(
       h: 1,
     });
   }
-  if (slideData.slide.content.items) {
-    slide.addText(slideData.slide.content.items, {
+  if (
+    slideData.slide.content.items &&
+    slideData.slide.content.items.length > 0
+  ) {
+    slide.addText([...slideData.slide.content.items], {
       x: 0.5,
       y: 1.5,
       w: 9,
