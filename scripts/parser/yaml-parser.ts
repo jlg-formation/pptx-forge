@@ -1,5 +1,6 @@
-import * as path from "path";
-import * as fs from "fs";
+import path from "path";
+import fs from "fs";
+
 // Scan un dossier et parse tous les fichiers YAML
 export function parseYamlFiles(dir: string): SlideData[] {
   const files = fs.readdirSync(dir, { withFileTypes: true });

@@ -1,7 +1,7 @@
 import { SlideData } from "../parser/yaml-parser";
 import { sortSlides } from "../utils/sort";
-import * as path from "path";
-import * as fs from "fs";
+import path from "path";
+import fs from "fs";
 import PptxGenJS from "pptxgenjs";
 import { getSlidemaster } from "./layout-manager";
 
