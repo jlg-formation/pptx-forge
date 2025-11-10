@@ -10,6 +10,7 @@ export function generatePptx(
   options: { output: string; theme?: string }
 ): void {
   const pptx = new PptxGenJS();
+  pptx.layout = "LAYOUT_4x3";
   const theme = options.theme || "standard";
 
   // Définir les slidemasters pour le thème
