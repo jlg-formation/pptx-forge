@@ -4,6 +4,8 @@ import path from "path";
 import fs from "fs";
 import PptxGenJS from "pptxgenjs";
 import { getSlidemaster } from "./layout-manager";
+import { standardSlidemasters } from "./slidemasters/standard";
+import { darkSlidemasters } from "./slidemasters/dark";
 
 export function generatePptx(
   slides: SlideData[],
@@ -15,9 +17,7 @@ export function generatePptx(
 
   // Définir les slidemasters pour le thème
   const themeSlidemasters =
-    theme === "dark"
-      ? require("./slidemasters/dark").darkSlidemasters
-      : require("./slidemasters/standard").standardSlidemasters;
+    theme === "dark" ? darkSlidemasters : standardSlidemasters;
 
   for (const [type, def] of Object.entries(themeSlidemasters) as [
     string,
@@ -26,6 +26,7 @@ export function generatePptx(
     pptx.defineSlideMaster({
       title: def.layout,
       background: { color: def.background.color },
+      objects: def.objects,
     });
   }
 
@@ -36,39 +37,36 @@ export function generatePptx(
     const slidemaster = getSlidemaster(slideData.slide.type, theme);
     const slide = pptx.addSlide({ masterName: slidemaster.layout });
 
-    // Ajouter le titre
-    slide.addText(slideData.slide.title, {
-      x: 1,
-      y: 0.5,
-      w: 8,
-      h: 1,
-      ...slidemaster.title,
-    });
-
     // Selon le type
     if (slideData.slide.type === "cover") {
-      // Pour cover, titre centré, plus grand
+      // Titre centré avec placeholder
       slide.addText(slideData.slide.title, {
-        x: 1,
-        y: 2,
-        w: 8,
-        h: 2,
-        align: "center",
+        placeholder: "title",
         ...slidemaster.title,
         fontSize: 44,
       });
     } else if (slideData.slide.type === "toc") {
-      // Titre déjà ajouté, ajouter items
+      // Titre
+      slide.addText(slideData.slide.title, {
+        placeholder: "title",
+        ...slidemaster.title,
+      });
+      // Items
       if (slideData.slide.content.items) {
         slide.addText(
           slideData.slide.content.items.map((item) => `• ${item}`).join("\n"),
-          { x: 1, y: 2, w: 8, h: 4, ...slidemaster.items }
+          { placeholder: "body", ...slidemaster.items }
         );
       }
     } else if (
       slideData.slide.type === "content" ||
       slideData.slide.type === "conclusion"
     ) {
+      // Titre
+      slide.addText(slideData.slide.title, {
+        placeholder: "title",
+        ...slidemaster.title,
+      });
       // Bullets
       if (
         slideData.slide.content.bullets &&
@@ -76,16 +74,13 @@ export function generatePptx(
       ) {
         slide.addText(
           slideData.slide.content.bullets.map((b) => `• ${b}`).join("\n"),
-          { x: 1, y: 2, w: 6, h: 3, ...slidemaster.bullets }
+          { placeholder: "body", ...slidemaster.bullets }
         );
       }
       // Key message
       if (slideData.slide.content.key_message) {
         slide.addText(slideData.slide.content.key_message, {
-          x: 1,
-          y: 5,
-          w: 8,
-          h: 1,
+          placeholder: "keyMessage",
           ...slidemaster.keyMessage,
         });
       }

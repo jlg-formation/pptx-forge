@@ -1,29 +1,19 @@
-import { SlideMasterDefinition } from "../layout-manager";
+import { SlideMasterDefinition, createSlidemasters } from "../layout-manager";
 
-export const darkSlidemasters: Record<string, SlideMasterDefinition> = {
-  cover: {
-    background: { color: "#222831" },
-    title: { fontSize: 36, color: "#EEEEEE", bold: true, fontFace: "Arial" },
-    layout: "cover-dark",
-  },
-  toc: {
-    background: { color: "#393E46" },
-    title: { fontSize: 28, color: "#EEEEEE", bold: true },
-    items: { fontSize: 18, color: "#FFD369" },
-    layout: "toc-dark",
-  },
-  content: {
-    background: { color: "#222831" },
-    title: { fontSize: 24, color: "#FFD369", bold: true },
-    bullets: { fontSize: 18, color: "#EEEEEE" },
-    keyMessage: { fontSize: 20, color: "#FFD369", italic: true },
-    layout: "content-dark",
-  },
-  conclusion: {
-    background: { color: "#393E46" },
-    title: { fontSize: 24, color: "#FFD369", bold: true },
-    bullets: { fontSize: 18, color: "#EEEEEE" },
-    keyMessage: { fontSize: 20, color: "#FFD369", italic: true },
-    layout: "conclusion-dark",
-  },
+const darkColors = {
+  backgroundCover: "#222831",
+  backgroundToc: "#393E46",
+  backgroundContent: "#222831",
+  backgroundConclusion: "#393E46",
+  titleCover: "#EEEEEE",
+  titleToc: "#EEEEEE",
+  titleContent: "#FFD369",
+  titleConclusion: "#FFD369",
+  itemsToc: "#FFD369",
+  bulletsContent: "#EEEEEE",
+  bulletsConclusion: "#EEEEEE",
+  keyMessageContent: "#FFD369",
+  keyMessageConclusion: "#FFD369",
 };
+
+export const darkSlidemasters = createSlidemasters(darkColors, "dark");
