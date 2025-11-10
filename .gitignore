@@ -2,5 +2,6 @@ node_modules
 illustrations
 dist
 slides
+00-plan-formation.md
 01-slidemap.md
 .env
