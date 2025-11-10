@@ -98,7 +98,7 @@ Le choix du slidemaster (template graphique) pour chaque slide doit dépendre à
 - En mode `--illustrations-only`, le script principal ne propose ces choix (IA, PSE, placeholder) que pour les slides dont l'illustration est absente (non présente dans le dossier `illustrations/`). Les illustrations déjà présentes ne sont pas remplacées ni modifiées.
   Pour chaque slide sans illustration, l'utilisateur choisit :
   1. Générer l'illustration par IA (appel du module IA, stockage dans `illustrations/`)
-  2. Télécharger une illustration via PSE (appel du module PSE, stockage dans `illustrations/`)
+  2. Télécharger une illustration via PSE (appel du module PSE, stockage dans `illustrations/` ; utilise le titre du slide `slide.title` comme terme de recherche au lieu du `illustration_prompt`)
   3. Utiliser le placeholder (aucune image générée, le placeholder est utilisé)
      Le choix est fait via prompt CLI (ex : readline ou enquirer). Aucun PPTX n'est généré dans ce mode.
 - Logging : Console avec niveaux (info, warn, error).
