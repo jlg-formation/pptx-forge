@@ -112,6 +112,21 @@ export function createSlidemasters(
             text: "",
           },
         },
+        // Ajout du placeholder image selon la doc PptxGenJS
+        {
+          placeholder: {
+            options: {
+              name: "contentImage",
+              type: "pic",
+              x: 7,
+              y: 2,
+              w: 2,
+              h: 3,
+              sizing: { type: "contain" },
+            },
+            image: "", // à remplir lors de la génération
+          },
+        },
       ],
     },
     conclusion: {

@@ -91,14 +91,28 @@ export function generatePptx(
       slide.addNotes(slideData.slide.content.speaker_notes);
     }
 
-    // Ajouter l'illustration si elle existe
-    const imagePath = path.resolve(
-      "illustrations",
-      slideData.chapter.key,
-      `${slideData.slide.id}.png`
-    );
-    if (fs.existsSync(imagePath)) {
-      slide.addImage({ path: imagePath, x: 7, y: 2, w: 2, h: 2 });
+    // Ajouter l'illustration si elle existe (peu importe l'extension)
+    const imageExtensions = [".png", ".jpg", ".jpeg", ".webp", ".gif"];
+    let foundImagePath: string | null = null;
+    for (const ext of imageExtensions) {
+      const candidatePath = path.resolve(
+        "illustrations",
+        slideData.chapter.key,
+        `${slideData.slide.id}${ext}`
+      );
+      if (fs.existsSync(candidatePath)) {
+        foundImagePath = candidatePath;
+        break;
+      }
+    }
+    // Vérifier que le slidemaster possède un placeholder 'contentImage' avant d'ajouter l'image
+    const hasContentImagePlaceholder =
+      Array.isArray(slidemaster.objects) &&
+      slidemaster.objects.some(
+        (obj) => obj.placeholder?.options?.name === "contentImage"
+      );
+    if (foundImagePath && hasContentImagePlaceholder) {
+      slide.addImage({ path: foundImagePath, placeholder: "contentImage" });
     }
   }
 
