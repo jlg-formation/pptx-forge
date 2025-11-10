@@ -32,13 +32,12 @@ L'outil est un script TypeScript exécuté via bun, structuré en modules pour l
 
 - **Langage :** TypeScript (ES2022+). Tous les scripts sont écrits en TypeScript.
 - **Runtime :** Bun (pour exécution rapide et gestion des dépendances, incluant fetch natif pour téléchargements HTTP).
-- **Bibliothèques Clés :**
-  - `pptxgenjs` : Génération PPTX (layouts, contenu, export).
-  - `js-yaml` : Parsing des fichiers YAML.
+  - `pptxgenjs@4.0.1` : Génération PPTX (layouts, contenu, export).
+  - `js-yaml@4.1.0` : Parsing des fichiers YAML.
   - `fs` (Node.js) : Accès aux fichiers système.
   - `path` (Node.js) : Gestion des chemins de fichiers.
   - `crypto` (Node.js) : Hash SHA1 pour sélection de template.
-- **Dépendances Optionnelles :** Pour scripts illustrations (utiliser fetch de bun pour téléchargements HTTP, sans bibliothèques externes comme axios).
+  - `openai@6.8.1` : Communication avec l'API OpenAI, notamment pour générer une image à partir d'un prompt (utilisé pour les illustrations générées automatiquement).
 - **Environnement :** Compatible avec Node.js 22+ et bun 1.3.2+.
 
 ## Modèles de Données
