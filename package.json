@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "pptx": "bun run scripts/index.ts",
-    "check": "tsc --noEmit"
+    "check": "tsc --noEmit",
+    "hello-pptx": "bun run scripts/helloworld/pptxgenjs.ts"
   },
   "dependencies": {
     "js-yaml": "^4.1.0",

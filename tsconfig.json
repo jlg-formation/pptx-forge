@@ -5,9 +5,8 @@
     "exactOptionalPropertyTypes": true,
     "noFallthroughCasesInSwitch": true,
     "target": "ESNext",
-    "moduleResolution": "nodenext",
-    "module": "nodenext",
-    "skipLibCheck": true,
-    "noEmit": true
+    "moduleResolution": "node",
+    "module": "es2022",
+    "skipLibCheck": true
   }
 }
