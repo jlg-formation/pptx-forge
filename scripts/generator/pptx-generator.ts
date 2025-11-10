@@ -6,6 +6,7 @@ import PptxGenJS from "pptxgenjs";
 import { getSlidemaster } from "./layout-manager";
 import { standardSlidemasters } from "./slidemasters/standard";
 import { darkSlidemasters } from "./slidemasters/dark";
+import { getImageSize } from "../utils/getImageSize";
 
 export function generatePptx(
   slides: SlideData[],
@@ -44,6 +45,18 @@ export function generatePptx(
         placeholder: "title",
         ...slidemaster.title,
         fontSize: 44,
+      });
+      // Sous-titre auteur + année dynamique
+      const currentYear = new Date().getFullYear();
+      slide.addText(`Jean-Louis GUENEGO @${currentYear}`, {
+        placeholder: "subtitle",
+        fontSize: 18,
+        color: "#666666",
+        align: "center",
+        x: 0.5,
+        y: 6.2,
+        w: 9,
+        h: 0.6,
       });
     } else if (slideData.slide.type === "toc") {
       // Titre
@@ -91,28 +104,69 @@ export function generatePptx(
       slide.addNotes(slideData.slide.content.speaker_notes);
     }
 
-    // Ajouter l'illustration si elle existe (peu importe l'extension)
-    const imageExtensions = [".png", ".jpg", ".jpeg", ".webp", ".gif"];
-    let foundImagePath: string | null = null;
-    for (const ext of imageExtensions) {
-      const candidatePath = path.resolve(
-        "illustrations",
-        slideData.chapter.key,
-        `${slideData.slide.id}${ext}`
-      );
-      if (fs.existsSync(candidatePath)) {
-        foundImagePath = candidatePath;
-        break;
+    // Ajouter l'illustration si elle existe (peu importe l'extension) et si le template n'est pas 'toc'
+    if (slideData.slide.type !== "toc") {
+      const imageExtensions = [".png", ".jpg", ".jpeg", ".webp", ".gif"];
+      let foundImagePath: string | null = null;
+      for (const ext of imageExtensions) {
+        const candidatePath = path.resolve(
+          "illustrations",
+          slideData.chapter.key,
+          `${slideData.slide.id}${ext}`
+        );
+        if (fs.existsSync(candidatePath)) {
+          foundImagePath = candidatePath;
+          break;
+        }
       }
-    }
-    // Vérifier que le slidemaster possède un placeholder 'contentImage' avant d'ajouter l'image
-    const hasContentImagePlaceholder =
-      Array.isArray(slidemaster.objects) &&
-      slidemaster.objects.some(
-        (obj) => obj.placeholder?.options?.name === "contentImage"
-      );
-    if (foundImagePath && hasContentImagePlaceholder) {
-      slide.addImage({ path: foundImagePath, placeholder: "contentImage" });
+      // Ajouter l'image en calculant les coordonnées et dimensions selon le ratio
+      if (foundImagePath) {
+        const { width, height } = getImageSize(foundImagePath);
+        if (width > 0 && height > 0) {
+          // Définir la zone image selon le type de slide
+          let imgZone;
+          if (slideData.slide.type === "cover") {
+            // Image centrée sur le slide, zone réduite pour laisser le titre visible
+            imgZone = { x: 2.5, y: 3, w: 5, h: 2.5 };
+          } else {
+            // Valeur par défaut ou du slidemaster
+            imgZone = { x: 7, y: 2, w: 2, h: 3 };
+            if (Array.isArray(slidemaster.objects)) {
+              const imgObj = slidemaster.objects.find(
+                (obj) => obj.placeholder?.options?.name === "contentImage"
+              );
+              if (imgObj) {
+                const opts = imgObj.placeholder.options;
+                imgZone = { x: opts.x, y: opts.y, w: opts.w, h: opts.h };
+              }
+            }
+          }
+          // Calcul du ratio image et zone
+          const imgRatio = width / height;
+          const zoneRatio = imgZone.w / imgZone.h;
+          let finalW = imgZone.w;
+          let finalH = imgZone.h;
+          if (imgRatio > zoneRatio) {
+            // Image plus large, ajuster la hauteur
+            finalH = imgZone.w / imgRatio;
+          } else {
+            // Image plus haute, ajuster la largeur
+            finalW = imgZone.h * imgRatio;
+          }
+          // Centrer dans la zone
+          const finalX = imgZone.x + (imgZone.w - finalW) / 2;
+          const finalY = imgZone.y + (imgZone.h - finalH) / 2;
+          slide.addImage({
+            path: foundImagePath,
+            x: finalX,
+            y: finalY,
+            w: finalW,
+            h: finalH,
+          });
+        } else {
+          // Image non supportée ou corrompue, ignorer
+        }
+      }
     }
   }
 

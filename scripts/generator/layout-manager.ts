@@ -45,13 +45,29 @@ export function createSlidemasters(
             options: {
               name: "title",
               type: "title",
-              x: 1,
-              y: 2,
-              w: 8,
-              h: 2,
+              x: 0.5,
+              y: 1,
+              w: 9,
+              h: 5,
               align: "center",
             },
             text: "",
+          },
+        },
+        {
+          placeholder: {
+            options: {
+              name: "subtitle",
+              type: "subtitle",
+              x: 0.5,
+              y: 6.2,
+              w: 9,
+              h: 0.6,
+              align: "center",
+              fontSize: 18,
+              color: "#666666",
+            },
+            text: "Jean-Louis GUENEGO @2025",
           },
         },
       ],
@@ -64,13 +80,20 @@ export function createSlidemasters(
       objects: [
         {
           placeholder: {
-            options: { name: "title", type: "title", x: 1, y: 0.5, w: 8, h: 1 },
+            options: {
+              name: "title",
+              type: "title",
+              x: 0.5,
+              y: 0.5,
+              w: 9,
+              h: 1,
+            },
             text: "",
           },
         },
         {
           placeholder: {
-            options: { name: "body", type: "body", x: 1, y: 2, w: 8, h: 4 },
+            options: { name: "body", type: "body", x: 0.5, y: 2, w: 9, h: 4 },
             text: "",
           },
         },
@@ -89,13 +112,20 @@ export function createSlidemasters(
       objects: [
         {
           placeholder: {
-            options: { name: "title", type: "title", x: 1, y: 0.5, w: 8, h: 1 },
+            options: {
+              name: "title",
+              type: "title",
+              x: 0.5,
+              y: 0.5,
+              w: 9,
+              h: 1,
+            },
             text: "",
           },
         },
         {
           placeholder: {
-            options: { name: "body", type: "body", x: 1, y: 2, w: 6, h: 3 },
+            options: { name: "body", type: "body", x: 0.5, y: 2, w: 7, h: 3 },
             text: "",
           },
         },
@@ -104,27 +134,12 @@ export function createSlidemasters(
             options: {
               name: "keyMessage",
               type: "body",
-              x: 1,
+              x: 0.5,
               y: 5,
-              w: 8,
+              w: 9,
               h: 1,
             },
             text: "",
-          },
-        },
-        // Ajout du placeholder image selon la doc PptxGenJS
-        {
-          placeholder: {
-            options: {
-              name: "contentImage",
-              type: "pic",
-              x: 7,
-              y: 2,
-              w: 2,
-              h: 3,
-              sizing: { type: "contain" },
-            },
-            image: "", // à remplir lors de la génération
           },
         },
       ],
@@ -142,13 +157,20 @@ export function createSlidemasters(
       objects: [
         {
           placeholder: {
-            options: { name: "title", type: "title", x: 1, y: 0.5, w: 8, h: 1 },
+            options: {
+              name: "title",
+              type: "title",
+              x: 0.5,
+              y: 0.5,
+              w: 9,
+              h: 1,
+            },
             text: "",
           },
         },
         {
           placeholder: {
-            options: { name: "body", type: "body", x: 1, y: 2, w: 6, h: 3 },
+            options: { name: "body", type: "body", x: 0.5, y: 2, w: 7, h: 3 },
             text: "",
           },
         },
@@ -157,9 +179,9 @@ export function createSlidemasters(
             options: {
               name: "keyMessage",
               type: "body",
-              x: 1,
+              x: 0.5,
               y: 5,
-              w: 8,
+              w: 9,
               h: 1,
             },
             text: "",

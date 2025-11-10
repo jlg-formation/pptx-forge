@@ -6,6 +6,11 @@ import sizeOf from "image-size";
  * @returns { width, height }
  */
 export function getImageSize(path: string): { width: number; height: number } {
-  const dimensions = sizeOf(path);
-  return { width: dimensions.width ?? 0, height: dimensions.height ?? 0 };
+  try {
+    const dimensions = sizeOf(path);
+    return { width: dimensions.width ?? 0, height: dimensions.height ?? 0 };
+  } catch (err) {
+    // Erreur de lecture ou format non supporté
+    return { width: 0, height: 0 };
+  }
 }
