@@ -1,6 +1,12 @@
 import PptxGenJS from "pptxgenjs";
+import { getImageSize } from "../utils/getImageSize";
 
 let pptx = new PptxGenJS();
+const imgPath = "images/jlg-consulting.png";
+const { width: imgWidth, height: imgHeight } = getImageSize(imgPath);
+// Choix arbitraire d'une largeur en pouces, ici 1.67 comme avant
+const w = 1.67;
+const h = (imgHeight / imgWidth) * w;
 pptx.layout = "LAYOUT_WIDE";
 
 pptx.defineSlideMaster({
@@ -19,8 +25,9 @@ pptx.defineSlideMaster({
       image: {
         x: 11.3,
         y: 6.4,
-        w: 1.67,
-        path: "images/jlg-consulting.png",
+        w,
+        h,
+        path: imgPath,
       },
     },
   ],

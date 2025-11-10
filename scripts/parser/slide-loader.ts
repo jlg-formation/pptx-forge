@@ -1,9 +1,9 @@
 import { readdirSync, statSync } from "fs";
 import { join } from "path";
 import { parseYamlFile, SlideData } from "./yaml-parser.js";
-import { sortSlides } from "../utils/sort.js";
-import { validateYaml } from "../utils/validate.js";
-import { Logger, LogLevel } from "../cli/logger.js";
+import { sortSlides } from "../utils/sort";
+import { validateSlide } from "../utils/validate";
+import { logger } from "../cli/logger";
 
 export function loadSlides(dir: string): SlideData[] {
   const slides: SlideData[] = [];
@@ -15,10 +15,10 @@ export function loadSlides(dir: string): SlideData[] {
         scan(fullPath);
       } else if (item.endsWith(".yaml")) {
         const data = parseYamlFile(fullPath);
-        if (data && validateYaml(data)) {
+        if (data && validateSlide(data)) {
           slides.push(data);
         } else {
-          Logger.log(LogLevel.WARN, `Invalid YAML: ${fullPath}`);
+          logger.warn(`Invalid YAML: ${fullPath}`);
         }
       }
     }

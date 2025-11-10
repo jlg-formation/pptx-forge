@@ -18,7 +18,7 @@ export async function extractPromptFromAI(
   });
 
   const message = response.choices[0].message.content;
-  return message;
+  return message || "";
 }
 
 // a partir d'un prompt genere une image avec l'API openai et telecharge l'image dans le path specifie en parametre
@@ -40,7 +40,7 @@ export async function generateImageFromPrompt(
     .map((output) => output.result);
 
   if (imageData.length > 0) {
-    const imageBase64 = imageData[0];
+    const imageBase64 = imageData[0] as string;
     writeFileSync(outputPath, Buffer.from(imageBase64, "base64"));
   }
 }

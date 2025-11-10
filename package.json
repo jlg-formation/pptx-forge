@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "pptx": "bun run scripts/index.ts",
-    "check": "tsc --noEmit",
+    "check": "tsc --noEmit --pretty",
     "hello-pptx": "bun run scripts/helloworld/pptxgenjs.ts",
     "hello-slidemaster": "bun run scripts/helloworld/slidemaster.ts"
   },
