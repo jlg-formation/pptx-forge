@@ -1,5 +1,6 @@
 // extraire le prompt depuis une IA generative (openai)
 import { writeFileSync } from "fs";
+import { Buffer } from "buffer";
 import { OpenAI } from "openai";
 
 export async function extractPromptFromAI(

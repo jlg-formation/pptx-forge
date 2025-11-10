@@ -1,15 +1,16 @@
 import path from "path";
+import process from "process";
 import { parseArgs } from "./cli/args";
 import { logger } from "./cli/logger";
 import { generatePptx } from "./generator/pptx-generator";
-import { loadIllustration } from "./illustrations/image-loader";
+// import { loadIllustration } from "./illustrations/image-loader";
 import { parseYamlFiles } from "./parser/yaml-parser";
 
 // CLI arguments
-const args = parseArgs(process.argv.slice(2));
+const args = parseArgs();
 const slidesDir = path.resolve("slides");
 const outputFile = args.output || "dist/presentation.pptx";
-const theme = args.theme || "standard";
+// const theme = args.theme || "standard";
 
 logger.info(`Scan slides in: ${slidesDir}`);
 
@@ -25,7 +26,7 @@ try {
 
 // 2. Génération PPTX
 try {
-  generatePptx(slides, { output: outputFile, theme, loadIllustration });
+  generatePptx();
   logger.info(`PPTX généré: ${outputFile}`);
 } catch (err) {
   logger.error(`Erreur lors de la génération PPTX: ${err}`);
