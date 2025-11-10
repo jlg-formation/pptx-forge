@@ -21,5 +21,6 @@ export default [
       "@typescript-eslint/no-explicit-any": "warn",
       "@typescript-eslint/explicit-function-return-type": "off",
     },
+    env: { bun: true },
   },
 ];
