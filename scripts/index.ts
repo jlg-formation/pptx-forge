@@ -1,10 +1,9 @@
-import { parseYamlFiles } from "./parser/yaml-parser";
+import path from "path";
+import { parseArgs } from "./cli/args";
+import { logger } from "./cli/logger";
 import { generatePptx } from "./generator/pptx-generator";
 import { loadIllustration } from "./illustrations/image-loader";
-import { logger } from "./cli/logger";
-import { parseArgs } from "./cli/args";
-import path from "path";
-import fs from "fs";
+import { parseYamlFiles } from "./parser/yaml-parser";
 
 // CLI arguments
 const args = parseArgs(process.argv.slice(2));

@@ -5,6 +5,7 @@
   "scripts": {
     "pptx": "bun run scripts/index.ts",
     "check": "tsc --noEmit --pretty",
+    "lint": "eslint .",
     "hello-pptx": "bun run scripts/helloworld/pptxgenjs.ts",
     "hello-slidemaster": "bun run scripts/helloworld/slidemaster.ts"
   },
@@ -14,10 +15,12 @@
     "pptxgenjs": "^4.0.1"
   },
   "devDependencies": {
-    "@types/node": "^24.10.0",
-    "bun-types": "^1.3.2",
-    "typescript": "^5.9.3",
     "@types/js-yaml": "^4.0.5",
-    "@types/marked": "^4.0.7"
+    "@types/marked": "^4.0.7",
+    "@types/node": "^24.10.0",
+    "@typescript-eslint/eslint-plugin": "^8.46.3",
+    "bun-types": "^1.3.2",
+    "eslint": "^9.39.1",
+    "typescript": "^5.9.3"
   }
 }
