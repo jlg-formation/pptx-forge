@@ -50,7 +50,9 @@ L'outil est un script TypeScript exécuté via bun, qui transforme des fichiers 
 
 - **Description :** Paramètres CLI pour output, thème.
 - **User Stories :** US2.2.
-- **Critères :** Thèmes appliqués, fichiers nommés correctement.
+- **Critères :**
+  - Thèmes appliqués, fichiers nommés correctement.
+  - Le choix du slidemaster (template de slide) pour chaque slide dépend à la fois du type de layout (cover, toc, content, conclusion) et du thème sélectionné via l'option CLI `--theme`. Le générateur doit sélectionner dynamiquement le slidemaster approprié selon ces deux critères.
 
 ### 7. Performance
 

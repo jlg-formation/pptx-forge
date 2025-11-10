@@ -31,7 +31,7 @@ L'outil est un script TypeScript exécuté via bun, structuré en modules pour l
 ## Technologies et Dépendances
 
 - **Langage :** TypeScript (ES2022+). Tous les scripts sont écrits en TypeScript.
-- **Runtime :** Bun (pour exécution rapide et gestion des dépendances, incluant fetch natif pour téléchargements HTTP).
+- **Runtime :** Bun (pour exécutionl rapide et gestion des dépendances, incluant fetch natif pour téléchargements HTTP).
   - `pptxgenjs@4.0.1` : Génération PPTX (layouts, contenu, export).
   - `js-yaml@4.1.0` : Parsing des fichiers YAML.
   - `fs` (Node.js) : Accès aux fichiers système.
@@ -82,6 +82,9 @@ interface SlideData {
 - `toc` : Slide avec titre et liste d'items. slide (pour cohérence et variété).
 - `content` : Slide avec titre, bullets, key_message ; 3 variantes (rotation basée sur slide.order % 3).
 - `conclusion` : Slide avec titre, bullets, key_message.
+
+**Sélection du slidemaster :**
+Le choix du slidemaster (template graphique) pour chaque slide doit dépendre à la fois du type de layout (cover, toc, content, conclusion) et du thème sélectionné via l'option CLI `--theme`. Le module de génération doit permettre un mapping dynamique `{layout, theme} → slidemaster` pour garantir la cohérence visuelle et la personnalisation des présentations.
 
 ## Interfaces et APIs
 
