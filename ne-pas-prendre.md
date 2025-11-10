@@ -1,4 +1,4 @@
-# 🤖 AGENTS.md — Convention **fichiers par slide** (v3.1)
+# 🤖 AGENTS.md — Convention **fichiers par slide** (v3.2)
 
 ## Commandes : `xxxSlidemap` & `xxxSlides` & `xxxPptx` (mode YAML)
 
@@ -11,6 +11,15 @@
 Générer/mettre à jour un fichier `01-slidemap.md` à partir du plan de formation `00-plan-formation.md` **pour piloter la production YAML**.
 Ce fichier répertorie tous les chapitres et toutes les _slides logiques_ (01–18), avec leur numéro, titre, **référence YAML cible (1 fichier par slide)** et **statut**.
 Il permet ensuite à la commande `xxxSlides` de savoir **où elle s’est arrêtée** et de **reprendre automatiquement**.
+
+Avant le premier chapitre, un **slide de page de garde de la formation** est ajouté automatiquement.
+Il contient :
+
+- le **titre complet de la formation** (issu du `00-plan-formation.md`),
+- le **nom de l’auteur** (par défaut : _Jean-Louis Guénégo_),
+- et **l’année de production du contenu** (par défaut : année en cours).
+
+Ce slide est enregistré dans `slides/00-cover.yaml` et ajouté en tête du fichier `01-slidemap.md`.
 
 ### ⚙️ Fonctionnement
 
@@ -25,7 +34,8 @@ L’agent doit :
 1. Lire `00-plan-formation.md`.
 2. Lister les chapitres du plan.
 3. Pour chaque chapitre, produire 18 entrées (01 à 18) avec : _type_, _titre de slide_, **référence YAML (chemin de fichier)** et _statut initial_ `⏳` (sauf si le fichier YAML existe déjà → `✅`).
-4. Écrire/mettre à jour `01-slidemap.md` à la racine du repo.
+4. Ajouter une entrée spéciale en tête du fichier pour la **page de garde de la formation**.
+5. Écrire/mettre à jour `01-slidemap.md` à la racine du repo.
 
 ### 📁 Références YAML et nouvelle convention de nommage (fichier **par slide**)
 
@@ -60,6 +70,14 @@ Chaque slide logique correspond à **un fichier YAML** dans `slides/<CC>-<chapit
 
 ---
 
+## Page de garde de la formation
+
+| Ordre | Type          | Référence YAML       | Titre du slide                  | Statut |
+| ----: | ------------- | -------------------- | ------------------------------- | :----: |
+|     0 | Page de garde | slides/00-cover.yaml | <Titre complet de la formation> |   ✅   |
+
+---
+
 ## Chapitre 1 — Introduction à la sécurité mobile
 
 | Ordre | Type               | Référence YAML                               | Titre du slide                    | Statut |
@@ -85,6 +103,7 @@ Chaque slide logique correspond à **un fichier YAML** dans `slides/<CC>-<chapit
 ### Règles
 
 - 18 _slides logiques_ par chapitre : `01` (page de garde) · `02` (table des matières) · `03–17` (contenu) · `18` (conclusion).
+- 1 slide **global** avant tout le reste : la **page de garde de la formation**, stockée dans `slides/00-cover.yaml`.
 - Dossiers/fichiers : `slides/<CC>-<chapitre-simplifie>/<CC>-<NN>-<motcleslide>.yaml`, minuscules, accents supprimés, **un seul mot** pour `<chapitre-simplifie>` et `<motcleslide>`.
 - Chemins **relatifs** au repo.
 - `xxxSlides` **lit** ce fichier pour savoir quelles entrées passer de `⏳` à `✅`.
@@ -286,4 +305,4 @@ Lors de l'implémentation du code, il est obligatoire de lire les spécification
 ### 🪶 Auteur
 
 Jean-Louis Guénégo — JLG Consulting
-(version 3.1, novembre 2025)
+(version 3.2, novembre 2025)
