@@ -13,7 +13,7 @@ import { processIllustrationsOnly } from "./illustrations/illustrations-only";
 const args = parseArgs(process.argv.slice(2));
 const slidesDir = path.resolve("slides");
 const outputFile = args.output || "dist/presentation.pptx";
-// const theme = args.theme || "standard";
+const theme = args.theme || "standard";
 
 logger.info(`Scan slides in: ${slidesDir}`);
 
@@ -29,14 +29,25 @@ try {
 
 // Mode illustrations-only
 if (args.illustrationsOnly) {
-  logger.info("Mode illustrations-only activé");
-  processIllustrationsOnly(slides).then(() => {
+  logger.info(
+    `Mode illustrations-only activé${
+      args.illustrationsOnly !== "interactive"
+        ? ` (${args.illustrationsOnly})`
+        : ""
+    }`
+  );
+  processIllustrationsOnly(
+    slides,
+    args.illustrationsOnly === "interactive"
+      ? undefined
+      : args.illustrationsOnly
+  ).then(() => {
     process.exit(0);
   });
 } else {
   // 2. Génération PPTX (mode normal)
   try {
-    generatePptx();
+    generatePptx(slides, { output: outputFile, theme });
     logger.info(`PPTX généré: ${outputFile}`);
   } catch (err) {
     logger.error(`Erreur lors de la génération PPTX: ${err}`);

@@ -5,6 +5,7 @@
   "scripts": {
     "pptx": "bun run scripts/index.ts",
     "illustrations-only": "bun run scripts/index.ts --illustrations-only",
+    "illustrations-only-pse": "bun run scripts/index.ts --illustrations-only=pse",
     "check": "tsc --noEmit --pretty",
     "lint": "eslint .",
     "hello-pptx": "bun run scripts/helloworld/pptxgenjs.ts",

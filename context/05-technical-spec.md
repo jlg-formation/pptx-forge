@@ -95,12 +95,14 @@ Le choix du slidemaster (template graphique) pour chaque slide doit dépendre à
   - `--output <file>` : Chemin de sortie (défaut : `dist/presentation.pptx`).
   - `--theme <theme>` : Thème PPTX (défaut : standard).
   - `--illustrations-only` : Mode interactif, génère uniquement les illustrations pour chaque slide YAML.
-- En mode `--illustrations-only`, le script principal ne propose ces choix (IA, PSE, placeholder) que pour les slides dont l'illustration est absente (non présente dans le dossier `illustrations/`). Les illustrations déjà présentes ne sont pas remplacées ni modifiées.
+  - `--illustrations-only=<method>` : Mode non interactif, utilise la méthode spécifiée pour toutes les illustrations manquantes (ex: `--illustrations-only=pse` pour utiliser PSE automatiquement).
+- En mode `--illustrations-only` (interactif), le script principal ne propose ces choix (IA, PSE, placeholder) que pour les slides dont l'illustration est absente (non présente dans le dossier `illustrations/`). Les illustrations déjà présentes ne sont pas remplacées ni modifiées.
   Pour chaque slide sans illustration, l'utilisateur choisit :
   1. Générer l'illustration par IA (appel du module IA, stockage dans `illustrations/`)
   2. Télécharger une illustration via PSE (appel du module PSE, stockage dans `illustrations/` ; utilise le titre du slide `slide.title` comme terme de recherche au lieu du `illustration_prompt`)
   3. Utiliser le placeholder (aucune image générée, le placeholder est utilisé)
      Le choix est fait via prompt CLI (ex : readline ou enquirer). Aucun PPTX n'est généré dans ce mode.
+- En mode `--illustrations-only=<method>` (non interactif), la méthode spécifiée est appliquée automatiquement à toutes les illustrations manquantes sans interaction utilisateur. Par exemple, `--illustrations-only=pse` télécharge automatiquement via PSE pour toutes les images manquantes.
 - Logging : Console avec niveaux (info, warn, error).
 
 ### APIs Internes
@@ -109,6 +111,7 @@ Le choix du slidemaster (template graphique) pour chaque slide doit dépendre à
 - `generatePptx(slides: SlideData[], options: Options): void` : Génère et sauvegarde PPTX.
 - `loadIllustration(path: string): Buffer | null` : Charge image ou retourne null.
 - `downloadImage(url: string): Promise<Buffer>` : Télécharge image via fetch de bun (pour scripts illustrations).
+- `processIllustrationsOnly(slides: SlideData[], defaultMethod?: string): Promise<void>` : Traite les illustrations en mode interactif (defaultMethod undefined) ou non interactif (defaultMethod spécifié, ex: "pse").
 
 ## Gestion d'Erreurs
 

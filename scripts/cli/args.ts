@@ -1,21 +1,22 @@
-/**
- * Parse les arguments CLI au format --key=value ou --key value
- * Reconnaît --output et --theme selon les specs techniques
- */
 export function parseArgs(argv: string[] = []): {
   output?: string;
   theme?: string;
-  illustrationsOnly?: boolean;
+  illustrationsOnly?: string;
 } {
-  const args: { output?: string; theme?: string; illustrationsOnly?: boolean } =
+  const args: { output?: string; theme?: string; illustrationsOnly?: string } =
     {};
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i];
     if (arg.startsWith("--")) {
       const key = arg.replace(/^--/, "");
-      // Option illustrations-only (flag sans valeur)
-      if (key === "illustrations-only") {
-        args.illustrationsOnly = true;
+      // Option illustrations-only (peut avoir une valeur)
+      if (key.startsWith("illustrations-only")) {
+        if (key.includes("=")) {
+          const [, value] = key.split("=");
+          args.illustrationsOnly = value || "interactive";
+        } else {
+          args.illustrationsOnly = "interactive";
+        }
         continue;
       }
       // Format --key=value
