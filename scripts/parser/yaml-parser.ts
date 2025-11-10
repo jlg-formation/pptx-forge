@@ -43,9 +43,9 @@ export interface SlideData {
 export function parseYamlFile(filePath: string): SlideData | null {
   try {
     const content = readFileSync(filePath, "utf-8");
-    const data = load(content) as any;
+    const data = load(content) as Record<string, unknown>;
     if (!data) return null;
-    return data as SlideData;
+    return data as unknown as SlideData;
   } catch {
     return null;
   }

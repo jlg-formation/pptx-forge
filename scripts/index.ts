@@ -14,7 +14,7 @@ const theme = args.theme || "standard";
 logger.info(`Scan slides in: ${slidesDir}`);
 
 // 1. Parse YAML files
-let slides: any[] = [];
+let slides: unknown[] = [];
 try {
   slides = parseYamlFiles(slidesDir);
   logger.info(`Slides loaded: ${slides.length}`);

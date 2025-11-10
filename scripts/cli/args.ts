@@ -1,5 +1,5 @@
 // Dummy implementation: parses CLI arguments
-export function parseArgs(argv: string[]): any {
+export function parseArgs(): Record<string, unknown> {
   // TODO: Implémenter le parsing réel des arguments
   return {};
 }
