@@ -1,5 +1,11 @@
 {
   "compilerOptions": {
-    "types": ["bun-types"]
+    "types": ["bun-types"],
+    "strict": true,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "target": "ESNext",
+    "moduleResolution": "nodenext",
+    "module": "nodenext"
   }
 }
