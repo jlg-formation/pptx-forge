@@ -1,4 +1,6 @@
 node_modules
 illustrations
 dist
+slides
+01-slidemap.md
 .env
