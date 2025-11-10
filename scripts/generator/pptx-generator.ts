@@ -3,18 +3,37 @@ import { sortSlides } from "../utils/sort";
 import * as path from "path";
 import * as fs from "fs";
 import PptxGenJS from "pptxgenjs";
+import { getSlidemaster } from "./layout-manager";
 
 export function generatePptx(
   slides: SlideData[],
   options: { output: string; theme?: string }
 ): void {
   const pptx = new PptxGenJS();
+  const theme = options.theme || "standard";
+
+  // Définir les slidemasters pour le thème
+  const themeSlidemasters =
+    theme === "dark"
+      ? require("./slidemasters/dark").darkSlidemasters
+      : require("./slidemasters/standard").standardSlidemasters;
+
+  for (const [type, def] of Object.entries(themeSlidemasters) as [
+    string,
+    (typeof themeSlidemasters)[string]
+  ][]) {
+    pptx.defineSlideMaster({
+      title: def.layout,
+      background: { color: def.background.color },
+    });
+  }
 
   // Trier les slides
   const sortedSlides = sortSlides(slides);
 
   for (const slideData of sortedSlides) {
-    const slide = pptx.addSlide();
+    const slidemaster = getSlidemaster(slideData.slide.type, theme);
+    const slide = pptx.addSlide({ masterName: slidemaster.layout });
 
     // Ajouter le titre
     slide.addText(slideData.slide.title, {
@@ -22,8 +41,7 @@ export function generatePptx(
       y: 0.5,
       w: 8,
       h: 1,
-      fontSize: 32,
-      bold: true,
+      ...slidemaster.title,
     });
 
     // Selon le type
@@ -34,15 +52,16 @@ export function generatePptx(
         y: 2,
         w: 8,
         h: 2,
-        fontSize: 44,
         align: "center",
+        ...slidemaster.title,
+        fontSize: 44,
       });
     } else if (slideData.slide.type === "toc") {
       // Titre déjà ajouté, ajouter items
       if (slideData.slide.content.items) {
         slide.addText(
           slideData.slide.content.items.map((item) => `• ${item}`).join("\n"),
-          { x: 1, y: 2, w: 8, h: 4, fontSize: 18 }
+          { x: 1, y: 2, w: 8, h: 4, ...slidemaster.items }
         );
       }
     } else if (
@@ -56,7 +75,7 @@ export function generatePptx(
       ) {
         slide.addText(
           slideData.slide.content.bullets.map((b) => `• ${b}`).join("\n"),
-          { x: 1, y: 2, w: 6, h: 3, fontSize: 18 }
+          { x: 1, y: 2, w: 6, h: 3, ...slidemaster.bullets }
         );
       }
       // Key message
@@ -66,9 +85,7 @@ export function generatePptx(
           y: 5,
           w: 8,
           h: 1,
-          fontSize: 24,
-          bold: true,
-          color: "FF0000",
+          ...slidemaster.keyMessage,
         });
       }
     }
