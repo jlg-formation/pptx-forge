@@ -74,7 +74,7 @@ Chaque slide logique correspond à **un fichier YAML** dans `slides/<CC>-<chapit
 
 | Ordre | Type          | Référence YAML       | Titre du slide                  | Statut |
 | ----: | ------------- | -------------------- | ------------------------------- | :----: |
-|     0 | Page de garde | slides/00-cover.yaml | <Titre complet de la formation> |   ✅   |
+|     0 | Page de garde | slides/00-cover.yaml | <Titre complet de la formation> |   ⏳   |
 
 ---
 
