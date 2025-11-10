@@ -29,13 +29,16 @@ L'outil est un script TypeScript exécuté via bun, qui transforme des fichiers 
 - **User Stories :** US1.2.
 - **Critères :** Images chargées si disponibles, sinon placeholder sans erreur ; pas de génération en temps réel dans l'outil.
 
-### 4. Scripts de Gestion des Illustrations
+### 4. Gestion interactive des Illustrations
 
-- **Description :** Fournir deux scripts séparés, lancés à la demande par l'utilisateur, pour préparer les illustrations avant génération PPTX.
-  - Script 1 : Génération d'images par IA (utilise prompts des YAML pour créer images vectorielles, stockées dans `illustrations/` avec la même structure que les YAML).
-  - Script 2 : Recherche Google Images et téléchargement (PSE script, limité à 100 images/jour, utilise prompts pour rechercher et télécharger images, stockées dans `illustrations/` avec la même structure).
+- **Description :** L'utilisateur peut lancer le script principal (`scripts/index.ts`) en mode "illustrations uniquement" (ex : argument CLI `--illustrations-only`). Dans ce mode, pour chaque slide YAML, l'utilisateur choisit interactivement :
+  1. Générer l'illustration par IA (utilise le prompt du YAML, stockée dans `illustrations/`)
+  2. Télécharger une illustration via PSE (recherche web, stockée dans `illustrations/`)
+  3. Utiliser le placeholder (aucune image générée, le placeholder est utilisé)
+     En mode `illustrations-only`, le programme ne propose ces choix que pour les slides dont l'illustration est absente (manquante dans le dossier `illustrations/`). Les illustrations déjà présentes ne sont pas remplacées ni modifiées.
+     Le script ne génère pas le PPTX dans ce mode. Les modules IA et PSE sont appelés selon le choix utilisateur uniquement pour les slides sans illustration.
 - **User Stories :** US1.2 (pour Marie), US2.5 (pour Antoine).
-- **Critères :** Scripts en ligne de commande, compatibles avec bun/TypeScript, gèrent erreurs (ex. : limites API), stockent images sous `<CC>-<chapitre-simplifie>/<CC>-<NN>-<motcleslide>.<ext>`.
+- **Critères :** Mode CLI interactif, compatible bun/TypeScript, gestion des erreurs, stockage des images selon la structure `<CC>-<chapitre-simplifie>/<CC>-<NN>-<motcleslide>.<ext>`.
 
 ### 5. Gestion d'Erreurs
 

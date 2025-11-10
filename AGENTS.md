@@ -5,7 +5,8 @@ This document outlines best practices for writing clean, maintainable code in Bu
 ## General Principles
 
 - **Early Returns**: Use early returns to exit functions as soon as possible when conditions are met, reducing nesting and improving readability.
-- **Single Responsibility**: Each function or class should have one clear purpose.
+  -- **Single Responsibility**: Each function or class should have one clear purpose.
+- **Fine-grained Module Separation**: Prefer splitting features (e.g., CLI modes like 'illustrations-only') into dedicated files/modules for maintainability and clarity. Avoid monolithic scripts; orchestrate from the main entry point.
 - **DRY (Don't Repeat Yourself)**: Avoid code duplication by extracting common logic into reusable functions or modules.
 - **Clear Naming**: Use descriptive variable, function, and class names that convey intent. Avoid abbreviations unless widely understood.
 - **Comments**: Write comments for complex logic, but prefer self-documenting code. Avoid redundant comments.

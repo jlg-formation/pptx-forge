@@ -5,12 +5,19 @@
 export function parseArgs(argv: string[] = []): {
   output?: string;
   theme?: string;
+  illustrationsOnly?: boolean;
 } {
-  const args: { output?: string; theme?: string } = {};
+  const args: { output?: string; theme?: string; illustrationsOnly?: boolean } =
+    {};
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i];
     if (arg.startsWith("--")) {
       const key = arg.replace(/^--/, "");
+      // Option illustrations-only (flag sans valeur)
+      if (key === "illustrations-only") {
+        args.illustrationsOnly = true;
+        continue;
+      }
       // Format --key=value
       if (arg.includes("=")) {
         const [k, v] = key.split("=");
