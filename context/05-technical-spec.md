@@ -19,6 +19,7 @@ L'outil est un script TypeScript exécuté via bun, structuré en modules pour l
 - `scripts/illustrations/image-loader.ts` : Chargement des images depuis le système de fichiers.
 - `scripts/illustrations/downloader.ts` : Téléchargement d'images via fetch.
 - `scripts/illustrations/placeholder.ts` : Gestion des placeholders d'images.
+- `scripts/export.ts` : Export de la formation dans un répertoire dédié.
 - `scripts/utils/sort.ts` : Fonctions de tri (slides, chapitres).
 - `scripts/utils/validate.ts` : Validation des données YAML et chemins.
 - `scripts/utils/helpers.ts` : Fonctions utilitaires diverses (hash, formatage).
@@ -96,6 +97,7 @@ Le choix du slidemaster (template graphique) pour chaque slide doit dépendre à
   - `--theme <theme>` : Thème PPTX (défaut : standard).
   - `--illustrations-only` : Mode interactif, génère uniquement les illustrations pour chaque slide YAML.
   - `--illustrations-only=<method>` : Mode non interactif, utilise la méthode spécifiée pour toutes les illustrations manquantes (ex: `--illustrations-only=pse` pour utiliser PSE automatiquement).
+  - `--export` : Exporte la formation dans un répertoire nommé d'après le titre de la formation (sans espaces, tirets, minuscules), contenant le PPTX, le dossier slides, et les fichiers de plan.
 - En mode `--illustrations-only` (interactif), le script principal ne propose ces choix (IA, PSE, placeholder) que pour les slides dont l'illustration est absente (non présente dans le dossier `illustrations/`). Les illustrations déjà présentes ne sont pas remplacées ni modifiées.
   Pour chaque slide sans illustration, l'utilisateur choisit :
   1. Générer l'illustration par IA (appel du module IA, stockage dans `illustrations/`)
@@ -103,6 +105,7 @@ Le choix du slidemaster (template graphique) pour chaque slide doit dépendre à
   3. Utiliser le placeholder (aucune image générée, le placeholder est utilisé)
      Le choix est fait via prompt CLI (ex : readline ou enquirer). Aucun PPTX n'est généré dans ce mode.
 - En mode `--illustrations-only=<method>` (non interactif), la méthode spécifiée est appliquée automatiquement à toutes les illustrations manquantes sans interaction utilisateur. Par exemple, `--illustrations-only=pse` télécharge automatiquement via PSE pour toutes les images manquantes.
+- En mode `--export`, le script crée un répertoire dans `dist/` basé sur le titre de la formation extrait de `00-plan-formation.md`, copie le fichier `dist/presentation.pptx`, le répertoire `slides/`, et les fichiers `00-plan-formation.md` et `01-slidemap.md`.
 - Logging : Console avec niveaux (info, warn, error).
 
 ### APIs Internes
