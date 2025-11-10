@@ -6,6 +6,8 @@
     "noFallthroughCasesInSwitch": true,
     "target": "ESNext",
     "moduleResolution": "nodenext",
-    "module": "nodenext"
+    "module": "nodenext",
+    "skipLibCheck": true,
+    "noEmit": true
   }
 }

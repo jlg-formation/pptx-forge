@@ -1,4 +1,4 @@
-import PptxGenJS from "pptxgenjs";
+import pptxgen from "pptxgenjs";
 import { SlideData } from "../parser/yaml-parser.js";
 import { buildSlide } from "./slide-builder.js";
 import { CliOptions } from "../cli/args.js";
@@ -11,7 +11,7 @@ export async function generatePptx(
   options: CliOptions,
   illustrationsDir: string
 ): Promise<void> {
-  const pptx = new PptxGenJS();
+  const pptx = new pptxgen();
   pptx.author = "JLG Consulting";
   pptx.title = "Presentation";
 
