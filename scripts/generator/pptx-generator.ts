@@ -34,137 +34,140 @@ export function generatePptx(
   // Trier les slides
   const sortedSlides = sortSlides(slides);
 
+  // Grouper les slides par chapitre
+  const slidesByChapter: Record<string, SlideData[]> = {};
   for (const slideData of sortedSlides) {
-    const slidemaster = getSlidemaster(slideData.slide.type, theme);
-    const slide = pptx.addSlide({ masterName: slidemaster.layout });
+    const chapterKey = slideData.chapter.key;
+    if (!slidesByChapter[chapterKey]) {
+      slidesByChapter[chapterKey] = [];
+    }
+    slidesByChapter[chapterKey].push(slideData);
+  }
 
-    // Selon le type
-    if (slideData.slide.type === "cover") {
-      // Titre centré avec placeholder
-      slide.addText(slideData.slide.title, {
-        placeholder: "title",
-        ...slidemaster.title,
-        fontSize: 44,
+  // Pour chaque chapitre, créer une section et ajouter les slides
+  for (const [chapterKey, chapterSlides] of Object.entries(slidesByChapter)) {
+    // Utiliser le titre du chapitre pour la section
+    const sectionTitle = chapterSlides[0]?.chapter.title || chapterKey;
+    pptx.addSection({ title: sectionTitle });
+
+    for (const slideData of chapterSlides) {
+      const slidemaster = getSlidemaster(slideData.slide.type, theme);
+      const slide = pptx.addSlide({
+        masterName: slidemaster.layout,
+        sectionTitle,
       });
-      // Sous-titre auteur + année dynamique
-      const currentYear = new Date().getFullYear();
-      slide.addText(`Jean-Louis GUENEGO @${currentYear}`, {
-        placeholder: "subtitle",
-        fontSize: 18,
-        color: "#666666",
-        align: "center",
-        x: 0.5,
-        y: 6.2,
-        w: 9,
-        h: 0.6,
-      });
-    } else if (slideData.slide.type === "toc") {
-      // Titre
-      slide.addText(slideData.slide.title, {
-        placeholder: "title",
-        ...slidemaster.title,
-      });
-      // Items
-      if (slideData.slide.content.items) {
-        slide.addText(
-          slideData.slide.content.items.map((item) => `• ${item}`).join("\n"),
-          { placeholder: "body", ...slidemaster.items }
-        );
-      }
-    } else if (
-      slideData.slide.type === "content" ||
-      slideData.slide.type === "conclusion"
-    ) {
-      // Titre
-      slide.addText(slideData.slide.title, {
-        placeholder: "title",
-        ...slidemaster.title,
-      });
-      // Bullets
-      if (
-        slideData.slide.content.bullets &&
-        slideData.slide.content.bullets.length > 0
-      ) {
-        slide.addText(
-          slideData.slide.content.bullets.map((b) => `• ${b}`).join("\n"),
-          { placeholder: "body", ...slidemaster.bullets }
-        );
-      }
-      // Key message
-      if (slideData.slide.content.key_message) {
-        slide.addText(slideData.slide.content.key_message, {
-          placeholder: "keyMessage",
-          ...slidemaster.keyMessage,
+
+      // Selon le type
+      if (slideData.slide.type === "cover") {
+        slide.addText(slideData.slide.title, {
+          placeholder: "title",
+          ...slidemaster.title,
+          fontSize: 44,
         });
-      }
-    }
-
-    // Ajouter speaker notes
-    if (slideData.slide.content.speaker_notes) {
-      slide.addNotes(slideData.slide.content.speaker_notes);
-    }
-
-    // Ajouter l'illustration si elle existe (peu importe l'extension) et si le template n'est pas 'toc'
-    if (slideData.slide.type !== "toc") {
-      const imageExtensions = [".png", ".jpg", ".jpeg", ".webp", ".gif"];
-      let foundImagePath: string | null = null;
-      for (const ext of imageExtensions) {
-        const candidatePath = path.resolve(
-          "illustrations",
-          slideData.chapter.key,
-          `${slideData.slide.id}${ext}`
-        );
-        if (fs.existsSync(candidatePath)) {
-          foundImagePath = candidatePath;
-          break;
+        const currentYear = new Date().getFullYear();
+        slide.addText(`Jean-Louis GUENEGO @${currentYear}`, {
+          placeholder: "subtitle",
+          fontSize: 18,
+          color: "#666666",
+          align: "center",
+          x: 0.5,
+          y: 6.2,
+          w: 9,
+          h: 0.6,
+        });
+      } else if (slideData.slide.type === "toc") {
+        slide.addText(slideData.slide.title, {
+          placeholder: "title",
+          ...slidemaster.title,
+        });
+        if (slideData.slide.content.items) {
+          slide.addText(
+            slideData.slide.content.items.map((item) => `• ${item}`).join("\n"),
+            { placeholder: "body", ...slidemaster.items }
+          );
+        }
+      } else if (
+        slideData.slide.type === "content" ||
+        slideData.slide.type === "conclusion"
+      ) {
+        slide.addText(slideData.slide.title, {
+          placeholder: "title",
+          ...slidemaster.title,
+        });
+        if (
+          slideData.slide.content.bullets &&
+          slideData.slide.content.bullets.length > 0
+        ) {
+          slide.addText(
+            slideData.slide.content.bullets.map((b) => `• ${b}`).join("\n"),
+            { placeholder: "body", ...slidemaster.bullets }
+          );
+        }
+        if (slideData.slide.content.key_message) {
+          slide.addText(slideData.slide.content.key_message, {
+            placeholder: "keyMessage",
+            ...slidemaster.keyMessage,
+          });
         }
       }
-      // Ajouter l'image en calculant les coordonnées et dimensions selon le ratio
-      if (foundImagePath) {
-        const { width, height } = getImageSize(foundImagePath);
-        if (width > 0 && height > 0) {
-          // Définir la zone image selon le type de slide
-          let imgZone;
-          if (slideData.slide.type === "cover") {
-            // Image centrée sur le slide, zone réduite pour laisser le titre visible
-            imgZone = { x: 2.5, y: 3, w: 5, h: 2.5 };
-          } else {
-            // Valeur par défaut ou du slidemaster
-            imgZone = { x: 7, y: 2, w: 2, h: 3 };
-            if (Array.isArray(slidemaster.objects)) {
-              const imgObj = slidemaster.objects.find(
-                (obj) => obj.placeholder?.options?.name === "contentImage"
-              );
-              if (imgObj) {
-                const opts = imgObj.placeholder.options;
-                imgZone = { x: opts.x, y: opts.y, w: opts.w, h: opts.h };
+
+      // Ajouter speaker notes
+      if (slideData.slide.content.speaker_notes) {
+        slide.addNotes(slideData.slide.content.speaker_notes);
+      }
+
+      // Ajouter l'illustration si elle existe (peu importe l'extension) et si le template n'est pas 'toc'
+      if (slideData.slide.type !== "toc") {
+        const imageExtensions = [".png", ".jpg", ".jpeg", ".webp", ".gif"];
+        let foundImagePath: string | null = null;
+        for (const ext of imageExtensions) {
+          const candidatePath = path.resolve(
+            "illustrations",
+            slideData.chapter.key,
+            `${slideData.slide.id}${ext}`
+          );
+          if (fs.existsSync(candidatePath)) {
+            foundImagePath = candidatePath;
+            break;
+          }
+        }
+        if (foundImagePath) {
+          const { width, height } = getImageSize(foundImagePath);
+          if (width > 0 && height > 0) {
+            let imgZone;
+            if (slideData.slide.type === "cover") {
+              imgZone = { x: 2.5, y: 3, w: 5, h: 2.5 };
+            } else {
+              imgZone = { x: 7, y: 2, w: 2, h: 3 };
+              if (Array.isArray(slidemaster.objects)) {
+                const imgObj = slidemaster.objects.find(
+                  (obj) => obj.placeholder?.options?.name === "contentImage"
+                );
+                if (imgObj) {
+                  const opts = imgObj.placeholder.options;
+                  imgZone = { x: opts.x, y: opts.y, w: opts.w, h: opts.h };
+                }
               }
             }
+            const imgRatio = width / height;
+            const zoneRatio = imgZone.w / imgZone.h;
+            let finalW = imgZone.w;
+            let finalH = imgZone.h;
+            if (imgRatio > zoneRatio) {
+              finalH = imgZone.w / imgRatio;
+            } else {
+              finalW = imgZone.h * imgRatio;
+            }
+            const finalX = imgZone.x + (imgZone.w - finalW) / 2;
+            const finalY = imgZone.y + (imgZone.h - finalH) / 2;
+            slide.addImage({
+              path: foundImagePath,
+              x: finalX,
+              y: finalY,
+              w: finalW,
+              h: finalH,
+            });
           }
-          // Calcul du ratio image et zone
-          const imgRatio = width / height;
-          const zoneRatio = imgZone.w / imgZone.h;
-          let finalW = imgZone.w;
-          let finalH = imgZone.h;
-          if (imgRatio > zoneRatio) {
-            // Image plus large, ajuster la hauteur
-            finalH = imgZone.w / imgRatio;
-          } else {
-            // Image plus haute, ajuster la largeur
-            finalW = imgZone.h * imgRatio;
-          }
-          // Centrer dans la zone
-          const finalX = imgZone.x + (imgZone.w - finalW) / 2;
-          const finalY = imgZone.y + (imgZone.h - finalH) / 2;
-          slide.addImage({
-            path: foundImagePath,
-            x: finalX,
-            y: finalY,
-            w: finalW,
-            h: finalH,
-          });
-        } else {
-          // Image non supportée ou corrompue, ignorer
         }
       }
     }

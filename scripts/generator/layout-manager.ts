@@ -75,7 +75,7 @@ export function createSlidemasters(
     toc: {
       background: { color: colors.backgroundToc },
       title: { fontSize: 28, color: colors.titleToc, bold: true },
-      items: { fontSize: 18, color: colors.itemsToc },
+      items: { fontSize: 15, color: colors.itemsToc },
       layout: `toc-${theme}`,
       objects: [
         {
@@ -102,7 +102,7 @@ export function createSlidemasters(
     content: {
       background: { color: colors.backgroundContent },
       title: { fontSize: 24, color: colors.titleContent, bold: true },
-      bullets: { fontSize: 18, color: colors.bulletsContent },
+      bullets: { fontSize: 15, color: colors.bulletsContent },
       keyMessage: {
         fontSize: 20,
         color: colors.keyMessageContent,
@@ -125,7 +125,7 @@ export function createSlidemasters(
         },
         {
           placeholder: {
-            options: { name: "body", type: "body", x: 0.5, y: 2, w: 7, h: 3 },
+            options: { name: "body", type: "body", x: 0.5, y: 2, w: 6, h: 3 },
             text: "",
           },
         },
@@ -135,7 +135,7 @@ export function createSlidemasters(
               name: "keyMessage",
               type: "body",
               x: 0.5,
-              y: 5,
+              y: 6,
               w: 9,
               h: 1,
             },
@@ -147,7 +147,7 @@ export function createSlidemasters(
     conclusion: {
       background: { color: colors.backgroundConclusion },
       title: { fontSize: 24, color: colors.titleConclusion, bold: true },
-      bullets: { fontSize: 18, color: colors.bulletsConclusion },
+      bullets: { fontSize: 15, color: colors.bulletsConclusion },
       keyMessage: {
         fontSize: 20,
         color: colors.keyMessageConclusion,
