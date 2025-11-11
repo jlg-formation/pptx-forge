@@ -77,7 +77,7 @@ Un outil en ligne de commande pour générer automatiquement des présentations 
 5. Générez la présentation PPTX :
 
    ```bash
-   bun run pptx --output dist/ma-formation.pptx --theme standard
+   bun run pptx
    ```
 
 6. Exportez la formation complète :
