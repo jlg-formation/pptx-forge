@@ -186,10 +186,9 @@ slide:
       format 16:9, style plat/isométrique, composition simple, lisible et
       imprimable, sans watermark.>
     speaker_notes: |
-      <Texte au format Markdown, présenté comme une prose fluide (250 à 500 mots).
+      <Texte au format texte, présenté comme une prose fluide (250 à 500 mots).
       Le ton est formateur, concret et professionnel.  
-      Le texte peut utiliser des **mises en valeur** (gras, italique), des listes à
-      puces ou numérotées si besoin, mais **aucun titre de chapitre**.  
+      Le texte doit être constitué de 4 paragraphes maximum. Chaque paragraphe doit faire au moins 100 mots minimum. 
       Il doit être structuré naturellement, clair et agréable à lire, tout en
       restant dans la limite de 500 mots.>
 ```
