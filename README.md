@@ -149,7 +149,7 @@ bun run illustrations-only-pse
 
 ## Prérequis
 
-- Bun (recommandé) ou Node.js 22+
+- Bun 1.3.2+
 - VSCode avec GitHub Copilot
 - Git
 
