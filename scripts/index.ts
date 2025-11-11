@@ -28,7 +28,7 @@ try {
 }
 
 // Extraire le titre de la formation
-const title = slides[0]?.slide.title || 'Formation';
+const title = slides[0]?.slide.title || "Formation";
 
 // Mode illustrations-only
 if (args.illustrationsOnly) {

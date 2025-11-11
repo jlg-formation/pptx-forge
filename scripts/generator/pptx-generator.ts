@@ -15,7 +15,7 @@ export function generatePptx(
   const pptx = new PptxGenJS();
 
   // Métadonnées
-  const author = process.env.AUTHOR || 'JLG';
+  const author = process.env.AUTHOR || "JLG";
   const company = process.env.COMPANY;
   if (options.title) {
     pptx.title = options.title;
