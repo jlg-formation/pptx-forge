@@ -164,12 +164,12 @@ slide:
   meta:
     order: 5 # 1..18 (entier)
   content:
-    bullets: # 5 bullets exactement pour content & conclusion
-      - "<Bullet 1, ≤ 12 mots>"
-      - "<Bullet 2, ≤ 12 mots>"
-      - "<Bullet 3, ≤ 12 mots>"
-      - "<Bullet 4, ≤ 12 mots>"
-      - "<Bullet 5, ≤ 12 mots>"
+    bullets: # 5 bullets entre guillemets exactement pour content & conclusion
+      - "<Bullet 1, ≤ 100 caractères>"
+      - "<Bullet 2, ≤ 100 caractères>"
+      - "<Bullet 3, ≤ 100 caractères>"
+      - "<Bullet 4, ≤ 100 caractères>"
+      - "<Bullet 5, ≤ 100 caractères>"
     key_message: "<phrase percutante ≤ 120 caractères>"
     illustration_prompt: >
       <3–6 phrases, image vectorielle sans texte, fond blanc pur (#ffffff),
