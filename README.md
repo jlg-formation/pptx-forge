@@ -20,9 +20,29 @@ Un outil en ligne de commande pour générer automatiquement des présentations 
    ```
 
 2. Installez les dépendances avec Bun :
+
    ```bash
    bun install
    ```
+
+3. Créez un fichier `.env` à la racine du projet avec les clés API nécessaires :
+
+   ```bash
+   cat > .env << 'EOF'
+   GOOGLE_CX=votre-google-cx-ici
+   GOOGLE_API_KEY=votre-google-api-key-ici
+   PIXABAY_API_KEY=votre-pixabay-api-key-ici
+
+   AUTHOR=Jean-Louis GUENEGO
+   COMPANY=JLG Consulting
+   EOF
+   ```
+
+   Remplacez les valeurs `votre-*` par vos vraies clés API.
+
+   - `GOOGLE_CX` : ID de votre moteur de recherche personnalisé Google (Custom Search Engine)
+   - `GOOGLE_API_KEY` : Clé API Google pour accéder à l'API Custom Search (utilisée pour rechercher des images via Google PSE)
+   - `PIXABAY_API_KEY` : Clé API Pixabay pour télécharger des images depuis Pixabay
 
 ## Créer une Formation avec VSCode et GitHub Copilot
 
