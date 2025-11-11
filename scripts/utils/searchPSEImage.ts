@@ -23,7 +23,10 @@ export async function searchPSEImage(query: string): Promise<string | null> {
     }
     return null;
   } catch (err) {
-    console.error("Erreur recherche PSE:", err);
+    console.error(
+      "Erreur recherche PSE:",
+      err instanceof Error ? err.message : err
+    );
     return null;
   }
 }

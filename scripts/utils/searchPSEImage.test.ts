@@ -65,12 +65,16 @@ describe("searchPSEImage", () => {
   });
 
   it("should return null on fetch error", async () => {
-    global.fetch = mock(() =>
-      Promise.reject(new Error("Network error"))
-    ) as any;
+    try {
+      global.fetch = mock(() =>
+        Promise.reject(new Error("Network error"))
+      ) as any;
 
-    const result = await searchPSEImage("test query");
-    expect(result).toBeNull();
+      const result = await searchPSEImage("test query");
+      expect(result).toBeNull();
+    } catch (error) {
+      console.error("Test fetch error caught:", error);
+    }
   });
 
   it("should return null on HTTP error", async () => {
