@@ -6,6 +6,9 @@ import { logger } from "../cli/logger";
 import { SlideData } from "../parser/yaml-parser";
 import { searchPSEImage } from "../utils/searchPSEImage";
 import { downloadImage } from "../utils/downloadImage";
+import { handleAIMethod } from "./handlers/ai-handler";
+import { handlePSEMethod } from "./handlers/pse-handler";
+import { handlePlaceholderMethod } from "./handlers/placeholder-handler";
 
 function illustrationExists(slide: SlideData): boolean {
   const chapterKey = slide.chapter.key;
@@ -16,84 +19,6 @@ function illustrationExists(slide: SlideData): boolean {
     if (fs.existsSync(imgPath)) return true;
   }
   return false;
-}
-
-async function handleAIMethod(slide: SlideData, imgDir: string): Promise<void> {
-  const chapterKey = slide.chapter.key;
-  const slideId = slide.slide.id;
-  const prompt = slide.slide.content.illustration_prompt || "";
-  logger.info(
-    `Génération IA pour ${chapterKey}/${slideId} (prompt: ${prompt})`
-  );
-  // Générer l'image via OpenAI et stocker
-  const { generateImageFromPrompt } = await import(
-    "../utils/openai/extractPromptFromAI"
-  );
-  const outputPath = path.join(imgDir, `${slideId}.png`);
-  try {
-    await generateImageFromPrompt(prompt, outputPath);
-    logger.info(`Image IA créée: ${outputPath}`);
-  } catch (err) {
-    logger.error(`Erreur génération IA: ${err}`);
-  }
-}
-
-async function handlePSEMethod(
-  slide: SlideData,
-  imgDir: string
-): Promise<void> {
-  const chapterKey = slide.chapter.key;
-  const slideId = slide.slide.id;
-  const searchTerm = slide.slide.title;
-  logger.info(
-    `Recherche et téléchargement PSE pour ${chapterKey}/${slideId} (titre: ${searchTerm})`
-  );
-  try {
-    const url = await searchPSEImage(searchTerm);
-    if (url) {
-      const downloadedPath = await downloadImage(url, imgDir, slideId);
-      logger.info(`Image téléchargée: ${downloadedPath}`);
-    } else {
-      logger.warn(`Aucune image trouvée pour le titre: ${searchTerm}`);
-      // Use placeholder
-      const placeholderSrc = path.join("illustrations", "placeholder.png");
-      const outputPath = path.join(imgDir, `${slideId}.png`);
-      try {
-        if (fs.existsSync(placeholderSrc)) {
-          fs.copyFileSync(placeholderSrc, outputPath);
-          logger.info(`Placeholder utilisé: ${outputPath}`);
-        } else {
-          logger.error(`Placeholder manquant: ${placeholderSrc}`);
-        }
-      } catch (err) {
-        logger.error(`Erreur copie placeholder: ${err}`);
-      }
-    }
-  } catch (err) {
-    logger.error(`Erreur PSE: ${err}`);
-  }
-}
-
-async function handlePlaceholderMethod(
-  slide: SlideData,
-  imgDir: string
-): Promise<void> {
-  const chapterKey = slide.chapter.key;
-  const slideId = slide.slide.id;
-  logger.info(`Utilisation du placeholder pour ${chapterKey}/${slideId}`);
-  // Copier le placeholder dans le dossier illustrations
-  const placeholderSrc = path.join("illustrations", "placeholder.png");
-  const outputPath = path.join(imgDir, `${slideId}.png`);
-  try {
-    if (fs.existsSync(placeholderSrc)) {
-      fs.copyFileSync(placeholderSrc, outputPath);
-      logger.info(`Placeholder copié: ${outputPath}`);
-    } else {
-      logger.error(`Placeholder manquant: ${placeholderSrc}`);
-    }
-  } catch (err) {
-    logger.error(`Erreur copie placeholder: ${err}`);
-  }
 }
 
 export async function processIllustrationsOnly(
