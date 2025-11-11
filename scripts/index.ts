@@ -27,6 +27,9 @@ try {
   process.exit(1);
 }
 
+// Extraire le titre de la formation
+const title = slides[0]?.slide.title || 'Formation';
+
 // Mode illustrations-only
 if (args.illustrationsOnly) {
   logger.info(
@@ -47,7 +50,7 @@ if (args.illustrationsOnly) {
 } else {
   // 2. Génération PPTX (mode normal)
   try {
-    generatePptx(slides, { output: outputFile, theme });
+    generatePptx(slides, { output: outputFile, theme, title });
     logger.info(`PPTX généré: ${outputFile}`);
   } catch (err) {
     logger.error(`Erreur lors de la génération PPTX: ${err}`);

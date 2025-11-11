@@ -10,9 +10,20 @@ import { getImageSize } from "../utils/getImageSize";
 
 export function generatePptx(
   slides: SlideData[],
-  options: { output: string; theme?: string }
+  options: { output: string; theme?: string; title?: string }
 ): void {
   const pptx = new PptxGenJS();
+
+  // Métadonnées
+  const author = process.env.AUTHOR || 'JLG';
+  const company = process.env.COMPANY;
+  if (options.title) {
+    pptx.title = options.title;
+    pptx.subject = options.title;
+  }
+  if (author) pptx.author = author;
+  if (company) pptx.company = company;
+
   pptx.layout = "LAYOUT_4x3";
   const theme = options.theme || "standard";
 
