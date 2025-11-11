@@ -12,7 +12,6 @@ import { processIllustrationsOnly } from "./illustrations/illustrations-only";
 // CLI arguments
 const args = parseArgs(process.argv.slice(2));
 const slidesDir = path.resolve("slides");
-const outputFile = args.output || "dist/presentation.pptx";
 const theme = args.theme || "standard";
 
 (async () => {
@@ -30,6 +29,20 @@ const theme = args.theme || "standard";
 
   // Extraire le titre de la formation
   const title = slides[0]?.slide.title || "Formation";
+
+  // Function to slugify the title
+  function slugify(title: string): string {
+    return title
+      .normalize("NFD") // Normalize to decompose diacritics
+      .replace(/[\u0300-\u036f]/g, "") // Remove diacritical marks
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, "") // Remove special characters
+      .replace(/\s+/g, "-") // Replace spaces with hyphens
+      .replace(/-+/g, "-") // Replace multiple hyphens with single
+      .trim();
+  }
+
+  const outputFile = args.output || `dist/${slugify(title)}.pptx`;
 
   // Mode illustrations-only
   if (args.illustrationsOnly) {
