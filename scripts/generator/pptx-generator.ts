@@ -7,6 +7,7 @@ import { getSlidemaster } from "./layout-manager";
 import { standardSlidemasters } from "./slidemasters/standard";
 import { darkSlidemasters } from "./slidemasters/dark";
 import { getImageSize } from "../utils/getImageSize";
+import { addImageToSlide } from "../utils/addImage";
 import crypto from "crypto";
 
 export function generatePptx(
@@ -134,6 +135,22 @@ export function generatePptx(
 
       // Ajouter l'illustration si elle existe (peu importe l'extension) et si le template n'est pas 'toc'
       if (slideData.slide.type !== "toc") {
+        // Calculer la zone d'image
+        let imgZone = { x: 7, y: 2, w: 2, h: 3 };
+        if (Array.isArray(slidemaster.objects)) {
+          const imgObj = slidemaster.objects.find(
+            (obj) => obj.placeholder?.options?.name === "contentImage"
+          );
+          if (imgObj) {
+            const opts = imgObj.placeholder.options;
+            imgZone = { x: opts.x, y: opts.y, w: opts.w, h: opts.h };
+          }
+        }
+        if (slideData.slide.type === "cover") {
+          imgZone = { x: 2.5, y: 3, w: 5, h: 2.5 };
+        }
+
+        // Chercher l'image d'illustration
         const imageExtensions = [
           ".png",
           ".jpg",
@@ -142,7 +159,7 @@ export function generatePptx(
           ".gif",
           ".svg",
         ];
-        let foundImagePath: string | null = null;
+        let imagePath: string | null = null;
         for (const ext of imageExtensions) {
           const candidatePath = path.resolve(
             "illustrations",
@@ -150,99 +167,32 @@ export function generatePptx(
             `${slideData.slide.id}${ext}`
           );
           if (fs.existsSync(candidatePath)) {
-            foundImagePath = candidatePath;
+            imagePath = candidatePath;
             break;
           }
         }
-        if (foundImagePath) {
-          const { width, height } = getImageSize(foundImagePath);
-          if (width > 0 && height > 0) {
-            let imgZone = { x: 7, y: 2, w: 2, h: 3 };
-            if (Array.isArray(slidemaster.objects)) {
-              const imgObj = slidemaster.objects.find(
-                (obj) => obj.placeholder?.options?.name === "contentImage"
-              );
-              if (imgObj) {
-                const opts = imgObj.placeholder.options;
-                imgZone = { x: opts.x, y: opts.y, w: opts.w, h: opts.h };
-              }
-            }
-            if (slideData.slide.type === "cover") {
-              imgZone = { x: 2.5, y: 3, w: 5, h: 2.5 };
-            }
-            const imgRatio = width / height;
-            const zoneRatio = imgZone.w / imgZone.h;
-            let finalW = imgZone.w;
-            let finalH = imgZone.h;
-            if (imgRatio > zoneRatio) {
-              finalH = imgZone.w / imgRatio;
-            }
-            if (imgRatio <= zoneRatio) {
-              finalW = imgZone.h * imgRatio;
-            }
-            const finalX = imgZone.x + (imgZone.w - finalW) / 2;
-            const finalY = imgZone.y + (imgZone.h - finalH) / 2;
-            slide.addImage({
-              path: foundImagePath,
-              x: finalX,
-              y: finalY,
-              w: finalW,
-              h: finalH,
-            });
-          }
-        } else {
-          // Fallback to pixabay image
+
+        // Fallback to pixabay si pas trouvée
+        if (!imagePath) {
           const hash = crypto
             .createHash("sha1")
             .update(slideData.slide.id)
             .digest("hex");
           const num = (parseInt(hash.substring(0, 8), 16) % 30) + 1;
-
           const padded = num.toString().padStart(2, "0");
-
           const pixabayDir = "pixabay";
           if (fs.existsSync(pixabayDir)) {
             const files = fs.readdirSync(pixabayDir);
             const pixabayFile = files.find((f) => f.startsWith(padded + "."));
             if (pixabayFile) {
-              const pixabayPath = path.join(pixabayDir, pixabayFile);
-              const { width, height } = getImageSize(pixabayPath);
-              if (width > 0 && height > 0) {
-                let imgZone = { x: 7, y: 2, w: 2, h: 3 };
-                if (Array.isArray(slidemaster.objects)) {
-                  const imgObj = slidemaster.objects.find(
-                    (obj) => obj.placeholder?.options?.name === "contentImage"
-                  );
-                  if (imgObj) {
-                    const opts = imgObj.placeholder.options;
-                    imgZone = { x: opts.x, y: opts.y, w: opts.w, h: opts.h };
-                  }
-                }
-                if (slideData.slide.type === "cover") {
-                  imgZone = { x: 2.5, y: 3, w: 5, h: 2.5 };
-                }
-                const imgRatio = width / height;
-                const zoneRatio = imgZone.w / imgZone.h;
-                let finalW = imgZone.w;
-                let finalH = imgZone.h;
-                if (imgRatio > zoneRatio) {
-                  finalH = imgZone.w / imgRatio;
-                }
-                if (imgRatio <= zoneRatio) {
-                  finalW = imgZone.h * imgRatio;
-                }
-                const finalX = imgZone.x + (imgZone.w - finalW) / 2;
-                const finalY = imgZone.y + (imgZone.h - finalH) / 2;
-                slide.addImage({
-                  path: pixabayPath,
-                  x: finalX,
-                  y: finalY,
-                  w: finalW,
-                  h: finalH,
-                });
-              }
+              imagePath = path.join(pixabayDir, pixabayFile);
             }
           }
+        }
+
+        // Ajouter l'image si trouvée
+        if (imagePath) {
+          addImageToSlide(slide, imagePath, imgZone);
         }
       }
     }
