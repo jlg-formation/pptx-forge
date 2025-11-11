@@ -6,8 +6,8 @@ Ce document liste les propositions de refactoring pour réduire les lignes de co
 
 D'après l'analyse des fichiers TypeScript dans le dossier `scripts`, les fichiers les plus longs (plus de 50 lignes) sont :
 
-- `scripts/generator/layout-manager.ts` : 208 lignes
-- `scripts/generator/pptx-generator.ts` : 226 lignes
+- `scripts/generator/layout-manager.ts` : 224 lignes
+- `scripts/generator/pptx-generator.ts` : 216 lignes
 - `scripts/illustrations/illustrations-only.ts` : 121 lignes
 - `scripts/utils/searchPSEImage.test.ts` : 91 lignes
 - `scripts/utils/downloadImage.test.ts` : 84 lignes
@@ -28,15 +28,15 @@ La fonction `generatePptx` a été refactorisée avec extraction de fonctions mo
 
 **Résultat** : Le code est maintenant plus modulaire et maintenable. La fonction principale `generatePptx` est simplifiée, bien que le nombre total de lignes ait légèrement augmenté (226 lignes) en raison de la séparation en fonctions.
 
-### 2. `scripts/generator/layout-manager.ts` (208 lignes)
+### 2. `scripts/generator/layout-manager.ts` (224 lignes) ✅ FAIT
 
-La fonction `createSlidemasters` contient des définitions répétitives pour chaque type de slide.
+La fonction `createSlidemasters` a été refactorisée avec extraction de fonctions spécialisées.
 
-- **Extraire des fonctions par type de slide** : Créer `createCoverMaster(colors)`, `createTocMaster(colors)`, `createContentMaster(colors)`, `createConclusionMaster(colors)`. Chaque fonction retournerait la définition du slidemaster pour ce type.
+- **Extraire des fonctions par type de slide** : ✅ Créé `createCoverMaster(colors, theme)`, `createTocMaster(colors, theme)`, `createContentMaster(colors, theme)`, `createConclusionMaster(colors, theme)`. Chaque fonction retourne la définition du slidemaster pour ce type.
 
-Cela éliminera la répétition et rendra le code plus maintenable. La fonction principale `createSlidemasters` deviendrait un simple objet retournant les appels à ces fonctions.
+Cela élimine la répétition et rend le code plus maintenable. La fonction principale `createSlidemasters` est maintenant un simple objet retournant les appels à ces fonctions.
 
-**Résultat estimé** : `createSlidemasters` passerait de 150+ lignes à environ 20-30 lignes, avec des fonctions spécialisées.
+**Résultat** : Le code est plus modulaire et maintenable. La fonction principale est réduite à 4 lignes, bien que le nombre total de lignes ait légèrement augmenté (208 → 224) en raison de la séparation en fonctions.
 
 ### 3. `scripts/illustrations/illustrations-only.ts` (121 lignes)
 
