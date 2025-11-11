@@ -2,6 +2,16 @@
 
 Un outil en ligne de commande pour générer automatiquement des présentations PowerPoint (.pptx) à partir de fichiers YAML structurés. Idéal pour créer des formations professionnelles avec illustrations intégrées.
 
+## Prérequis
+
+- Bun 1.3.2+
+- PowerPoint (Microsoft) pour ouvrir les présentations générées
+- VSCode avec GitHub Copilot
+- Git
+- Compte Pixabay pour accéder à l'API Pixabay (nécessaire pour les illustrations Pixabay)
+- Compte Google pour accéder aux API Google Images (optionnel, pour les illustrations PSE)
+- Compte OpenAI pour générer les images par IA (optionnel, pour les illustrations IA)
+
 ## Fonctionnalités
 
 - Génération de PPTX à partir de slides YAML
@@ -150,6 +160,7 @@ bun run illustrations-only-pse
 ## Prérequis
 
 - Bun 1.3.2+
+- PowerPoint (Microsoft) pour ouvrir les présentations générées
 - VSCode avec GitHub Copilot
 - Git
 
