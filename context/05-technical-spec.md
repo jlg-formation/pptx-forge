@@ -24,7 +24,7 @@ L'outil est un script TypeScript exécuté via bun, structuré en modules pour l
 - `scripts/utils/downloadImage.ts` : Téléchargement d'images avec timeout.
 - `scripts/utils/searchPSEImage.ts` : Recherche d'images via Google PSE.
 - `scripts/utils/getImageSize.ts` : Obtention des dimensions d'une image.
-- `scripts/utils/openai/extractPromptFromAI.ts` : Génération d'images via OpenAI.
+- `scripts/pixabay.ts` : Téléchargement d'images depuis l'API Pixabay.
 
 - **Module Principal :** Orchestration (parsing YAML, génération PPTX).
 - **Module Illustrations :** Gestion des images (chargement, téléchargement, placeholders).
@@ -98,6 +98,7 @@ Le choix du slidemaster dépend du type de layout et du thème sélectionné via
   - `--illustrations-only` : Mode interactif, génère uniquement les illustrations pour chaque slide YAML.
   - `--illustrations-only=<method>` : Mode non interactif, utilise la méthode spécifiée pour toutes les illustrations manquantes (ex: `--illustrations-only=pse` pour utiliser PSE automatiquement).
 - Commande export : `bun run export.ts` : Exporte la formation dans un répertoire nommé d'après le titre de la formation (sans espaces, tirets, minuscules), contenant le PPTX, le dossier slides, et les fichiers de plan.
+- Commande pixabay : `bun run pixabay [query]` : Télécharge 30 images depuis Pixabay pour la requête donnée (défaut : "nature"), stockées dans `pixabay/` avec noms 01.ext, 02.ext, etc.
 - En mode `--illustrations-only` (interactif), le script propose pour chaque slide sans illustration :
   1. Générer l'illustration par IA (appel OpenAI, stockage dans `illustrations/` ; utilise `illustration_prompt`)
   2. Télécharger une illustration via PSE (appel Google PSE, stockage dans `illustrations/` ; utilise le titre du slide `slide.title` comme terme de recherche)

@@ -7,11 +7,13 @@
     "illustrations-only": "bun run scripts/index.ts --illustrations-only",
     "illustrations-only-pse": "bun run scripts/index.ts --illustrations-only=pse",
     "export": "bun run scripts/export.ts",
+    "pixabay": "bun run scripts/pixabay.ts",
     "check": "tsc --noEmit --pretty",
     "lint": "eslint .",
     "hello-pptx": "bun run scripts/helloworld/pptxgenjs.ts",
     "hello-slidemaster": "bun run scripts/helloworld/slidemaster.ts",
-    "search-image": "bun run scripts/helloworld/search-image.ts"
+    "search-image": "bun run scripts/helloworld/search-image.ts",
+    "test": "bun test"
   },
   "dependencies": {
     "js-yaml": "^4.1.0",
