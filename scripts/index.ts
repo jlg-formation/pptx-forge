@@ -47,14 +47,14 @@ const theme = args.theme || "standard";
         : args.illustrationsOnly
     );
     process.exit(0);
-  } else {
-    // 2. Génération PPTX (mode normal)
-    try {
-      generatePptx(slides, { output: outputFile, theme, title });
-      logger.info(`PPTX généré: ${outputFile}`);
-    } catch (err) {
-      logger.error(`Erreur lors de la génération PPTX: ${err}`);
-      process.exit(2);
-    }
+  }
+
+  // 2. Génération PPTX (mode normal)
+  try {
+    generatePptx(slides, { output: outputFile, theme, title });
+    logger.info(`PPTX généré: ${outputFile}`);
+  } catch (err) {
+    logger.error(`Erreur lors de la génération PPTX: ${err}`);
+    process.exit(2);
   }
 })();

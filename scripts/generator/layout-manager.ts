@@ -202,7 +202,6 @@ export function getSlidemaster(
 ): SlideMasterDefinition {
   if (theme === "dark") {
     return darkSlidemasters[layout];
-  } else {
-    return standardSlidemasters[layout];
   }
+  return standardSlidemasters[layout];
 }

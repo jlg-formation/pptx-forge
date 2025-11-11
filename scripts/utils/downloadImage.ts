@@ -25,8 +25,8 @@ export async function downloadImage(
   let extension = "jpg";
   if (contentType) {
     if (contentType.includes("png")) extension = "png";
-    else if (contentType.includes("gif")) extension = "gif";
-    else if (contentType.includes("webp")) extension = "webp";
+    if (contentType.includes("gif")) extension = "gif";
+    if (contentType.includes("webp")) extension = "webp";
   }
 
   const fullPath = join(destDir, `${baseFileName}.${extension}`);

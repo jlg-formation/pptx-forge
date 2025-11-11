@@ -11,11 +11,10 @@ export function parseArgs(argv: string[] = []): {
       const key = arg.replace(/^--/, "");
       // Option illustrations-only (peut avoir une valeur)
       if (key.startsWith("illustrations-only")) {
+        args.illustrationsOnly = "interactive";
         if (key.includes("=")) {
           const [, value] = key.split("=");
           args.illustrationsOnly = value || "interactive";
-        } else {
-          args.illustrationsOnly = "interactive";
         }
         continue;
       }
@@ -23,17 +22,16 @@ export function parseArgs(argv: string[] = []): {
       if (arg.includes("=")) {
         const [k, v] = key.split("=");
         if (k === "output" || k === "theme") args[k] = v;
-      } else {
-        // Format --key value
-        const next = argv[i + 1];
-        if (
-          (key === "output" || key === "theme") &&
-          next &&
-          !next.startsWith("--")
-        ) {
-          args[key] = next;
-          i++;
-        }
+      }
+      // Format --key value
+      const next = argv[i + 1];
+      if (
+        (key === "output" || key === "theme") &&
+        next &&
+        !next.startsWith("--")
+      ) {
+        args[key] = next;
+        i++;
       }
     }
   }

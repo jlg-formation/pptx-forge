@@ -69,57 +69,61 @@ export function generatePptx(
       });
 
       // Selon le type
-      if (slideData.slide.type === "cover") {
-        slide.addText(slideData.slide.title, {
-          placeholder: "title",
-          ...slidemaster.title,
-          fontSize: 44,
-        });
-        const currentYear = new Date().getFullYear();
-        slide.addText(`Jean-Louis GUENEGO @${currentYear}`, {
-          placeholder: "subtitle",
-          fontSize: 18,
-          color: "#666666",
-          align: "center",
-          x: 0.5,
-          y: 6.2,
-          w: 9,
-          h: 0.6,
-        });
-      } else if (slideData.slide.type === "toc") {
-        slide.addText(slideData.slide.title, {
-          placeholder: "title",
-          ...slidemaster.title,
-        });
-        if (slideData.slide.content.items) {
-          slide.addText(
-            slideData.slide.content.items.map((item) => `• ${item}`).join("\n"),
-            { placeholder: "body", ...slidemaster.items }
-          );
-        }
-      } else if (
-        slideData.slide.type === "content" ||
-        slideData.slide.type === "conclusion"
-      ) {
-        slide.addText(slideData.slide.title, {
-          placeholder: "title",
-          ...slidemaster.title,
-        });
-        if (
-          slideData.slide.content.bullets &&
-          slideData.slide.content.bullets.length > 0
-        ) {
-          slide.addText(
-            slideData.slide.content.bullets.map((b) => `• ${b}`).join("\n"),
-            { placeholder: "body", ...slidemaster.bullets }
-          );
-        }
-        if (slideData.slide.content.key_message) {
-          slide.addText(slideData.slide.content.key_message, {
-            placeholder: "keyMessage",
-            ...slidemaster.keyMessage,
+      switch (slideData.slide.type) {
+        case "cover":
+          slide.addText(slideData.slide.title, {
+            placeholder: "title",
+            ...slidemaster.title,
+            fontSize: 44,
           });
-        }
+          const currentYear = new Date().getFullYear();
+          slide.addText(`Jean-Louis GUENEGO @${currentYear}`, {
+            placeholder: "subtitle",
+            fontSize: 18,
+            color: "#666666",
+            align: "center",
+            x: 0.5,
+            y: 6.2,
+            w: 9,
+            h: 0.6,
+          });
+          break;
+        case "toc":
+          slide.addText(slideData.slide.title, {
+            placeholder: "title",
+            ...slidemaster.title,
+          });
+          if (slideData.slide.content.items) {
+            slide.addText(
+              slideData.slide.content.items
+                .map((item) => `• ${item}`)
+                .join("\n"),
+              { placeholder: "body", ...slidemaster.items }
+            );
+          }
+          break;
+        case "content":
+        case "conclusion":
+          slide.addText(slideData.slide.title, {
+            placeholder: "title",
+            ...slidemaster.title,
+          });
+          if (
+            slideData.slide.content.bullets &&
+            slideData.slide.content.bullets.length > 0
+          ) {
+            slide.addText(
+              slideData.slide.content.bullets.map((b) => `• ${b}`).join("\n"),
+              { placeholder: "body", ...slidemaster.bullets }
+            );
+          }
+          if (slideData.slide.content.key_message) {
+            slide.addText(slideData.slide.content.key_message, {
+              placeholder: "keyMessage",
+              ...slidemaster.keyMessage,
+            });
+          }
+          break;
       }
 
       // Ajouter speaker notes
@@ -145,20 +149,18 @@ export function generatePptx(
         if (foundImagePath) {
           const { width, height } = getImageSize(foundImagePath);
           if (width > 0 && height > 0) {
-            let imgZone;
+            let imgZone = { x: 7, y: 2, w: 2, h: 3 };
+            if (Array.isArray(slidemaster.objects)) {
+              const imgObj = slidemaster.objects.find(
+                (obj) => obj.placeholder?.options?.name === "contentImage"
+              );
+              if (imgObj) {
+                const opts = imgObj.placeholder.options;
+                imgZone = { x: opts.x, y: opts.y, w: opts.w, h: opts.h };
+              }
+            }
             if (slideData.slide.type === "cover") {
               imgZone = { x: 2.5, y: 3, w: 5, h: 2.5 };
-            } else {
-              imgZone = { x: 7, y: 2, w: 2, h: 3 };
-              if (Array.isArray(slidemaster.objects)) {
-                const imgObj = slidemaster.objects.find(
-                  (obj) => obj.placeholder?.options?.name === "contentImage"
-                );
-                if (imgObj) {
-                  const opts = imgObj.placeholder.options;
-                  imgZone = { x: opts.x, y: opts.y, w: opts.w, h: opts.h };
-                }
-              }
             }
             const imgRatio = width / height;
             const zoneRatio = imgZone.w / imgZone.h;
@@ -166,7 +168,8 @@ export function generatePptx(
             let finalH = imgZone.h;
             if (imgRatio > zoneRatio) {
               finalH = imgZone.w / imgRatio;
-            } else {
+            }
+            if (imgRatio <= zoneRatio) {
               finalW = imgZone.h * imgRatio;
             }
             const finalX = imgZone.x + (imgZone.w - finalW) / 2;

@@ -13,13 +13,15 @@ export function loadSlides(dir: string): SlideData[] {
       const fullPath = join(directory, item);
       if (statSync(fullPath).isDirectory()) {
         scan(fullPath);
-      } else if (item.endsWith(".yaml")) {
+        continue;
+      }
+      if (item.endsWith(".yaml")) {
         const data = parseYamlFile(fullPath);
-        if (data && validateSlide(data)) {
-          slides.push(data);
-        } else {
+        if (!data || !validateSlide(data)) {
           logger.warn(`Invalid YAML: ${fullPath}`);
+          continue;
         }
+        slides.push(data);
       }
     }
   }

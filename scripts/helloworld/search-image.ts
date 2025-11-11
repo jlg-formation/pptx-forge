@@ -29,9 +29,8 @@ async function main() {
       const filePath = await downloadImage(imageUrl, "dist", "searched-image");
 
       console.log(`Image downloaded to ${filePath}`);
-    } else {
-      console.log("No image found for the query.");
     }
+    console.log("No image found for the query.");
   } catch (error) {
     console.error("Error:", error);
   }
