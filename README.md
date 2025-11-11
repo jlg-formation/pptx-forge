@@ -29,8 +29,13 @@ Un outil en ligne de commande pour générer automatiquement des présentations 
 
    ```bash
    cat > .env << 'EOF'
+   # utile pour chercher des images d'illustrations sur GOOGLE IMAGES
+   # gratuit pour 100 images par jour.
    GOOGLE_CX=votre-google-cx-ici
    GOOGLE_API_KEY=votre-google-api-key-ici
+
+   # utile pour chercher des images d'illustrations sur PIXABAY
+   # gratuit pour 60 images par minute
    PIXABAY_API_KEY=votre-pixabay-api-key-ici
 
    AUTHOR=Jean-Louis GUENEGO
