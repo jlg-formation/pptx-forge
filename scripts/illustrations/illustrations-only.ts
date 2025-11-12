@@ -46,23 +46,25 @@ export async function processIllustrationsOnly(
       );
     } else {
       // Non-interactive, use default method
+      answer = "3";
       if (defaultMethod === "pse") {
         answer = "2";
-      } else {
-        // Default to placeholder if unknown method
-        answer = "3";
       }
     }
     const chapterKey = slide.chapter.key;
     const slideId = slide.slide.id;
     const imgDir = path.join("illustrations", chapterKey);
     if (!fs.existsSync(imgDir)) fs.mkdirSync(imgDir, { recursive: true });
-    if (answer === "1") {
-      await handleAIMethod(slide, imgDir);
-    } else if (answer === "2") {
-      await handlePSEMethod(slide, imgDir);
-    } else {
-      await handlePlaceholderMethod(slide, imgDir);
+    switch (answer) {
+      case "1":
+        await handleAIMethod(slide, imgDir);
+        break;
+      case "2":
+        await handlePSEMethod(slide, imgDir);
+        break;
+      default:
+        await handlePlaceholderMethod(slide, imgDir);
+        break;
     }
   }
   if (rl) rl.close();

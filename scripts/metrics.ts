@@ -9,7 +9,8 @@ function getTsFiles(dir: string, baseDir: string = dir): string[] {
     const stat = statSync(fullPath);
     if (stat.isDirectory() && item !== "node_modules") {
       files.push(...getTsFiles(fullPath, baseDir));
-    } else if (extname(item) === ".ts") {
+    }
+    if (extname(item) === ".ts") {
       files.push(relative(baseDir, fullPath));
     }
   }

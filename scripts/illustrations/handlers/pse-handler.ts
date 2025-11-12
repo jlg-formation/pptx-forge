@@ -17,25 +17,25 @@ export async function handlePSEMethod(
   );
   try {
     const url = await searchPSEImage(searchTerm);
-    if (url) {
-      const downloadedPath = await downloadImage(url, imgDir, slideId);
-      logger.info(`Image téléchargée: ${downloadedPath}`);
-    } else {
+    if (!url) {
       logger.warn(`Aucune image trouvée pour le titre: ${searchTerm}`);
       // Use placeholder
       const placeholderSrc = path.join("illustrations", "placeholder.png");
       const outputPath = path.join(imgDir, `${slideId}.png`);
       try {
-        if (fs.existsSync(placeholderSrc)) {
-          fs.copyFileSync(placeholderSrc, outputPath);
-          logger.info(`Placeholder utilisé: ${outputPath}`);
-        } else {
+        if (!fs.existsSync(placeholderSrc)) {
           logger.error(`Placeholder manquant: ${placeholderSrc}`);
+          return;
         }
+        fs.copyFileSync(placeholderSrc, outputPath);
+        logger.info(`Placeholder utilisé: ${outputPath}`);
       } catch (err) {
         logger.error(`Erreur copie placeholder: ${err}`);
       }
+      return;
     }
+    const downloadedPath = await downloadImage(url, imgDir, slideId);
+    logger.info(`Image téléchargée: ${downloadedPath}`);
   } catch (err) {
     logger.error(`Erreur PSE: ${err}`);
   }

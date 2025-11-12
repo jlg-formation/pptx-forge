@@ -14,7 +14,8 @@ export function addImageToSlide(
     let finalH = imgZone.h;
     if (imgRatio > zoneRatio) {
       finalH = imgZone.w / imgRatio;
-    } else {
+    }
+    if (imgRatio <= zoneRatio) {
       finalW = imgZone.h * imgRatio;
     }
     const finalX = imgZone.x + (imgZone.w - finalW) / 2;

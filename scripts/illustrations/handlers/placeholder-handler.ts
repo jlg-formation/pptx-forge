@@ -14,12 +14,12 @@ export async function handlePlaceholderMethod(
   const placeholderSrc = path.join("illustrations", "placeholder.png");
   const outputPath = path.join(imgDir, `${slideId}.png`);
   try {
-    if (fs.existsSync(placeholderSrc)) {
-      fs.copyFileSync(placeholderSrc, outputPath);
-      logger.info(`Placeholder copié: ${outputPath}`);
-    } else {
+    if (!fs.existsSync(placeholderSrc)) {
       logger.error(`Placeholder manquant: ${placeholderSrc}`);
+      return;
     }
+    fs.copyFileSync(placeholderSrc, outputPath);
+    logger.info(`Placeholder copié: ${outputPath}`);
   } catch (err) {
     logger.error(`Erreur copie placeholder: ${err}`);
   }
