@@ -13,7 +13,7 @@ export interface SlideMasterDefinition {
   bullets?: { fontSize: number; color: string };
   keyMessage?: { fontSize: number; color: string; italic?: boolean };
   layout: string;
-  objects: any[];
+  objects: readonly any[];
 }
 
 export interface ColorScheme {

@@ -1,5 +1,21 @@
 import { SlideMasterDefinition, ColorScheme } from "../layout-manager";
 
+type PlaceholderOptions = {
+  name: string;
+  type: string;
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+};
+
+type PlaceholderObject = {
+  placeholder: {
+    options: PlaceholderOptions;
+    text: string;
+  };
+};
+
 export function createConclusionMaster(
   colors: ColorScheme,
   theme: "standard" | "dark"
@@ -47,6 +63,6 @@ export function createConclusionMaster(
           text: "",
         },
       },
-    ],
+    ] as const satisfies readonly PlaceholderObject[],
   };
 }
