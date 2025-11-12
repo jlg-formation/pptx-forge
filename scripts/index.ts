@@ -1,5 +1,6 @@
 import path from "path";
 import process from "process";
+import fs from "fs";
 import { parseArgs } from "./cli/args";
 import { logger } from "./cli/logger";
 import { generatePptx } from "./generator/pptx-generator";
@@ -32,6 +33,13 @@ const theme = args.theme || "standard";
   const title = slides[0]?.slide.title || "Formation";
 
   const outputFile = args.output || `dist/${slugify(title)}.pptx`;
+
+  // Assurer que le répertoire de sortie existe
+  const outputDir = path.dirname(outputFile);
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+    logger.info(`Répertoire créé: ${outputDir}`);
+  }
 
   // Mode illustrations-only
   if (args.illustrationsOnly) {
