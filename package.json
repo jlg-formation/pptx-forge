@@ -8,6 +8,7 @@
     "illustrations-only-pse": "bun run scripts/index.ts --illustrations-only=pse",
     "export": "bun run scripts/export.ts",
     "pixabay": "bun run scripts/pixabay.ts",
+    "reset": "bun run scripts/reset.ts",
     "check": "tsc --noEmit --pretty",
     "lint": "eslint .",
     "hello-pptx": "bun run scripts/helloworld/pptxgenjs.ts",

@@ -47,7 +47,8 @@ export function parseYamlFile(filePath: string): SlideData | null {
     const data = load(content) as Record<string, unknown>;
     if (!data) return null;
     return data as unknown as SlideData;
-  } catch {
+  } catch (err) {
+    console.error(`Erreur parsing ${filePath}: ${err}`);
     return null;
   }
 }
