@@ -20,10 +20,10 @@ async function main() {
     mkdirSync(exportDir, { recursive: true });
 
     // Copy presentation.pptx
-    const pptxSrc = join(__dirname, "..", "dist", "presentation.pptx");
-    const pptxDest = join(exportDir, "presentation.pptx");
+    const pptxSrc = join(__dirname, "..", "dist", `${slug}.pptx`);
+    const pptxDest = join(exportDir, `${slug}.pptx`);
     copyFileSync(pptxSrc, pptxDest);
-    console.log("Copié presentation.pptx");
+    console.log(`Copié ${slug}.pptx`);
 
     // Copy slides directory
     const slidesSrc = join(__dirname, "..", "slides");

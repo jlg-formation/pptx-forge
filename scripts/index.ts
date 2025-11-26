@@ -9,7 +9,7 @@ import { parseYamlFiles } from "./parser/yaml-parser";
 
 import { SlideData } from "./parser/yaml-parser";
 import { processIllustrationsOnly } from "./illustrations/illustrations-only";
-import { slugify } from "./utils/common";
+import { slugify, getFormationTitle } from "./utils/common";
 
 // CLI arguments
 const args = parseArgs(process.argv.slice(2));
@@ -30,7 +30,7 @@ const theme = args.theme || "standard";
   }
 
   // Extraire le titre de la formation
-  const title = slides[0]?.slide.title || "Formation";
+  const title = getFormationTitle();
 
   const outputFile = args.output || `dist/${slugify(title)}.pptx`;
 
